@@ -1,46 +1,82 @@
-import { useState } from "react"
-import { Link } from "react-router-dom"
-import { animeData } from "../data/animeData"
+import { useState, useEffect } from "react"
+import { Link, useNavigate } from "react-router-dom"
+import { useAuth } from "../context/AuthContext"
+import { apiGet, apiPut } from "../services/db"
 
 export default function Profile() {
   const [activeTab, setActiveTab] = useState("activity")
+  const { user: authUser, loading: authLoading, login, token } = useAuth()
+  const navigate = useNavigate()
 
-  const user = {
-    username: "AnimeVerseFan",
-    bio: "Passionate otaku exploring every universe. Lover of Shonen and Seinen. Always chasing the next great story.",
-    joined: "January 2024",
-    followers: 1247,
-    following: 389,
+  const [profileData, setProfileData] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [saveMsg, setSaveMsg] = useState("")
+  const [saveErr, setSaveErr] = useState("")
+
+  // Settings form state
+  const [settingsForm, setSettingsForm] = useState({ username: "", bio: "", email: "" })
+
+  // Redirect if not logged in
+  useEffect(() => {
+    if (!authLoading && !authUser) {
+      navigate("/login")
+    }
+  }, [authLoading, authUser, navigate])
+
+  // Fetch profile data
+  useEffect(() => {
+    if (!authUser) return
+    apiGet("/api/profile")
+      .then((data) => {
+        setProfileData(data)
+        setSettingsForm({
+          username: data.user.username || "",
+          bio: data.user.bio || "",
+          email: data.user.email || "",
+        })
+      })
+      .catch(() => {})
+      .finally(() => setLoading(false))
+  }, [authUser])
+
+  if (authLoading || loading) {
+    return (
+      <div className="min-h-screen pt-20 flex items-center justify-center">
+        <div className="text-purple-400 font-orbitron text-xl animate-pulse">Loading profile...</div>
+      </div>
+    )
   }
 
-  const stats = [
-    { label: "Anime Watched", value: "156", icon: "&#127916;" },
-    { label: "Episodes Seen", value: "3,847", icon: "&#9654;" },
-    { label: "Hours Watched", value: "1,539", icon: "&#9200;" },
-    { label: "Favorites", value: "42", icon: "&#10084;" },
+  if (!authUser || !profileData) return null
+
+  const { user, stats, recent_watchlist, user_reviews } = profileData
+
+  const displayStats = [
+    { label: "In Watchlist", value: String(stats.watchlist_total), icon: "&#127916;" },
+    { label: "Completed", value: String(stats.completed), icon: "&#9654;" },
+    { label: "Reviews", value: String(stats.reviews), icon: "&#9200;" },
+    { label: "Member Since", value: new Date(user.created_at).toLocaleDateString("en-US", { month: "short", year: "numeric" }), icon: "&#10084;" },
   ]
 
-  const activity = [
-    { action: "Completed watching", anime: "Attack on Titan", time: "2 hours ago" },
-    { action: "Started watching", anime: "Demon Slayer S4", time: "Yesterday" },
-    { action: "Added to watchlist", anime: "Chainsaw Man", time: "3 days ago" },
-    { action: "Rated 9/10", anime: "Steins;Gate", time: "1 week ago" },
-    { action: "Wrote a review for", anime: "Violet Evergarden", time: "2 weeks ago" },
-  ]
-
-  const genrePrefs = [
-    { name: "Action", percent: 85 },
-    { name: "Fantasy", percent: 72 },
-    { name: "Drama", percent: 65 },
-    { name: "Sci-Fi", percent: 48 },
-    { name: "Romance", percent: 35 },
-  ]
-
-  const currentlyWatching = animeData.filter(a => a.status === "Ongoing").slice(0, 3).map((a, i) => ({
-    ...a,
-    currentEp: [18, 8, 45][i],
-    totalEp: a.episodes,
+  const activity = recent_watchlist.map((w) => ({
+    action: w.watch_status === "Completed" ? "Completed watching" : w.watch_status === "Watching" ? "Started watching" : "Added to watchlist",
+    anime: w.title,
+    time: new Date(w.added_at).toLocaleDateString(),
   }))
+
+  const handleSaveSettings = async (e) => {
+    e.preventDefault()
+    setSaveMsg("")
+    setSaveErr("")
+    try {
+      const data = await apiPut("/api/profile", settingsForm)
+      setSaveMsg("Profile updated successfully!")
+      // Update auth context with new user data
+      login(data.user, token)
+    } catch (err) {
+      setSaveErr(err.message)
+    }
+  }
 
   const tabs = ["activity", "watchlist", "reviews", "settings"]
 
@@ -61,25 +97,24 @@ export default function Profile() {
             <div className="relative">
               <div className="absolute -inset-1 bg-gradient-to-br from-purple-500 via-cyan-500 to-pink-500 rounded-full blur-sm" />
               <div className="relative w-28 h-28 rounded-full bg-gradient-to-br from-purple-600 to-cyan-500 flex items-center justify-center text-white font-orbitron font-black text-4xl border-4 border-[#03010a]">
-                {user.username[0]}
+                {user.username[0].toUpperCase()}
               </div>
             </div>
             <div className="flex-1">
               <h1 className="font-orbitron text-2xl font-bold text-white">{user.username}</h1>
-              <p className="text-gray-400 text-sm mt-1 max-w-lg">{user.bio}</p>
+              <p className="text-gray-400 text-sm mt-1 max-w-lg">{user.bio || "No bio yet — add one in settings!"}</p>
               <div className="flex items-center gap-4 mt-2 text-sm text-gray-500">
-                <span>&#128197; Joined {user.joined}</span>
-                <span><strong className="text-gray-300">{user.followers.toLocaleString()}</strong> Followers</span>
-                <span><strong className="text-gray-300">{user.following}</strong> Following</span>
+                <span>&#128197; Joined {new Date(user.created_at).toLocaleDateString("en-US", { month: "long", year: "numeric" })}</span>
+                <span>{user.email}</span>
               </div>
             </div>
-            <button className="px-6 py-2 rounded-xl border border-purple-500/30 text-purple-300 font-semibold text-sm hover:bg-purple-500/10 transition-all">Edit Profile</button>
+            <button onClick={() => setActiveTab("settings")} className="px-6 py-2 rounded-xl border border-purple-500/30 text-purple-300 font-semibold text-sm hover:bg-purple-500/10 transition-all">Edit Profile</button>
           </div>
         </div>
 
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-          {stats.map(s => (
+          {displayStats.map(s => (
             <div key={s.label} className="glass rounded-xl p-5 text-center hover:glow-purple transition-all">
               <div className="text-2xl mb-2" dangerouslySetInnerHTML={{ __html: s.icon }} />
               <div className="font-orbitron text-2xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">{s.value}</div>
@@ -102,52 +137,42 @@ export default function Profile() {
           <div className="animate-fade-in grid lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2 space-y-6">
               <h3 className="font-orbitron text-lg font-bold text-white">Recent Activity</h3>
-              <div className="space-y-3">
-                {activity.map((a, i) => (
-                  <div key={i} className="glass rounded-xl p-4 flex items-center gap-4 hover:border-purple-500/30 transition-all">
-                    <div className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-300 shrink-0">&#9654;</div>
-                    <div className="flex-1">
-                      <p className="text-sm text-gray-300"><span className="text-gray-500">{a.action}</span> <span className="text-purple-300 font-semibold">{a.anime}</span></p>
-                      <span className="text-xs text-gray-500">{a.time}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <h3 className="font-orbitron text-lg font-bold text-white mt-8">Currently Watching</h3>
-              <div className="grid sm:grid-cols-3 gap-4">
-                {currentlyWatching.map(a => (
-                  <Link to={`/anime/${a.id}`} key={a.id} className="glass rounded-xl overflow-hidden group hover:border-purple-500/30 transition-all">
-                    <img src={a.image} alt={a.title} className="w-full h-40 object-cover group-hover:scale-105 transition-transform" />
-                    <div className="p-3">
-                      <h4 className="text-white text-sm font-semibold truncate">{a.title}</h4>
-                      <div className="flex items-center justify-between text-xs text-gray-400 mt-2 mb-1">
-                        <span>EP {a.currentEp}/{a.totalEp}</span>
-                        <span>{Math.round((a.currentEp / a.totalEp) * 100)}%</span>
-                      </div>
-                      <div className="w-full h-1.5 rounded-full bg-[#0d0a1a] overflow-hidden">
-                        <div className="h-full rounded-full bg-gradient-to-r from-purple-500 to-cyan-500" style={{ width: `${(a.currentEp / a.totalEp) * 100}%` }} />
+              {activity.length > 0 ? (
+                <div className="space-y-3">
+                  {activity.map((a, i) => (
+                    <div key={i} className="glass rounded-xl p-4 flex items-center gap-4 hover:border-purple-500/30 transition-all">
+                      <div className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-300 shrink-0">&#9654;</div>
+                      <div className="flex-1">
+                        <p className="text-sm text-gray-300"><span className="text-gray-500">{a.action}</span> <span className="text-purple-300 font-semibold">{a.anime}</span></p>
+                        <span className="text-xs text-gray-500">{a.time}</span>
                       </div>
                     </div>
-                  </Link>
-                ))}
-              </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="glass rounded-xl p-8 text-center">
+                  <div className="text-4xl mb-3">📭</div>
+                  <p className="text-gray-400">No activity yet. Start adding anime to your watchlist!</p>
+                  <Link to="/anime" className="inline-block mt-4 px-6 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-cyan-500 text-white font-bold text-sm hover:shadow-[0_0_20px_rgba(180,79,255,0.4)] transition-all">Browse Anime</Link>
+                </div>
+              )}
             </div>
 
             <div>
-              <h3 className="font-orbitron text-lg font-bold text-white mb-4">Favorite Genres</h3>
+              <h3 className="font-orbitron text-lg font-bold text-white mb-4">Account Info</h3>
               <div className="glass rounded-xl p-6 space-y-4">
-                {genrePrefs.map(g => (
-                  <div key={g.name}>
-                    <div className="flex justify-between text-sm mb-1">
-                      <span className="text-gray-300">{g.name}</span>
-                      <span className="text-purple-300">{g.percent}%</span>
-                    </div>
-                    <div className="w-full h-2 rounded-full bg-[#0d0a1a] overflow-hidden">
-                      <div className="h-full rounded-full bg-gradient-to-r from-purple-500 to-cyan-500" style={{ width: `${g.percent}%` }} />
-                    </div>
-                  </div>
-                ))}
+                <div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wider mb-1">Username</div>
+                  <div className="text-gray-300">{user.username}</div>
+                </div>
+                <div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wider mb-1">Email</div>
+                  <div className="text-gray-300">{user.email}</div>
+                </div>
+                <div>
+                  <div className="text-xs text-gray-500 uppercase tracking-wider mb-1">Member Since</div>
+                  <div className="text-gray-300">{new Date(user.created_at).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}</div>
+                </div>
               </div>
             </div>
           </div>
@@ -163,36 +188,51 @@ export default function Profile() {
 
         {activeTab === "reviews" && (
           <div className="animate-fade-in space-y-4">
-            {[
-              { anime: "Attack on Titan", rating: 9, text: "A masterpiece of storytelling and world-building. Every episode keeps you on the edge of your seat." },
-              { anime: "Violet Evergarden", rating: 10, text: "The most beautiful anime I have ever watched. The animation and emotional depth are unparalleled." },
-            ].map(r => (
-              <div key={r.anime} className="glass rounded-xl p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <h4 className="text-purple-300 font-semibold">{r.anime}</h4>
-                  <span className="text-yellow-400 font-bold">&#11088; {r.rating}/10</span>
+            {user_reviews && user_reviews.length > 0 ? (
+              user_reviews.map((r, i) => (
+                <div key={i} className="glass rounded-xl p-6">
+                  <div className="flex items-center justify-between mb-3">
+                    <h4 className="text-purple-300 font-semibold">{r.anime_title}</h4>
+                    <span className="text-yellow-400 font-bold">&#11088; {r.rating}/10</span>
+                  </div>
+                  <p className="text-gray-300 text-sm">{r.review_text}</p>
+                  <p className="text-gray-500 text-xs mt-2">{new Date(r.created_at).toLocaleDateString()}</p>
                 </div>
-                <p className="text-gray-300 text-sm">{r.text}</p>
+              ))
+            ) : (
+              <div className="text-center py-12 glass rounded-xl">
+                <div className="text-5xl mb-4">✏️</div>
+                <h3 className="font-orbitron text-xl text-white mb-2">No reviews yet</h3>
+                <p className="text-gray-400 mb-4">Share your thoughts on the anime you&apos;ve watched!</p>
+                <Link to="/anime" className="inline-block px-8 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-cyan-500 text-white font-bold text-sm hover:shadow-[0_0_20px_rgba(180,79,255,0.4)] transition-all">Browse Anime</Link>
               </div>
-            ))}
+            )}
           </div>
         )}
 
         {activeTab === "settings" && (
           <div className="animate-fade-in max-w-2xl">
-            <div className="glass rounded-xl p-8 space-y-6">
+            <form onSubmit={handleSaveSettings} className="glass rounded-xl p-8 space-y-6">
               <h3 className="font-orbitron text-xl font-bold text-white">Account Settings</h3>
+
+              {saveMsg && (
+                <div className="p-3 rounded-xl bg-green-500/10 border border-green-500/30 text-green-300 text-sm">{saveMsg}</div>
+              )}
+              {saveErr && (
+                <div className="p-3 rounded-xl bg-red-500/10 border border-red-500/30 text-red-300 text-sm">{saveErr}</div>
+              )}
+
               <div>
                 <label className="block text-sm text-gray-300 mb-2 font-semibold">Username</label>
-                <input defaultValue={user.username} className="w-full px-4 py-3 rounded-xl bg-[#0d0a1a] border border-purple-500/20 text-white focus:outline-none focus:border-purple-400 transition-all" />
+                <input value={settingsForm.username} onChange={(e) => setSettingsForm({ ...settingsForm, username: e.target.value })} className="w-full px-4 py-3 rounded-xl bg-[#0d0a1a] border border-purple-500/20 text-white focus:outline-none focus:border-purple-400 transition-all" />
               </div>
               <div>
                 <label className="block text-sm text-gray-300 mb-2 font-semibold">Bio</label>
-                <textarea defaultValue={user.bio} rows={3} className="w-full px-4 py-3 rounded-xl bg-[#0d0a1a] border border-purple-500/20 text-white focus:outline-none focus:border-purple-400 transition-all resize-none" />
+                <textarea value={settingsForm.bio} onChange={(e) => setSettingsForm({ ...settingsForm, bio: e.target.value })} rows={3} className="w-full px-4 py-3 rounded-xl bg-[#0d0a1a] border border-purple-500/20 text-white focus:outline-none focus:border-purple-400 transition-all resize-none" />
               </div>
               <div>
                 <label className="block text-sm text-gray-300 mb-2 font-semibold">Email</label>
-                <input defaultValue="animefan@email.com" className="w-full px-4 py-3 rounded-xl bg-[#0d0a1a] border border-purple-500/20 text-white focus:outline-none focus:border-purple-400 transition-all" />
+                <input value={settingsForm.email} onChange={(e) => setSettingsForm({ ...settingsForm, email: e.target.value })} className="w-full px-4 py-3 rounded-xl bg-[#0d0a1a] border border-purple-500/20 text-white focus:outline-none focus:border-purple-400 transition-all" />
               </div>
               <div className="space-y-3">
                 <h4 className="text-sm text-gray-300 font-semibold">Notifications</h4>
@@ -205,8 +245,8 @@ export default function Profile() {
                   </label>
                 ))}
               </div>
-              <button className="px-8 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-cyan-500 text-white font-bold text-sm hover:shadow-[0_0_20px_rgba(180,79,255,0.4)] transition-all">Save Changes</button>
-            </div>
+              <button type="submit" className="px-8 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-cyan-500 text-white font-bold text-sm hover:shadow-[0_0_20px_rgba(180,79,255,0.4)] transition-all">Save Changes</button>
+            </form>
           </div>
         )}
       </div>

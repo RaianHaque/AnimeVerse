@@ -1,11 +1,35 @@
 import { useState } from "react"
+import { apiPost } from "../services/db"
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", subject: "General", message: "" })
+  const [form, setForm] = useState({ name: "", email: "", subject: "General Inquiry", message: "" })
   const [openFaq, setOpenFaq] = useState(null)
+  const [success, setSuccess] = useState("")
+  const [error, setError] = useState("")
+  const [loading, setLoading] = useState(false)
 
   const handleChange = (field) => (e) => setForm({ ...form, [field]: e.target.value })
-  const handleSubmit = (e) => e.preventDefault()
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setSuccess("")
+    setError("")
+    setLoading(true)
+    try {
+      const data = await apiPost("/api/contact", {
+        name: form.name,
+        email: form.email,
+        subject: form.subject,
+        message: form.message,
+      })
+      setSuccess(data.message)
+      setForm({ name: "", email: "", subject: "General Inquiry", message: "" })
+    } catch (err) {
+      setError(err.message)
+    } finally {
+      setLoading(false)
+    }
+  }
 
   const faqs = [
     { q: "How do I create an account?", a: "Click the Sign Up button in the top right corner, fill in your details, and you are ready to start your anime journey!" },
@@ -63,6 +87,12 @@ export default function Contact() {
           <div>
             <h2 className="font-orbitron text-xl font-bold text-white mb-6">Send a Message</h2>
             <form onSubmit={handleSubmit} className="glass rounded-2xl p-8 space-y-5">
+              {success && (
+                <div className="p-3 rounded-xl bg-green-500/10 border border-green-500/30 text-green-300 text-sm">{success}</div>
+              )}
+              {error && (
+                <div className="p-3 rounded-xl bg-red-500/10 border border-red-500/30 text-red-300 text-sm">{error}</div>
+              )}
               <div>
                 <label className="block text-sm text-gray-300 mb-2 font-semibold">Name</label>
                 <input value={form.name} onChange={handleChange("name")} placeholder="Your name" className="w-full px-4 py-3 rounded-xl bg-[#0d0a1a] border border-purple-500/20 text-white placeholder-gray-500 focus:outline-none focus:border-purple-400 focus:shadow-[0_0_15px_rgba(180,79,255,0.2)] transition-all" />
@@ -85,7 +115,9 @@ export default function Contact() {
                 <label className="block text-sm text-gray-300 mb-2 font-semibold">Message</label>
                 <textarea value={form.message} onChange={handleChange("message")} rows={5} placeholder="Tell us what's on your mind..." className="w-full px-4 py-3 rounded-xl bg-[#0d0a1a] border border-purple-500/20 text-white placeholder-gray-500 focus:outline-none focus:border-purple-400 focus:shadow-[0_0_15px_rgba(180,79,255,0.2)] transition-all resize-none" />
               </div>
-              <button type="submit" className="w-full py-3.5 rounded-xl bg-gradient-to-r from-purple-600 to-cyan-500 text-white font-bold hover:shadow-[0_0_30px_rgba(180,79,255,0.4)] transition-all hover:scale-[1.02]">Send Message</button>
+              <button type="submit" disabled={loading} className="w-full py-3.5 rounded-xl bg-gradient-to-r from-purple-600 to-cyan-500 text-white font-bold hover:shadow-[0_0_30px_rgba(180,79,255,0.4)] transition-all hover:scale-[1.02] disabled:opacity-50 disabled:hover:scale-100">
+                {loading ? "Sending..." : "Send Message"}
+              </button>
             </form>
           </div>
         </div>

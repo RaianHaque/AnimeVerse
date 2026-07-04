@@ -1,12 +1,44 @@
 import { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import { useAuth } from "../context/AuthContext"
+import { apiPost } from "../services/db"
 
 export default function Register() {
   const [form, setForm] = useState({ username: "", email: "", password: "", confirm: "" })
   const [agreed, setAgreed] = useState(false)
+  const [error, setError] = useState("")
+  const [loading, setLoading] = useState(false)
+  const { login } = useAuth()
+  const navigate = useNavigate()
 
   const handleChange = (field) => (e) => setForm({ ...form, [field]: e.target.value })
-  const handleSubmit = (e) => e.preventDefault()
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setError("")
+
+    if (form.password !== form.confirm) {
+      return setError("Passwords do not match")
+    }
+    if (!agreed) {
+      return setError("Please agree to the Terms of Service")
+    }
+
+    setLoading(true)
+    try {
+      const data = await apiPost("/api/auth/register", {
+        username: form.username,
+        email: form.email,
+        password: form.password,
+      })
+      login(data.user, data.token)
+      navigate("/profile")
+    } catch (err) {
+      setError(err.message)
+    } finally {
+      setLoading(false)
+    }
+  }
 
   const getPasswordStrength = () => {
     const p = form.password
@@ -48,6 +80,12 @@ export default function Register() {
 
           <h2 className="font-orbitron text-2xl font-bold text-white mb-2">Create Account</h2>
           <p className="text-gray-400 mb-8">Fill in the details below to get started.</p>
+
+          {error && (
+            <div className="mb-4 p-3 rounded-xl bg-red-500/10 border border-red-500/30 text-red-300 text-sm">
+              {error}
+            </div>
+          )}
 
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
@@ -97,7 +135,9 @@ export default function Register() {
               <span className="text-sm text-gray-400">I agree to the <span className="text-purple-400 cursor-pointer">Terms of Service</span> and <span className="text-purple-400 cursor-pointer">Privacy Policy</span></span>
             </label>
 
-            <button type="submit" className="w-full py-3.5 rounded-xl bg-gradient-to-r from-pink-500 via-purple-600 to-cyan-500 text-white font-bold hover:shadow-[0_0_30px_rgba(180,79,255,0.4)] transition-all hover:scale-[1.02]">Create Account</button>
+            <button type="submit" disabled={loading} className="w-full py-3.5 rounded-xl bg-gradient-to-r from-pink-500 via-purple-600 to-cyan-500 text-white font-bold hover:shadow-[0_0_30px_rgba(180,79,255,0.4)] transition-all hover:scale-[1.02] disabled:opacity-50 disabled:hover:scale-100">
+              {loading ? "Creating Account..." : "Create Account"}
+            </button>
           </form>
 
           <div className="my-8 flex items-center gap-4">

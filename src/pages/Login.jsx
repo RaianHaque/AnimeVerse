@@ -1,13 +1,30 @@
 import { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import { useAuth } from "../context/AuthContext"
+import { apiPost } from "../services/db"
 
 export default function Login() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [remember, setRemember] = useState(false)
+  const [error, setError] = useState("")
+  const [loading, setLoading] = useState(false)
+  const { login } = useAuth()
+  const navigate = useNavigate()
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
+    setError("")
+    setLoading(true)
+    try {
+      const data = await apiPost("/api/auth/login", { email, password })
+      login(data.user, data.token)
+      navigate("/profile")
+    } catch (err) {
+      setError(err.message)
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -46,6 +63,12 @@ export default function Login() {
           <h2 className="font-orbitron text-2xl font-bold text-white mb-2">Sign In</h2>
           <p className="text-gray-400 mb-8">Welcome back! Please enter your credentials.</p>
 
+          {error && (
+            <div className="mb-4 p-3 rounded-xl bg-red-500/10 border border-red-500/30 text-red-300 text-sm">
+              {error}
+            </div>
+          )}
+
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
               <label className="block text-sm text-gray-300 mb-2 font-semibold">Email</label>
@@ -70,7 +93,9 @@ export default function Login() {
               <span className="text-sm text-purple-400 hover:text-purple-300 cursor-pointer transition-colors">Forgot password?</span>
             </div>
 
-            <button type="submit" className="w-full py-3.5 rounded-xl bg-gradient-to-r from-purple-600 to-cyan-500 text-white font-bold hover:shadow-[0_0_30px_rgba(180,79,255,0.4)] transition-all hover:scale-[1.02]">Sign In</button>
+            <button type="submit" disabled={loading} className="w-full py-3.5 rounded-xl bg-gradient-to-r from-purple-600 to-cyan-500 text-white font-bold hover:shadow-[0_0_30px_rgba(180,79,255,0.4)] transition-all hover:scale-[1.02] disabled:opacity-50 disabled:hover:scale-100">
+              {loading ? "Signing in..." : "Sign In"}
+            </button>
           </form>
 
           <div className="my-8 flex items-center gap-4">
