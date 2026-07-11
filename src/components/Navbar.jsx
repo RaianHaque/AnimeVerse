@@ -40,7 +40,7 @@ export default function Navbar() {
               </Link>
             ))}
             {/* Desktop Admin Dropdown */}
-            {user && (actualRole === "admin" || actualRole === "super_admin") && (
+            {user && (isAdmin || isSuperAdmin) && (
               <div className="relative group">
                 <button className={`px-4 py-2 rounded-lg text-sm font-semibold tracking-wide transition-all duration-300 flex items-center gap-1 ${isActive("/admin") ? "bg-amber-500/20 text-amber-300" : "text-amber-400 hover:text-amber-300 hover:bg-amber-500/10"}`}>
                   👑 Admin <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
@@ -116,20 +116,23 @@ export default function Navbar() {
             {user && (actualRole === "admin" || actualRole === "super_admin") && (
               <>
                 <div className="border-t border-purple-500/10 my-2" />
-                <span className="block px-4 py-1 text-[10px] font-bold uppercase text-amber-500/50 tracking-wider">Admin Controls</span>
-                <Link to="/admin" onClick={() => setMobileOpen(false)} className={`block px-4 py-2.5 rounded-lg text-sm font-semibold ${isActive("/admin") ? "bg-amber-500/20 text-amber-300" : "text-amber-400 hover:bg-amber-500/10"}`}>
-                  👑 Full Dashboard
-                </Link>
-                {/* Note: In a real app we might pass a tab query param, but for now we link to /admin and let them use the tabs */}
-                <Link to="/admin" onClick={() => setMobileOpen(false)} className="block px-4 py-2.5 rounded-lg text-sm font-semibold text-gray-300 hover:bg-purple-500/10">
-                  🎬 Manage Anime
-                </Link>
-                <Link to="/admin" onClick={() => setMobileOpen(false)} className="block px-4 py-2.5 rounded-lg text-sm font-semibold text-gray-300 hover:bg-purple-500/10">
-                  👥 Manage Users
-                </Link>
-                <Link to="/admin" onClick={() => setMobileOpen(false)} className="block px-4 py-2.5 rounded-lg text-sm font-semibold text-gray-300 hover:bg-purple-500/10">
-                  ⭐ Manage Reviews
-                </Link>
+                {(isAdmin || isSuperAdmin) && (
+                  <>
+                    <span className="block px-4 py-1 text-[10px] font-bold uppercase text-amber-500/50 tracking-wider">Admin Controls</span>
+                    <Link to="/admin" onClick={() => setMobileOpen(false)} className={`block px-4 py-2.5 rounded-lg text-sm font-semibold ${isActive("/admin") ? "bg-amber-500/20 text-amber-300" : "text-amber-400 hover:bg-amber-500/10"}`}>
+                      👑 Full Dashboard
+                    </Link>
+                    <Link to="/admin" onClick={() => setMobileOpen(false)} className="block px-4 py-2.5 rounded-lg text-sm font-semibold text-gray-300 hover:bg-purple-500/10">
+                      🎬 Manage Anime
+                    </Link>
+                    <Link to="/admin" onClick={() => setMobileOpen(false)} className="block px-4 py-2.5 rounded-lg text-sm font-semibold text-gray-300 hover:bg-purple-500/10">
+                      👥 Manage Users
+                    </Link>
+                    <Link to="/admin" onClick={() => setMobileOpen(false)} className="block px-4 py-2.5 rounded-lg text-sm font-semibold text-gray-300 hover:bg-purple-500/10">
+                      ⭐ Manage Reviews
+                    </Link>
+                  </>
+                )}
                 <button
                   onClick={() => { toggleViewMode(); setMobileOpen(false) }}
                   className="block w-full text-left px-4 py-2.5 rounded-lg text-sm font-semibold text-gray-400 hover:bg-purple-500/10"
