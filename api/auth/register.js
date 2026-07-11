@@ -22,10 +22,18 @@ export default async function handler(req, res) {
   try {
     // Check if user already exists
     const existing = await sql`
-      SELECT id FROM users WHERE email = ${email} OR username = ${username} LIMIT 1
+      SELECT email, username FROM users WHERE email = ${email} OR username = ${username}
     `;
     if (existing.length > 0) {
-      return error(res, "A user with that email or username already exists", 409);
+      const emailMatch = existing.some(u => u.email === email);
+      const usernameMatch = existing.some(u => u.username === username);
+      
+      if (emailMatch) {
+        return error(res, "User already registered. Please login.", 409);
+      }
+      if (usernameMatch) {
+        return error(res, "Username already exists. Try another one.", 409);
+      }
     }
 
     // Auto-detect super admin
