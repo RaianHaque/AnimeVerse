@@ -13,7 +13,7 @@ export default async function handler(req, res) {
 
   try {
     const users = await sql`
-      SELECT id, username, email, bio, avatar_url, created_at
+      SELECT id, username, email, bio, avatar_url, role, admin_permissions, created_at
       FROM users WHERE id = ${tokenUser.id} LIMIT 1
     `;
 

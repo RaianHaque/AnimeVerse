@@ -7,7 +7,7 @@ export default async function handler(req, res) {
 
   const sql = getDb();
 
-  // GET — Fetch reviews for an anime (public)
+  // GET — Fetch reviews for an anime (public, excludes hidden)
   if (req.method === "GET") {
     const { anime_id } = req.query;
     try {
@@ -16,18 +16,29 @@ export default async function handler(req, res) {
         reviews = await sql`
           SELECT r.*, u.username FROM reviews r
           JOIN users u ON r.user_id = u.id
-          WHERE r.anime_mal_id = ${parseInt(anime_id)}
+          WHERE r.anime_mal_id = ${parseInt(anime_id)} AND r.is_hidden = FALSE
           ORDER BY r.created_at DESC
         `;
       } else {
         reviews = await sql`
           SELECT r.*, u.username FROM reviews r
           JOIN users u ON r.user_id = u.id
+          WHERE r.is_hidden = FALSE
           ORDER BY r.created_at DESC
           LIMIT 50
         `;
       }
-      return json(res, { reviews });
+
+      // Calculate average rating for this anime
+      let avg_rating = 0;
+      let review_count = 0;
+      if (anime_id && reviews.length > 0) {
+        const sum = reviews.reduce((acc, r) => acc + (r.rating || 0), 0);
+        avg_rating = parseFloat((sum / reviews.length).toFixed(2));
+        review_count = reviews.length;
+      }
+
+      return json(res, { reviews, avg_rating, review_count });
     } catch (err) {
       console.error("Reviews GET error:", err);
       return error(res, "Failed to fetch reviews", 500);

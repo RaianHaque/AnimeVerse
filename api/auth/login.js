@@ -1,5 +1,5 @@
 import { getDb } from "../_db.js";
-import { signToken, json, error, setCors } from "../_auth.js";
+import { signToken, isSuperAdminEmail, json, error, setCors } from "../_auth.js";
 import bcrypt from "bcryptjs";
 
 export default async function handler(req, res) {
@@ -16,9 +16,9 @@ export default async function handler(req, res) {
   const sql = getDb();
 
   try {
-    // Find user by email
+    // Find user by email — include role and permissions
     const users = await sql`
-      SELECT id, username, email, password_hash, bio, avatar_url, created_at
+      SELECT id, username, email, password_hash, bio, avatar_url, role, admin_permissions, created_at
       FROM users WHERE email = ${email} LIMIT 1
     `;
 
@@ -34,6 +34,12 @@ export default async function handler(req, res) {
       return error(res, "Invalid email or password", 401);
     }
 
+    // Auto-upgrade to super_admin if email matches env var (in case they registered before setting it up)
+    if (isSuperAdminEmail(email) && user.role !== "super_admin") {
+      await sql`UPDATE users SET role = 'super_admin' WHERE id = ${user.id}`;
+      user.role = "super_admin";
+    }
+
     const token = signToken(user);
 
     json(res, {
@@ -45,6 +51,8 @@ export default async function handler(req, res) {
         email: user.email,
         bio: user.bio,
         avatar_url: user.avatar_url,
+        role: user.role,
+        admin_permissions: user.admin_permissions,
         created_at: user.created_at,
       },
     });

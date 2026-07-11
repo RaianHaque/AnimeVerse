@@ -1,5 +1,5 @@
 import { getDb } from "../_db.js";
-import { signToken, json, error, setCors } from "../_auth.js";
+import { signToken, isSuperAdminEmail, json, error, setCors } from "../_auth.js";
 import bcrypt from "bcryptjs";
 
 export default async function handler(req, res) {
@@ -28,12 +28,15 @@ export default async function handler(req, res) {
       return error(res, "A user with that email or username already exists", 409);
     }
 
+    // Auto-detect super admin
+    const role = isSuperAdminEmail(email) ? "super_admin" : "user";
+
     // Hash password and create user
     const password_hash = await bcrypt.hash(password, 10);
     const result = await sql`
-      INSERT INTO users (username, email, password_hash)
-      VALUES (${username}, ${email}, ${password_hash})
-      RETURNING id, username, email, bio, avatar_url, created_at
+      INSERT INTO users (username, email, password_hash, role)
+      VALUES (${username}, ${email}, ${password_hash}, ${role})
+      RETURNING id, username, email, bio, avatar_url, role, admin_permissions, created_at
     `;
 
     const user = result[0];
@@ -48,6 +51,8 @@ export default async function handler(req, res) {
         email: user.email,
         bio: user.bio,
         avatar_url: user.avatar_url,
+        role: user.role,
+        admin_permissions: user.admin_permissions,
         created_at: user.created_at,
       },
     }, 201);

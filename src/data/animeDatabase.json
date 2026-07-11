@@ -1,0 +1,1152 @@
+[
+  {
+    "mal_id": 1, "title": "Cowboy Bebop", "title_english": "Cowboy Bebop", "title_japanese": "カウボーイビバップ",
+    "synopsis": "In the year 2071, humanity has colonized several of the planets and moons of the solar system leaving the now uninhabitable surface of planet Earth behind. The Inter Solar System Police attempts to keep peace in the galaxy, aided in part by outlaw bounty hunters, referred to as 'Cowboys.' The ragtag crew of the spaceship Bebop is two such individuals. Mellow and carefree Spike Spiegel is balanced by his boisterous, pragmatic partner Jet Black as the pair make a living chasing bounties and trying to make ends meet.",
+    "score": 8.77, "scored_by": 935000, "rank": 28, "popularity": 39,
+    "episodes": 26, "status": "Finished Airing", "type": "TV", "source": "Original", "duration": "24 min per ep", "rating": "R - 17+",
+    "aired": { "string": "Apr 3, 1998 to Apr 24, 1999" }, "season": "spring", "year": 1998,
+    "genres": ["Action", "Sci-Fi"], "themes": ["Adult Cast", "Space"], "demographics": [], "studios": ["Sunrise"],
+    "image": "https://cdn.myanimelist.net/images/anime/4/19644l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/qig4KOK2R2g",
+    "characters": [
+      { "name": "Spiegel, Spike", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/4/50197.jpg" },
+      { "name": "Black, Jet", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/11/253723.jpg" },
+      { "name": "Valentine, Faye", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/5/71472.jpg" },
+      { "name": "Wong Hau Pepelu Tivrusky IV, Edward", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/6/63558.jpg" }
+    ],
+    "trending": false, "topRated": true
+  },
+  {
+    "mal_id": 5, "title": "Cowboy Bebop: Tengoku no Tobira", "title_english": "Cowboy Bebop: Knockin' on Heaven's Door", "title_japanese": "カウボーイビバップ 天国の扉",
+    "synopsis": "Another day, another bounty—such is the life of the often unlucky crew of the Bebop. However, this routine is interrupted when Faye, who is chasing a fairly worthless target on Mars, witnesses an oil tanker suddenly explode, resulting in a deadly blast. Spike, Jet, and Faye, attracted by the unusually high bounty placed on the perpetrator, parsing through the post-Loss 'Net reveals a nightmarish truth.",
+    "score": 8.38, "scored_by": 275000, "rank": 161, "popularity": 527,
+    "episodes": 1, "status": "Finished Airing", "type": "Movie", "source": "Original", "duration": "1 hr 55 min", "rating": "R - 17+",
+    "aired": { "string": "Sep 1, 2001" }, "season": null, "year": 2001,
+    "genres": ["Action", "Sci-Fi"], "themes": ["Adult Cast", "Space"], "demographics": [], "studios": ["Bones"],
+    "image": "https://cdn.myanimelist.net/images/anime/1439/93480l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/hc7IxJ93jtM",
+    "characters": [
+      { "name": "Spiegel, Spike", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/4/50197.jpg" },
+      { "name": "Valentine, Faye", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/5/71472.jpg" }
+    ],
+    "trending": false, "topRated": false
+  },
+  {
+    "mal_id": 16498, "title": "Shingeki no Kyojin", "title_english": "Attack on Titan", "title_japanese": "進撃の巨人",
+    "synopsis": "Centuries ago, mankind was slaughtered to near extinction by monstrous humanoid creatures called Titans, forcing humans to hide in fear behind enormous concentric walls. What makes these giants truly terrifying is that their taste for human flesh is not born out of hunger but what appears to be out of pleasure. In order to carry out this task, the military combats these creatures with vertical maneuvering equipment. Eren Yeager is a young boy who dreams of exploring the world beyond the walls.",
+    "score": 8.53, "scored_by": 2800000, "rank": 104, "popularity": 1,
+    "episodes": 25, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "24 min per ep", "rating": "R - 17+",
+    "aired": { "string": "Apr 7, 2013 to Sep 29, 2013" }, "season": "spring", "year": 2013,
+    "genres": ["Action", "Drama"], "themes": ["Gore", "Military", "Survival"], "demographics": ["Shounen"], "studios": ["Wit Studio"],
+    "image": "https://cdn.myanimelist.net/images/anime/10/47347l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/LHtdKWJdif4",
+    "characters": [
+      { "name": "Yeager, Eren", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/10/216895.jpg" },
+      { "name": "Ackerman, Mikasa", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/9/215563.jpg" },
+      { "name": "Arlert, Armin", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/7/286677.jpg" },
+      { "name": "Ackerman, Levi", "role": "Supporting", "image": "https://cdn.myanimelist.net/images/characters/2/241413.jpg" }
+    ],
+    "trending": true, "topRated": true
+  },
+  {
+    "mal_id": 1535, "title": "Death Note", "title_english": "Death Note", "title_japanese": "デスノート",
+    "synopsis": "A shinigami, as a god of death, can kill any person—provided they see their victim's face and write their victim's name in a notebook, the Death Note. One day, Ryuk, bored by the shinigami lifestyle, decides to drop his Death Note into the human realm. High school student Light Yagami discovers the notebook and begins to cleanse the world of criminals, adopting the persona 'Kira.' An enigmatic detective known as L begins investigating Kira.",
+    "score": 8.62, "scored_by": 2500000, "rank": 76, "popularity": 2,
+    "episodes": 37, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "23 min per ep", "rating": "R - 17+",
+    "aired": { "string": "Oct 4, 2006 to Jun 27, 2007" }, "season": "fall", "year": 2006,
+    "genres": ["Supernatural", "Suspense"], "themes": ["Psychological"], "demographics": ["Shounen"], "studios": ["Madhouse"],
+    "image": "https://cdn.myanimelist.net/images/anime/9/9453l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/NlJZ-YgAt-c",
+    "characters": [
+      { "name": "Yagami, Light", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/13/275534.jpg" },
+      { "name": "Lawliet, L", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/8/275541.jpg" },
+      { "name": "Ryuk", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/2/300761.jpg" },
+      { "name": "Amane, Misa", "role": "Supporting", "image": "https://cdn.myanimelist.net/images/characters/2/78680.jpg" }
+    ],
+    "trending": false, "topRated": true
+  },
+  {
+    "mal_id": 5114, "title": "Fullmetal Alchemist: Brotherhood", "title_english": "Fullmetal Alchemist: Brotherhood", "title_japanese": "鋼の錬金術師 FULLMETAL ALCHEMIST",
+    "synopsis": "After a horrific alchemy experiment goes wrong in the Elric household, brothers Edward and Alphonse are left in a catastrophic new reality. Ignoring the alchemical principle of Equivalent Exchange, the boys attempted human transmutation. Ed loses his left leg and Al his physical body. With his right arm Ed binds Al's soul to a suit of armor. Equipped with mechanical limbs, Edward becomes a state alchemist, seeking the Philosopher's Stone to restore their bodies.",
+    "score": 9.09, "scored_by": 2100000, "rank": 1, "popularity": 3,
+    "episodes": 64, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "24 min per ep", "rating": "R - 17+",
+    "aired": { "string": "Apr 5, 2009 to Jul 4, 2010" }, "season": "spring", "year": 2009,
+    "genres": ["Action", "Adventure", "Drama", "Fantasy"], "themes": ["Military"], "demographics": ["Shounen"], "studios": ["Bones"],
+    "image": "https://cdn.myanimelist.net/images/anime/1208/94745l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/--IcmZkvL0Q",
+    "characters": [
+      { "name": "Elric, Edward", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/9/72533.jpg" },
+      { "name": "Elric, Alphonse", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/7/284129.jpg" },
+      { "name": "Mustang, Roy", "role": "Supporting", "image": "https://cdn.myanimelist.net/images/characters/5/70735.jpg" },
+      { "name": "Hawkeye, Riza", "role": "Supporting", "image": "https://cdn.myanimelist.net/images/characters/12/76702.jpg" }
+    ],
+    "trending": false, "topRated": true
+  },
+  {
+    "mal_id": 11757, "title": "Sword Art Online", "title_english": "Sword Art Online", "title_japanese": "ソードアート・オンライン",
+    "synopsis": "In the year 2022, virtual reality has progressed by leaps and bounds, and a massive online role-playing game called Sword Art Online has been released. With NerveGear technology, players can control their avatars within the game using nothing but their own thoughts. Kazuto Kirigaya logs in to find himself trapped—the only way to escape is to clear all 100 floors of the tower.",
+    "score": 7.20, "scored_by": 1900000, "rank": 2946, "popularity": 5,
+    "episodes": 25, "status": "Finished Airing", "type": "TV", "source": "Light novel", "duration": "23 min per ep", "rating": "PG-13",
+    "aired": { "string": "Jul 8, 2012 to Dec 23, 2012" }, "season": "summer", "year": 2012,
+    "genres": ["Action", "Adventure", "Fantasy", "Romance"], "themes": ["Video Game"], "demographics": [], "studios": ["A-1 Pictures"],
+    "image": "https://cdn.myanimelist.net/images/anime/11/39717l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/6ohYYtxfDCg",
+    "characters": [
+      { "name": "Kirigaya, Kazuto", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/7/204821.jpg" },
+      { "name": "Yuuki, Asuna", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/15/262053.jpg" }
+    ],
+    "trending": false, "topRated": false
+  },
+  {
+    "mal_id": 20, "title": "Naruto", "title_english": "Naruto", "title_japanese": "ナルト",
+    "synopsis": "Moments prior to Naruto Uzumaki's birth, a huge demon known as the Kyuubi, the Nine-Tailed Fox, attacked the shinobi village Konohagakure. In order to put an end to the Kyuubi's rampage, the leader of the village sealed the beast within the newborn Naruto. Now a young ninja, Naruto struggles to find his place in the village while his burning desire to become the Hokage carries him through.",
+    "score": 8.0, "scored_by": 1900000, "rank": 596, "popularity": 8,
+    "episodes": 220, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "23 min per ep", "rating": "PG-13",
+    "aired": { "string": "Oct 3, 2002 to Feb 8, 2007" }, "season": "fall", "year": 2002,
+    "genres": ["Action", "Adventure", "Fantasy"], "themes": ["Martial Arts"], "demographics": ["Shounen"], "studios": ["Pierrot"],
+    "image": "https://cdn.myanimelist.net/images/anime/13/17405l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/QczGoCmX-pI",
+    "characters": [
+      { "name": "Uzumaki, Naruto", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/2/284121.jpg" },
+      { "name": "Uchiha, Sasuke", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/9/131317.jpg" },
+      { "name": "Haruno, Sakura", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/3/100521.jpg" },
+      { "name": "Hatake, Kakashi", "role": "Supporting", "image": "https://cdn.myanimelist.net/images/characters/7/284129.jpg" }
+    ],
+    "trending": false, "topRated": true
+  },
+  {
+    "mal_id": 1735, "title": "Naruto: Shippuuden", "title_english": "Naruto Shippuden", "title_japanese": "ナルト- 疾風伝",
+    "synopsis": "It has been two and a half years since Naruto Uzumaki left Konohagakure to undergo intense training. Now Akatsuki, the mysterious organization of elite rogue ninja, is closing in on their grand plan which could threaten the safety of the entire shinobi world. Naruto returns with new techniques and a resolve to protect his friends.",
+    "score": 8.25, "scored_by": 1700000, "rank": 236, "popularity": 7,
+    "episodes": 500, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "23 min per ep", "rating": "PG-13",
+    "aired": { "string": "Feb 15, 2007 to Mar 23, 2017" }, "season": "winter", "year": 2007,
+    "genres": ["Action", "Adventure", "Fantasy"], "themes": ["Martial Arts"], "demographics": ["Shounen"], "studios": ["Pierrot"],
+    "image": "https://cdn.myanimelist.net/images/anime/1565/111305l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/1dy2zMJ4lPI",
+    "characters": [
+      { "name": "Uzumaki, Naruto", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/2/284121.jpg" },
+      { "name": "Uchiha, Sasuke", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/9/131317.jpg" }
+    ],
+    "trending": false, "topRated": true
+  },
+  {
+    "mal_id": 269, "title": "Bleach", "title_english": "Bleach", "title_japanese": "ブリーチ",
+    "synopsis": "Ichigo Kurosaki is an ordinary high schooler—until his family is attacked by a Hollow, a corrupt spirit that seeks to devour human souls. A Soul Reaper named Rukia Kuchiki saves his family but is injured. Forced to transfer her powers to Ichigo, he must now protect the innocent from Hollows and guide departed souls to the afterlife.",
+    "score": 7.92, "scored_by": 1100000, "rank": 682, "popularity": 21,
+    "episodes": 366, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "24 min per ep", "rating": "PG-13",
+    "aired": { "string": "Oct 5, 2004 to Mar 27, 2012" }, "season": "fall", "year": 2004,
+    "genres": ["Action", "Adventure", "Fantasy"], "themes": ["Martial Arts"], "demographics": ["Shounen"], "studios": ["Pierrot"],
+    "image": "https://cdn.myanimelist.net/images/anime/3/40451l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/--IcmZkvL0Q",
+    "characters": [
+      { "name": "Kurosaki, Ichigo", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/2/78607.jpg" },
+      { "name": "Kuchiki, Rukia", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/12/82763.jpg" }
+    ],
+    "trending": false, "topRated": false
+  },
+  {
+    "mal_id": 21, "title": "One Piece", "title_english": "One Piece", "title_japanese": "ワンピース",
+    "synopsis": "Gol D. Roger was known as the 'Pirate King,' the strongest and most infamous being to have sailed the Grand Line. His execution inspired an era of piracy. Monkey D. Luffy, a young boy inspired by his idol 'Red-Haired' Shanks, sets off on a journey from the East Blue Sea to find the legendary treasure One Piece and proclaim himself King of the Pirates.",
+    "score": 8.71, "scored_by": 1300000, "rank": 40, "popularity": 12,
+    "episodes": 1122, "status": "Currently Airing", "type": "TV", "source": "Manga", "duration": "24 min per ep", "rating": "PG-13",
+    "aired": { "string": "Oct 20, 1999 to ?" }, "season": "fall", "year": 1999,
+    "genres": ["Action", "Adventure", "Fantasy"], "themes": [], "demographics": ["Shounen"], "studios": ["Toei Animation"],
+    "image": "https://cdn.myanimelist.net/images/anime/6/73245l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/MCb13lbVGE0",
+    "characters": [
+      { "name": "Monkey D., Luffy", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/9/310307.jpg" },
+      { "name": "Roronoa, Zoro", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/3/100534.jpg" },
+      { "name": "Nami", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/2/292673.jpg" },
+      { "name": "Vinsmoke, Sanji", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/8/295858.jpg" }
+    ],
+    "trending": true, "topRated": true
+  },
+  {
+    "mal_id": 9253, "title": "Steins;Gate", "title_english": "Steins;Gate", "title_japanese": "シュタインズ・ゲート",
+    "synopsis": "The self-proclaimed mad scientist Rintarou Okabe rents out a room where he and his lab members work on so-called 'future gadgets.' However, their most significant invention, a device that sends text messages to the past, draws the attention of an ideological organization and puts them in danger. Okabe must find a way to undo the damage using his knowledge of time travel.",
+    "score": 9.07, "scored_by": 1200000, "rank": 4, "popularity": 13,
+    "episodes": 24, "status": "Finished Airing", "type": "TV", "source": "Visual novel", "duration": "24 min per ep", "rating": "PG-13",
+    "aired": { "string": "Apr 6, 2011 to Sep 14, 2011" }, "season": "spring", "year": 2011,
+    "genres": ["Drama", "Sci-Fi", "Suspense"], "themes": ["Psychological", "Time Travel"], "demographics": [], "studios": ["White Fox"],
+    "image": "https://cdn.myanimelist.net/images/anime/5/73199l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/27OZc-ku6is",
+    "characters": [
+      { "name": "Okabe, Rintarou", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/6/122643.jpg" },
+      { "name": "Makise, Kurisu", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/16/122441.jpg" },
+      { "name": "Shiina, Mayuri", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/14/120327.jpg" }
+    ],
+    "trending": false, "topRated": true
+  },
+  {
+    "mal_id": 38000, "title": "Kimetsu no Yaiba", "title_english": "Demon Slayer: Kimetsu no Yaiba", "title_japanese": "鬼滅の刃",
+    "synopsis": "Ever since the death of his father, the burden of supporting the family has fallen upon Tanjirou Kamado's shoulders. One day, Tanjirou decides to go down to the local village to sell charcoal. On his way back, he is forced to take shelter after darkness falls. He returns home to find his family slaughtered and the sole survivor, his sister Nezuko, turned into a demon. Driven by his desire to cure his sister and avenge his family, Tanjirou joins the Demon Slayer Corps.",
+    "score": 8.51, "scored_by": 2000000, "rank": 111, "popularity": 4,
+    "episodes": 26, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "23 min per ep", "rating": "R - 17+",
+    "aired": { "string": "Apr 6, 2019 to Sep 28, 2019" }, "season": "spring", "year": 2019,
+    "genres": ["Action", "Fantasy"], "themes": ["Historical"], "demographics": ["Shounen"], "studios": ["ufotable"],
+    "image": "https://cdn.myanimelist.net/images/anime/1286/99889l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/VQGCKyvRb7A",
+    "characters": [
+      { "name": "Kamado, Tanjirou", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/6/386735.jpg" },
+      { "name": "Kamado, Nezuko", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/2/378254.jpg" },
+      { "name": "Agatsuma, Zenitsu", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/11/378585.jpg" },
+      { "name": "Hashibira, Inosuke", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/9/387717.jpg" }
+    ],
+    "trending": true, "topRated": true
+  },
+  {
+    "mal_id": 40748, "title": "Jujutsu Kaisen", "title_english": "Jujutsu Kaisen", "title_japanese": "呪術廻戦",
+    "synopsis": "Idly indulging in baseless paranormal activities with the Occult Club, high schooler Yuuji Itadori spends his days at either the clubroom or the hospital, where he visits his bedridden grandfather. However, this lifestyle soon takes a turn when he unknowingly encounters a cursed item. Swallowing a finger of the legendary demon Ryoumen Sukuna, he becomes his host and is thrust into the world of curses.",
+    "score": 8.61, "scored_by": 1500000, "rank": 82, "popularity": 6,
+    "episodes": 24, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "23 min per ep", "rating": "R - 17+",
+    "aired": { "string": "Oct 3, 2020 to Mar 27, 2021" }, "season": "fall", "year": 2020,
+    "genres": ["Action", "Fantasy"], "themes": ["School"], "demographics": ["Shounen"], "studios": ["MAPPA"],
+    "image": "https://cdn.myanimelist.net/images/anime/1171/109222l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/4A_X-Dvl0ws",
+    "characters": [
+      { "name": "Itadori, Yuuji", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/6/467646.jpg" },
+      { "name": "Fushiguro, Megumi", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/2/401077.jpg" },
+      { "name": "Kugisaki, Nobara", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/9/401073.jpg" },
+      { "name": "Gojou, Satoru", "role": "Supporting", "image": "https://cdn.myanimelist.net/images/characters/15/422168.jpg" }
+    ],
+    "trending": true, "topRated": true
+  },
+  {
+    "mal_id": 30276, "title": "One Punch Man", "title_english": "One Punch Man", "title_japanese": "ワンパンマン",
+    "synopsis": "The seemingly ordinary and unimpressive Saitama has a rather unique hobby: being a hero. In order to pursue his childhood dream, he trained relentlessly for three years—and lost all of his hair in the process. Now, Saitama is incredibly powerful, so much so that no enemy is able to defeat him in battle. The lack of challenge bores him and he seeks a worthy opponent.",
+    "score": 8.50, "scored_by": 1700000, "rank": 116, "popularity": 9,
+    "episodes": 12, "status": "Finished Airing", "type": "TV", "source": "Web manga", "duration": "24 min per ep", "rating": "R - 17+",
+    "aired": { "string": "Oct 5, 2015 to Dec 21, 2015" }, "season": "fall", "year": 2015,
+    "genres": ["Action", "Comedy"], "themes": ["Parody", "Super Power"], "demographics": ["Seinen"], "studios": ["Madhouse"],
+    "image": "https://cdn.myanimelist.net/images/anime/12/76049l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/Ppwv_kMB5W0",
+    "characters": [
+      { "name": "Saitama", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/11/294388.jpg" },
+      { "name": "Genos", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/9/291373.jpg" }
+    ],
+    "trending": false, "topRated": true
+  },
+  {
+    "mal_id": 30, "title": "Neon Genesis Evangelion", "title_english": "Neon Genesis Evangelion", "title_japanese": "新世紀エヴァンゲリオン",
+    "synopsis": "In the year 2015, the world stands on the brink of destruction. Humanity's last hope lies in the hands of Nerv, a special agency under the United Nations, and their Evangelions, giant machines capable of defeating the Angels who herald Earth's ruin. Gendou Ikari, head of the organization, seeks compatible pilots who can synchronize with the Evangelions and thus bring mankind's salvation. His 14-year-old son Shinji reluctantly accepts the duty.",
+    "score": 8.35, "scored_by": 1000000, "rank": 174, "popularity": 26,
+    "episodes": 26, "status": "Finished Airing", "type": "TV", "source": "Original", "duration": "24 min per ep", "rating": "PG-13",
+    "aired": { "string": "Oct 4, 1995 to Mar 27, 1996" }, "season": "fall", "year": 1995,
+    "genres": ["Action", "Award Winning", "Drama", "Sci-Fi"], "themes": ["Mecha", "Psychological"], "demographics": [], "studios": ["Gainax"],
+    "image": "https://cdn.myanimelist.net/images/anime/1314/108941l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/o1GYH7i7PiE",
+    "characters": [
+      { "name": "Ikari, Shinji", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/14/101765.jpg" },
+      { "name": "Ayanami, Rei", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/4/84044.jpg" },
+      { "name": "Souryuu Asuka, Langley", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/2/291183.jpg" }
+    ],
+    "trending": false, "topRated": true
+  },
+  {
+    "mal_id": 11061, "title": "Hunter x Hunter (2011)", "title_english": "Hunter x Hunter", "title_japanese": "ハンター×ハンター (2011)",
+    "synopsis": "Gon Freecss aspires to become a Hunter, an exceptional being capable of greatness. With his friends and his potential, he seeks out his father, who left him when he was younger. Along the way, Gon faces countless challenges and discovers the vast complexities of the world, all while pursuing his dream of reuniting with his father.",
+    "score": 9.04, "scored_by": 1400000, "rank": 5, "popularity": 10,
+    "episodes": 148, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "23 min per ep", "rating": "PG-13",
+    "aired": { "string": "Oct 2, 2011 to Sep 24, 2014" }, "season": "fall", "year": 2011,
+    "genres": ["Action", "Adventure", "Fantasy"], "themes": [], "demographics": ["Shounen"], "studios": ["Madhouse"],
+    "image": "https://cdn.myanimelist.net/images/anime/1337/99013l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/D9iTQRB4XRk",
+    "characters": [
+      { "name": "Freecss, Gon", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/11/174517.jpg" },
+      { "name": "Zoldyck, Killua", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/2/327831.jpg" },
+      { "name": "Kurapika", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/3/189742.jpg" },
+      { "name": "Leorio", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/3/189744.jpg" }
+    ],
+    "trending": false, "topRated": true
+  },
+  {
+    "mal_id": 33486, "title": "Boku no Hero Academia", "title_english": "My Hero Academia", "title_japanese": "僕のヒーローアカデミア",
+    "synopsis": "The appearance of 'quirks,' newly discovered super powers, has been steadily increasing over the years. In this superhuman society, there is nothing combating evil—except heroes. Izuku Midoriya dreams of becoming a Hero despite being bullied by his classmate Katsuki Bakugou for not having a Quirk. After the legendary hero All Might saves him and chooses him as his successor, Izuku enrolls in the prestigious U.A. High School.",
+    "score": 7.88, "scored_by": 1700000, "rank": 724, "popularity": 11,
+    "episodes": 13, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "24 min per ep", "rating": "PG-13",
+    "aired": { "string": "Apr 3, 2016 to Jun 26, 2016" }, "season": "spring", "year": 2016,
+    "genres": ["Action"], "themes": ["School", "Super Power"], "demographics": ["Shounen"], "studios": ["Bones"],
+    "image": "https://cdn.myanimelist.net/images/anime/10/78745l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/D5fYOnwYkj4",
+    "characters": [
+      { "name": "Midoriya, Izuku", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/7/299404.jpg" },
+      { "name": "Bakugou, Katsuki", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/14/300932.jpg" },
+      { "name": "Todoroki, Shouto", "role": "Supporting", "image": "https://cdn.myanimelist.net/images/characters/14/300933.jpg" }
+    ],
+    "trending": true, "topRated": false
+  },
+  {
+    "mal_id": 22319, "title": "Tokyo Ghoul", "title_english": "Tokyo Ghoul", "title_japanese": "東京喰種トーキョーグール",
+    "synopsis": "A sinister threat is invading Tokyo: flesh-eating 'ghouls' who appear identical to humans and blend into their population. Ken Kaneki, a shy college student, is drawn to Rize Kamishiro, an avid reader like himself, but a chance encounter turns him into the first ever human-ghoul hybrid. Trapped between two worlds, he must survive the threats of both while embracing his monstrous side.",
+    "score": 7.79, "scored_by": 1500000, "rank": 832, "popularity": 14,
+    "episodes": 12, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "24 min per ep", "rating": "R - 17+",
+    "aired": { "string": "Jul 4, 2014 to Sep 19, 2014" }, "season": "summer", "year": 2014,
+    "genres": ["Action", "Fantasy", "Horror", "Suspense"], "themes": ["Gore"], "demographics": ["Seinen"], "studios": ["Pierrot"],
+    "image": "https://cdn.myanimelist.net/images/anime/5/64449l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/vguQMEz9_dg",
+    "characters": [
+      { "name": "Kaneki, Ken", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/9/258243.jpg" },
+      { "name": "Kirishima, Touka", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/15/258621.jpg" }
+    ],
+    "trending": false, "topRated": false
+  },
+  {
+    "mal_id": 44511, "title": "Chainsaw Man", "title_english": "Chainsaw Man", "title_japanese": "チェンソーマン",
+    "synopsis": "Denji has a simple dream—to live a happy and peaceful life, spending time with a girl he likes. This is a far cry from reality, however, as Denji is forced by the yakuza into killing devils in order to pay off his crushing debts. Using his pet devil Pochita as a weapon, he is ready to do anything for a bit of cash. After being killed by the yakuza, Pochita merges with Denji's dead body and grants him the powers of a chainsaw devil.",
+    "score": 8.47, "scored_by": 1100000, "rank": 125, "popularity": 16,
+    "episodes": 12, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "24 min per ep", "rating": "R - 17+",
+    "aired": { "string": "Oct 12, 2022 to Dec 28, 2022" }, "season": "fall", "year": 2022,
+    "genres": ["Action", "Fantasy"], "themes": ["Gore"], "demographics": ["Shounen"], "studios": ["MAPPA"],
+    "image": "https://cdn.myanimelist.net/images/anime/1806/126216l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/q15CRdE5Bv0",
+    "characters": [
+      { "name": "Denji", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/3/491217.jpg" },
+      { "name": "Makima", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/3/494969.jpg" },
+      { "name": "Hayakawa, Aki", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/8/494971.jpg" },
+      { "name": "Power", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/2/494973.jpg" }
+    ],
+    "trending": true, "topRated": true
+  },
+  {
+    "mal_id": 50265, "title": "Spy x Family", "title_english": "SPY x FAMILY", "title_japanese": "スパイファミリー",
+    "synopsis": "For the agent known as 'Twilight,' no order is too tall if it is for the sake of peace. Operating as Westalis' master spy, Twilight works tirelessly to prevent extremists from unleashing a war. To investigate Ostanian politician Donovan Desmond, Twilight adopts the identity of Loid Forger and builds a family. Unknown to him, his daughter Anya is a telepath and his wife Yor is an assassin.",
+    "score": 8.50, "scored_by": 800000, "rank": 113, "popularity": 20,
+    "episodes": 12, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "23 min per ep", "rating": "PG-13",
+    "aired": { "string": "Apr 9, 2022 to Jun 25, 2022" }, "season": "spring", "year": 2022,
+    "genres": ["Action", "Comedy"], "themes": ["Childcare"], "demographics": ["Shounen"], "studios": ["Wit Studio", "CloverWorks"],
+    "image": "https://cdn.myanimelist.net/images/anime/1441/122795l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/ofXigVM9aDo",
+    "characters": [
+      { "name": "Forger, Loid", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/5/467849.jpg" },
+      { "name": "Forger, Anya", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/7/467847.jpg" },
+      { "name": "Forger, Yor", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/9/467851.jpg" }
+    ],
+    "trending": true, "topRated": true
+  },
+  {
+    "mal_id": 37999, "title": "Kaguya-sama wa Kokurasetai", "title_english": "Kaguya-sama: Love is War", "title_japanese": "かぐや様は告らせたい～天才たちの恋愛頭脳戦～",
+    "synopsis": "At the renowned Shuchiin Academy, Miyuki Shirogane and Kaguya Shinomiya are the student body's top representatives. The two are often regarded as the perfect couple by students despite them not being in any sort of romantic relationship. Both are too proud to confess their feelings first, so they spend their days scheming to get the other to confess.",
+    "score": 8.41, "scored_by": 700000, "rank": 147, "popularity": 28,
+    "episodes": 12, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "24 min per ep", "rating": "PG-13",
+    "aired": { "string": "Jan 12, 2019 to Mar 30, 2019" }, "season": "winter", "year": 2019,
+    "genres": ["Comedy", "Romance"], "themes": ["Psychological", "School"], "demographics": ["Seinen"], "studios": ["A-1 Pictures"],
+    "image": "https://cdn.myanimelist.net/images/anime/1295/106551l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/Ti2kJ-GYO68",
+    "characters": [
+      { "name": "Shinomiya, Kaguya", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/2/371tried887.jpg" },
+      { "name": "Shirogane, Miyuki", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/14/361735.jpg" },
+      { "name": "Fujiwara, Chika", "role": "Supporting", "image": "https://cdn.myanimelist.net/images/characters/4/362559.jpg" }
+    ],
+    "trending": false, "topRated": true
+  },
+  {
+    "mal_id": 33352, "title": "Violet Evergarden", "title_english": "Violet Evergarden", "title_japanese": "ヴァイオレット・エヴァーガーデン",
+    "synopsis": "The Great War finally came to an end after four long years of conflict. Violet Evergarden, a young girl formerly known as 'the weapon,' has left the battlefield to start a new life at CH Postal Service. There, she discovers a new calling: becoming an Auto Memory Doll, a profession that translates people's thoughts and feelings into words. She searches for the meaning of her late commander's final words: 'I love you.'",
+    "score": 8.66, "scored_by": 800000, "rank": 63, "popularity": 19,
+    "episodes": 13, "status": "Finished Airing", "type": "TV", "source": "Light novel", "duration": "24 min per ep", "rating": "PG-13",
+    "aired": { "string": "Jan 11, 2018 to Apr 5, 2018" }, "season": "winter", "year": 2018,
+    "genres": ["Drama", "Fantasy"], "themes": [], "demographics": [], "studios": ["Kyoto Animation"],
+    "image": "https://cdn.myanimelist.net/images/anime/1795/95088l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/BUfSen4Q5Xg",
+    "characters": [
+      { "name": "Evergarden, Violet", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/6/346955.jpg" },
+      { "name": "Bougainvillea, Gilbert", "role": "Supporting", "image": "https://cdn.myanimelist.net/images/characters/6/348067.jpg" }
+    ],
+    "trending": false, "topRated": true
+  },
+  {
+    "mal_id": 49387, "title": "Vinland Saga Season 2", "title_english": "Vinland Saga Season 2", "title_japanese": "ヴィンランド・サガ SEASON 2",
+    "synopsis": "After his father's death, Thorfinn lost his reason to live as he spent his life pursuing a futile quest for vengeance. Now a slave, Thorfinn must find a new purpose for his life. Working alongside the cheerful Einar, he begins to see the value of true peace.",
+    "score": 8.72, "scored_by": 400000, "rank": 38, "popularity": 81,
+    "episodes": 24, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "24 min per ep", "rating": "R - 17+",
+    "aired": { "string": "Jan 10, 2023 to Jun 19, 2023" }, "season": "winter", "year": 2023,
+    "genres": ["Action", "Adventure", "Drama"], "themes": ["Adult Cast", "Historical"], "demographics": ["Seinen"], "studios": ["MAPPA"],
+    "image": "https://cdn.myanimelist.net/images/anime/1170/124312l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/JkLSHP5VaHs",
+    "characters": [
+      { "name": "Thorfinn", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/6/281814.jpg" },
+      { "name": "Einar", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/3/489699.jpg" }
+    ],
+    "trending": true, "topRated": true
+  },
+  {
+    "mal_id": 36838, "title": "Ginga Eiyuu Densetsu: Die Neue These - Kaikou", "title_english": "Legend of the Galactic Heroes: Die Neue These", "title_japanese": "銀河英雄伝説 Die Neue These 邂逅",
+    "synopsis": "In humanity's distant future, two interstellar states—the Galactic Empire and the Free Planets Alliance—are locked in an interminable war. On the Empire side is Reinhard von Lohengramm, a military genius seeking to reshape the galaxy. On the Alliance side is Yang Wen-li, a reluctant hero who believes in democracy.",
+    "score": 7.79, "scored_by": 40000, "rank": 842, "popularity": 1500,
+    "episodes": 12, "status": "Finished Airing", "type": "TV", "source": "Novel", "duration": "25 min per ep", "rating": "R - 17+",
+    "aired": { "string": "Apr 3, 2018 to Jun 26, 2018" }, "season": "spring", "year": 2018,
+    "genres": ["Drama", "Sci-Fi"], "themes": ["Military", "Space"], "demographics": [], "studios": ["Production I.G"],
+    "image": "https://cdn.myanimelist.net/images/anime/1616/109839l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/Ou37P25tjJY",
+    "characters": [
+      { "name": "von Lohengramm, Reinhard", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/9/355927.jpg" },
+      { "name": "Yang, Wen-li", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/8/355929.jpg" }
+    ],
+    "trending": false, "topRated": false
+  },
+  {
+    "mal_id": 9919, "title": "Ao no Exorcist", "title_english": "Blue Exorcist", "title_japanese": "青の祓魔師",
+    "synopsis": "Humans and demons are two sides of the same coin. Rin Okumura, a seemingly ordinary boy, discovers that he is the son of Satan. With demons eyeing him as a potential vessel, Rin decides to become an exorcist to fight against Satan and protect the world. He enrolls at True Cross Academy, hiding his lineage from his peers.",
+    "score": 7.53, "scored_by": 700000, "rank": 1624, "popularity": 40,
+    "episodes": 25, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "24 min per ep", "rating": "PG-13",
+    "aired": { "string": "Apr 17, 2011 to Oct 2, 2011" }, "season": "spring", "year": 2011,
+    "genres": ["Action", "Fantasy"], "themes": ["School"], "demographics": ["Shounen"], "studios": ["A-1 Pictures"],
+    "image": "https://cdn.myanimelist.net/images/anime/10/75195l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/VkuZZ4TMR48",
+    "characters": [
+      { "name": "Okumura, Rin", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/12/110599.jpg" },
+      { "name": "Okumura, Yukio", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/11/106095.jpg" }
+    ],
+    "trending": false, "topRated": false
+  },
+  {
+    "mal_id": 1, "title_alt": "Reserved", "title": "Cowboy Bebop", "skip": true
+  },
+  {
+    "mal_id": 28851, "title": "Koe no Katachi", "title_english": "A Silent Voice", "title_japanese": "聲の形",
+    "synopsis": "As a wild youth, elementary school student Shouya Ishida sought to beat boredom in the cruelest ways. When the deaf Shouko Nishimiya transfers into his class, Shouya and the rest of his class thoughtlessly bully her until she is forced to transfer away. Shouya is singled out and ostracized, falling into depression. Years later, he resolves to make amends.",
+    "score": 8.94, "scored_by": 1200000, "rank": 12, "popularity": 15,
+    "episodes": 1, "status": "Finished Airing", "type": "Movie", "source": "Manga", "duration": "2 hr 10 min", "rating": "PG-13",
+    "aired": { "string": "Sep 17, 2016" }, "season": null, "year": 2016,
+    "genres": ["Award Winning", "Drama"], "themes": ["Love Polygon"], "demographics": ["Shounen"], "studios": ["Kyoto Animation"],
+    "image": "https://cdn.myanimelist.net/images/anime/1122/96435l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/nfK6UgLra7g",
+    "characters": [
+      { "name": "Ishida, Shouya", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/13/305520.jpg" },
+      { "name": "Nishimiya, Shouko", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/14/305521.jpg" }
+    ],
+    "trending": false, "topRated": true
+  },
+  {
+    "mal_id": 32281, "title": "Kimi no Na wa.", "title_english": "Your Name.", "title_japanese": "君の名は。",
+    "synopsis": "Mitsuha Miyamizu, a high school girl, yearns to live the life of a boy in the bustling city of Tokyo—a dream that stands in stark contrast to her present life in the countryside. Meanwhile in the city, Taki Tachibana lives a busy life working part-time. One day, Mitsuha awakens in Taki's body, and he in hers. This extraordinary phenomenon continues to happen randomly.",
+    "score": 8.83, "scored_by": 1500000, "rank": 22, "popularity": 17,
+    "episodes": 1, "status": "Finished Airing", "type": "Movie", "source": "Original", "duration": "1 hr 46 min", "rating": "PG-13",
+    "aired": { "string": "Aug 26, 2016" }, "season": null, "year": 2016,
+    "genres": ["Award Winning", "Drama", "Romance", "Supernatural"], "themes": [], "demographics": [], "studios": ["CoMix Wave Films"],
+    "image": "https://cdn.myanimelist.net/images/anime/5/87048l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/xU47nhruN-Q",
+    "characters": [
+      { "name": "Tachibana, Taki", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/2/311425.jpg" },
+      { "name": "Miyamizu, Mitsuha", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/7/311523.jpg" }
+    ],
+    "trending": false, "topRated": true
+  },
+  {
+    "mal_id": 43608, "title": "Kaguya-sama wa Kokurasetai: Ultra Romantic", "title_english": "Kaguya-sama: Love is War - Ultra Romantic", "title_japanese": "かぐや様は告らせたい-ウルトラロマンティック-",
+    "synopsis": "The third season of Kaguya-sama: Love is War. The student council wages more battles of love and wit, with the stakes higher than ever as graduation approaches.",
+    "score": 9.02, "scored_by": 500000, "rank": 6, "popularity": 52,
+    "episodes": 13, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "24 min per ep", "rating": "PG-13",
+    "aired": { "string": "Apr 9, 2022 to Jun 25, 2022" }, "season": "spring", "year": 2022,
+    "genres": ["Comedy", "Romance"], "themes": ["Psychological", "School"], "demographics": ["Seinen"], "studios": ["A-1 Pictures"],
+    "image": "https://cdn.myanimelist.net/images/anime/1160/122627l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/bFrXHeiVqUc",
+    "characters": [
+      { "name": "Shinomiya, Kaguya", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/2/371887.jpg" },
+      { "name": "Shirogane, Miyuki", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/14/361735.jpg" }
+    ],
+    "trending": false, "topRated": true
+  },
+  {
+    "mal_id": 47778, "title": "Sono Bisque Doll wa Koi wo Suru", "title_english": "My Dress-Up Darling", "title_japanese": "その着せ替え人形は恋をする",
+    "synopsis": "Wakana Gojou is a high school boy who secretly dreams of becoming a traditional Japanese doll craftsman. His classmate Marin Kitagawa is a beautiful, outgoing girl who has a secret of her own—she loves cosplay. When she discovers Gojou's sewing skills, their worlds begin to intertwine in surprising and heartwarming ways.",
+    "score": 8.18, "scored_by": 600000, "rank": 279, "popularity": 42,
+    "episodes": 12, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "24 min per ep", "rating": "R - 17+",
+    "aired": { "string": "Jan 9, 2022 to Mar 27, 2022" }, "season": "winter", "year": 2022,
+    "genres": ["Comedy", "Romance"], "themes": ["Otaku Culture", "School"], "demographics": ["Seinen"], "studios": ["CloverWorks"],
+    "image": "https://cdn.myanimelist.net/images/anime/1179/119897l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/nhMMpasMv-k",
+    "characters": [
+      { "name": "Kitagawa, Marin", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/14/456806.jpg" },
+      { "name": "Gojou, Wakana", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/16/456902.jpg" }
+    ],
+    "trending": true, "topRated": false
+  },
+  {
+    "mal_id": 19815, "title": "No Game No Life", "title_english": "No Game, No Life", "title_japanese": "ノーゲーム・ノーライフ",
+    "synopsis": "Sora and Shiro are shut-in NEET siblings and the online gamer duo 'Blank.' When they are summoned to a reality where everything is decided by games, the siblings are ecstatic. With every race vying for power, the two must conquer enough games to unite the warring factions and challenge the god of games.",
+    "score": 8.06, "scored_by": 1100000, "rank": 506, "popularity": 22,
+    "episodes": 12, "status": "Finished Airing", "type": "TV", "source": "Light novel", "duration": "23 min per ep", "rating": "PG-13",
+    "aired": { "string": "Apr 9, 2014 to Jun 25, 2014" }, "season": "spring", "year": 2014,
+    "genres": ["Comedy", "Fantasy"], "themes": ["Isekai", "Video Game"], "demographics": [], "studios": ["Madhouse"],
+    "image": "https://cdn.myanimelist.net/images/anime/1074/111944l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/fSrYtOGlhOA",
+    "characters": [
+      { "name": "Sora", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/13/252799.jpg" },
+      { "name": "Shiro", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/3/254837.jpg" }
+    ],
+    "trending": false, "topRated": false
+  },
+  {
+    "mal_id": 21459, "title": "Shigatsu wa Kimi no Uso", "title_english": "Your Lie in April", "title_japanese": "四月は君の嘘",
+    "synopsis": "Music accompanies the path of the human metronome, piano prodigy Kousei Arima. After his mother's death, his ability to hear his own playing fades away. Two years later, 14-year-old Kousei still avoids the piano—until he meets Kaori Miyazono, a free-spirited violinist whose music rekindles his passion.",
+    "score": 8.65, "scored_by": 900000, "rank": 68, "popularity": 18,
+    "episodes": 22, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "22 min per ep", "rating": "PG-13",
+    "aired": { "string": "Oct 10, 2014 to Mar 20, 2015" }, "season": "fall", "year": 2014,
+    "genres": ["Drama", "Romance"], "themes": ["Music", "School"], "demographics": ["Shounen"], "studios": ["A-1 Pictures"],
+    "image": "https://cdn.myanimelist.net/images/anime/3/67177l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/3aL0gDZtFbE",
+    "characters": [
+      { "name": "Arima, Kousei", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/16/264541.jpg" },
+      { "name": "Miyazono, Kaori", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/16/268803.jpg" }
+    ],
+    "trending": false, "topRated": true
+  },
+  {
+    "mal_id": 31964, "title": "Boku no Hero Academia 2nd Season", "title_english": "My Hero Academia Season 2", "title_japanese": "僕のヒーローアカデミア 2ndシーズン",
+    "synopsis": "At UA Academy, not even a villain attack can disrupt their breeding of heroes. The second season follows the UA Sports Festival, where students compete for recognition. Izuku Midoriya will face new challenges as he learns to harness the power of One For All.",
+    "score": 8.14, "scored_by": 1100000, "rank": 300, "popularity": 25,
+    "episodes": 25, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "24 min per ep", "rating": "PG-13",
+    "aired": { "string": "Apr 1, 2017 to Sep 30, 2017" }, "season": "spring", "year": 2017,
+    "genres": ["Action"], "themes": ["School", "Super Power"], "demographics": ["Shounen"], "studios": ["Bones"],
+    "image": "https://cdn.myanimelist.net/images/anime/1/84896l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/0jzb4kPFShs",
+    "characters": [
+      { "name": "Midoriya, Izuku", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/7/299404.jpg" },
+      { "name": "Todoroki, Shouto", "role": "Supporting", "image": "https://cdn.myanimelist.net/images/characters/14/300933.jpg" }
+    ],
+    "trending": false, "topRated": false
+  },
+  {
+    "mal_id": 52991, "title": "Sousou no Frieren", "title_english": "Frieren: Beyond Journey's End", "title_japanese": "葬送のフリーレン",
+    "synopsis": "The demon king has been defeated, and the victorious hero party returns home. Frieren, the elven mage, realizes that she barely knows her companions after their decade-long quest. As her friends age and pass away, she begins a new journey to understand humanity and cherish the connections she once took for granted.",
+    "score": 9.33, "scored_by": 500000, "rank": 1, "popularity": 30,
+    "episodes": 28, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "24 min per ep", "rating": "PG-13",
+    "aired": { "string": "Sep 29, 2023 to Mar 22, 2024" }, "season": "fall", "year": 2023,
+    "genres": ["Adventure", "Drama", "Fantasy"], "themes": [], "demographics": ["Shounen"], "studios": ["Madhouse"],
+    "image": "https://cdn.myanimelist.net/images/anime/1015/138006l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/qgZ4hSMRYsA",
+    "characters": [
+      { "name": "Frieren", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/12/525137.jpg" },
+      { "name": "Fern", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/16/525149.jpg" },
+      { "name": "Stark", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/3/525141.jpg" },
+      { "name": "Himmel", "role": "Supporting", "image": "https://cdn.myanimelist.net/images/characters/5/525147.jpg" }
+    ],
+    "trending": true, "topRated": true
+  },
+  {
+    "mal_id": 54492, "title": "Oshi no Ko", "title_english": "[Oshi No Ko]", "title_japanese": "【推しの子】",
+    "synopsis": "Sixteen-year-old Ai Hoshino is a talented and beautiful idol who is adored by her fans. But when she reveals a closely guarded secret, the resulting events challenge the glittering facade of the entertainment industry. A doctor who is reborn as her son navigates the dark side of Japan's idol culture.",
+    "score": 8.35, "scored_by": 500000, "rank": 172, "popularity": 35,
+    "episodes": 11, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "28 min per ep", "rating": "PG-13",
+    "aired": { "string": "Apr 12, 2023 to Jun 28, 2023" }, "season": "spring", "year": 2023,
+    "genres": ["Drama", "Supernatural"], "themes": ["Performing Arts", "Reincarnation"], "demographics": ["Seinen"], "studios": ["Doga Kobo"],
+    "image": "https://cdn.myanimelist.net/images/anime/1812/134736l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/YjYIJMaidqo",
+    "characters": [
+      { "name": "Hoshino, Aquamarine", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/8/516596.jpg" },
+      { "name": "Hoshino, Ruby", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/8/516598.jpg" },
+      { "name": "Hoshino, Ai", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/3/516600.jpg" }
+    ],
+    "trending": true, "topRated": true
+  },
+  {
+    "mal_id": 47917, "title": "Bocchi the Rock!", "title_english": "Bocchi the Rock!", "title_japanese": "ぼっち・ざ・ろっく！",
+    "synopsis": "Hitori Gotoh, a lonely high school girl who learned guitar in hopes of joining a band, lives her days as an extreme introvert. One day, she is recruited by the drummer Nijika Ijichi to join their band 'Kessoku Band.' Hitori must overcome her crippling social anxiety to perform live.",
+    "score": 8.78, "scored_by": 400000, "rank": 26, "popularity": 55,
+    "episodes": 12, "status": "Finished Airing", "type": "TV", "source": "4-koma manga", "duration": "24 min per ep", "rating": "PG-13",
+    "aired": { "string": "Oct 9, 2022 to Dec 25, 2022" }, "season": "fall", "year": 2022,
+    "genres": ["Comedy"], "themes": ["CGDCT", "Music", "School"], "demographics": ["Seinen"], "studios": ["CloverWorks"],
+    "image": "https://cdn.myanimelist.net/images/anime/1448/127956l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/52HKYA-HPBI",
+    "characters": [
+      { "name": "Gotoh, Hitori", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/8/488294.jpg" },
+      { "name": "Ijichi, Nijika", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/9/488296.jpg" }
+    ],
+    "trending": true, "topRated": true
+  },
+  {
+    "mal_id": 6547, "title": "Angel Beats!", "title_english": "Angel Beats!", "title_japanese": "エンジェルビーツ!",
+    "synopsis": "Otonashi awakens only to learn he is dead. He is dragged into the afterlife student council's war against a mysterious angel. In this world between life and death, students fight against fate to find meaning before they disappear.",
+    "score": 8.08, "scored_by": 900000, "rank": 474, "popularity": 24,
+    "episodes": 13, "status": "Finished Airing", "type": "TV", "source": "Original", "duration": "24 min per ep", "rating": "PG-13",
+    "aired": { "string": "Apr 3, 2010 to Jun 26, 2010" }, "season": "spring", "year": 2010,
+    "genres": ["Action", "Comedy", "Drama", "Supernatural"], "themes": ["Afterlife", "School"], "demographics": [], "studios": ["P.A. Works"],
+    "image": "https://cdn.myanimelist.net/images/anime/10/22061l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/RRFJ-FMMZ3I",
+    "characters": [
+      { "name": "Otonashi, Yuzuru", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/7/104855.jpg" },
+      { "name": "Tachibana, Kanade", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/6/105491.jpg" }
+    ],
+    "trending": false, "topRated": false
+  },
+  {
+    "mal_id": 5680, "title": "K-ON!", "title_english": "K-ON!", "title_japanese": "けいおん!",
+    "synopsis": "Hirasawa Yui, a young high school girl, enters school with the intention of joining the Light Music Club, thinking it just involves simple instruments. Despite having no experience, she joins and begins learning guitar, forming strong bonds with the other members.",
+    "score": 7.82, "scored_by": 400000, "rank": 790, "popularity": 75,
+    "episodes": 13, "status": "Finished Airing", "type": "TV", "source": "4-koma manga", "duration": "24 min per ep", "rating": "PG-13",
+    "aired": { "string": "Apr 3, 2009 to Jun 26, 2009" }, "season": "spring", "year": 2009,
+    "genres": ["Comedy"], "themes": ["CGDCT", "Music", "School"], "demographics": ["Seinen"], "studios": ["Kyoto Animation"],
+    "image": "https://cdn.myanimelist.net/images/anime/10/76120l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/xUOHEoW1_co",
+    "characters": [
+      { "name": "Hirasawa, Yui", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/9/78778.jpg" },
+      { "name": "Akiyama, Mio", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/7/78777.jpg" }
+    ],
+    "trending": false, "topRated": false
+  },
+  {
+    "mal_id": 48583, "title": "Shingeki no Kyojin: The Final Season Part 2", "title_english": "Attack on Titan Final Season Part 2", "title_japanese": "進撃の巨人 The Final Season Part 2",
+    "synopsis": "Eren's allies and enemies converge in a final desperate battle that will determine the fate of the world. As the Rumbling approaches, the remaining Survey Corps members face impossible choices.",
+    "score": 8.72, "scored_by": 800000, "rank": 36, "popularity": 31,
+    "episodes": 12, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "24 min per ep", "rating": "R - 17+",
+    "aired": { "string": "Jan 10, 2022 to Apr 4, 2022" }, "season": "winter", "year": 2022,
+    "genres": ["Action", "Drama"], "themes": ["Gore", "Military", "Survival"], "demographics": ["Shounen"], "studios": ["MAPPA"],
+    "image": "https://cdn.myanimelist.net/images/anime/1948/120625l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/2lFk-GxSyEk",
+    "characters": [
+      { "name": "Yeager, Eren", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/10/216895.jpg" },
+      { "name": "Ackerman, Mikasa", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/9/215563.jpg" }
+    ],
+    "trending": true, "topRated": true
+  },
+  {
+    "mal_id": 35760, "title": "Shingeki no Kyojin Season 3", "title_english": "Attack on Titan Season 3", "title_japanese": "進撃の巨人 Season 3",
+    "synopsis": "The Survey Corps learn that the government is corrupt and hiding the truth about the Titans. Eren and Historia hold the key to humanity's survival. Political intrigue and betrayal bring the fight within the walls.",
+    "score": 8.55, "scored_by": 1100000, "rank": 97, "popularity": 23,
+    "episodes": 12, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "24 min per ep", "rating": "R - 17+",
+    "aired": { "string": "Jul 23, 2018 to Oct 15, 2018" }, "season": "summer", "year": 2018,
+    "genres": ["Action", "Drama"], "themes": ["Gore", "Military", "Survival"], "demographics": ["Shounen"], "studios": ["Wit Studio"],
+    "image": "https://cdn.myanimelist.net/images/anime/1173/92110l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/JREklslO-3Q",
+    "characters": [
+      { "name": "Yeager, Eren", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/10/216895.jpg" },
+      { "name": "Ackerman, Levi", "role": "Supporting", "image": "https://cdn.myanimelist.net/images/characters/2/241413.jpg" }
+    ],
+    "trending": false, "topRated": true
+  },
+  {
+    "mal_id": 42249, "title": "Tokyo Revengers", "title_english": "Tokyo Revengers", "title_japanese": "東京リベンジャーズ",
+    "synopsis": "Takemichi Hanagaki is a freelancer who learns his middle school ex-girlfriend was murdered by the Tokyo Manji Gang. When he is pushed off a train platform, he time-travels 12 years to his school days. He vows to save her by rising through the gang's ranks and changing the future.",
+    "score": 7.75, "scored_by": 700000, "rank": 880, "popularity": 36,
+    "episodes": 24, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "23 min per ep", "rating": "R - 17+",
+    "aired": { "string": "Apr 11, 2021 to Sep 19, 2021" }, "season": "spring", "year": 2021,
+    "genres": ["Action", "Drama"], "themes": ["Delinquents", "Time Travel"], "demographics": ["Shounen"], "studios": ["LIDENFILMS"],
+    "image": "https://cdn.myanimelist.net/images/anime/1839/122012l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/3Mc3BNbjwJQ",
+    "characters": [
+      { "name": "Hanagaki, Takemichi", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/7/434523.jpg" },
+      { "name": "Sano, Manjirou", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/3/438403.jpg" }
+    ],
+    "trending": false, "topRated": false
+  },
+  {
+    "mal_id": 40356, "title": "Re:Zero kara Hajimeru Isekai Seikatsu 2nd Season", "title_english": "Re:ZERO -Starting Life in Another World- Season 2", "title_japanese": "Re:ゼロから始める異世界生活 2nd Season",
+    "synopsis": "After saving the Sanctuary, Subaru faces even darker trials. The second season delves into Emilia's past, Roswaal's schemes, and Subaru's determination to protect those he loves—no matter how many times he has to die.",
+    "score": 8.30, "scored_by": 500000, "rank": 197, "popularity": 70,
+    "episodes": 13, "status": "Finished Airing", "type": "TV", "source": "Light novel", "duration": "25 min per ep", "rating": "R - 17+",
+    "aired": { "string": "Jul 8, 2020 to Sep 30, 2020" }, "season": "summer", "year": 2020,
+    "genres": ["Drama", "Fantasy", "Suspense"], "themes": ["Isekai", "Psychological", "Time Travel"], "demographics": [], "studios": ["White Fox"],
+    "image": "https://cdn.myanimelist.net/images/anime/1444/108005l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/jJbqdOWjA0o",
+    "characters": [
+      { "name": "Natsuki, Subaru", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/14/316495.jpg" },
+      { "name": "Emilia", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/15/316497.jpg" }
+    ],
+    "trending": false, "topRated": false
+  },
+  {
+    "mal_id": 31478, "title": "Re:Zero kara Hajimeru Isekai Seikatsu", "title_english": "Re:ZERO -Starting Life in Another World-", "title_japanese": "Re:ゼロから始める異世界生活",
+    "synopsis": "When Subaru Natsuki leaves the convenience store, the last thing he expects is to be wrenched from his everyday life and dropped into a fantasy world. He soon discovers he has the ability to rewind time by dying—an ability he uses to save the silver-haired half-elf Emilia and those around her from deadly threats.",
+    "score": 8.23, "scored_by": 1200000, "rank": 247, "popularity": 27,
+    "episodes": 25, "status": "Finished Airing", "type": "TV", "source": "Light novel", "duration": "25 min per ep", "rating": "R - 17+",
+    "aired": { "string": "Apr 4, 2016 to Sep 19, 2016" }, "season": "spring", "year": 2016,
+    "genres": ["Drama", "Fantasy", "Suspense"], "themes": ["Isekai", "Psychological", "Time Travel"], "demographics": [], "studios": ["White Fox"],
+    "image": "https://cdn.myanimelist.net/images/anime/1522/128039l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/ETHLeMMin7Q",
+    "characters": [
+      { "name": "Natsuki, Subaru", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/14/316495.jpg" },
+      { "name": "Emilia", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/15/316497.jpg" },
+      { "name": "Rem", "role": "Supporting", "image": "https://cdn.myanimelist.net/images/characters/2/326811.jpg" }
+    ],
+    "trending": false, "topRated": false
+  },
+  {
+    "mal_id": 22535, "title": "Kiseijuu: Sei no Kakuritsu", "title_english": "Parasyte -the maxim-", "title_japanese": "寄生獣 セイの格率",
+    "synopsis": "All of a sudden, they arrived: parasitic aliens that descended upon Earth and quickly infiltrated humanity. These creatures can burrow into human brains and take control of their bodies. One parasite fails to take over Shinichi Izumi's brain, instead infecting his right hand. Now Shinichi and his parasite, Migi, must work together to survive.",
+    "score": 8.35, "scored_by": 800000, "rank": 175, "popularity": 29,
+    "episodes": 24, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "22 min per ep", "rating": "R - 17+",
+    "aired": { "string": "Oct 9, 2014 to Mar 26, 2015" }, "season": "fall", "year": 2014,
+    "genres": ["Action", "Drama", "Horror", "Sci-Fi"], "themes": ["Gore", "Psychological"], "demographics": ["Seinen"], "studios": ["Madhouse"],
+    "image": "https://cdn.myanimelist.net/images/anime/3/73178l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/9Olk1SpWluI",
+    "characters": [
+      { "name": "Izumi, Shinichi", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/6/267191.jpg" },
+      { "name": "Migi", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/4/267193.jpg" }
+    ],
+    "trending": false, "topRated": true
+  },
+  {
+    "mal_id": 23273, "title": "Shirobako", "title_english": "Shirobako", "title_japanese": "SHIROBAKO",
+    "synopsis": "It follows the everyday hard work of a young production assistant, Aoi Miyamori, and her colleagues as they produce an anime series within the intense landscape of the Japanese animation industry.",
+    "score": 8.20, "scored_by": 150000, "rank": 268, "popularity": 200,
+    "episodes": 24, "status": "Finished Airing", "type": "TV", "source": "Original", "duration": "24 min per ep", "rating": "PG-13",
+    "aired": { "string": "Oct 9, 2014 to Mar 26, 2015" }, "season": "fall", "year": 2014,
+    "genres": ["Comedy", "Drama"], "themes": ["Adult Cast", "Workplace"], "demographics": [], "studios": ["P.A. Works"],
+    "image": "https://cdn.myanimelist.net/images/anime/6/68021l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/RaZJGWBlIuA",
+    "characters": [
+      { "name": "Miyamori, Aoi", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/14/266507.jpg" }
+    ],
+    "trending": false, "topRated": false
+  },
+  {
+    "mal_id": 10620, "title": "Mirai Nikki", "title_english": "Future Diary", "title_japanese": "未来日記",
+    "synopsis": "Lonely high school student Yukiteru Amano spends his days writing a diary on his cellphone while conversing with his two imaginary friends Deus Ex Machina, the god of time and space, and Murmur, his servant. When Deus grants Yukiteru a 'Random Diary' that shows him the future, he is thrust into a deadly survival game against 11 other diary holders, where the last one standing becomes the new god of time and space.",
+    "score": 7.42, "scored_by": 800000, "rank": 1925, "popularity": 32,
+    "episodes": 26, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "23 min per ep", "rating": "R - 17+",
+    "aired": { "string": "Oct 9, 2011 to Apr 15, 2012" }, "season": "fall", "year": 2011,
+    "genres": ["Action", "Suspense"], "themes": ["Psychological", "Survival"], "demographics": ["Shounen"], "studios": ["Asread"],
+    "image": "https://cdn.myanimelist.net/images/anime/13/33465l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/zr4c8WdQvfM",
+    "characters": [
+      { "name": "Amano, Yukiteru", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/7/119553.jpg" },
+      { "name": "Gasai, Yuno", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/3/173541.jpg" }
+    ],
+    "trending": false, "topRated": false
+  },
+  {
+    "mal_id": 51009, "title": "Jujutsu Kaisen 2nd Season", "title_english": "Jujutsu Kaisen Season 2", "title_japanese": "呪術廻戦 第2期",
+    "synopsis": "The second season covers the Hidden Inventory arc, detailing Gojo and Geto's past, followed by the Shibuya Incident arc, where cursed spirits launch a devastating attack on Shibuya.",
+    "score": 8.55, "scored_by": 600000, "rank": 95, "popularity": 50,
+    "episodes": 23, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "23 min per ep", "rating": "R - 17+",
+    "aired": { "string": "Jul 6, 2023 to Dec 28, 2023" }, "season": "summer", "year": 2023,
+    "genres": ["Action", "Fantasy"], "themes": ["School"], "demographics": ["Shounen"], "studios": ["MAPPA"],
+    "image": "https://cdn.myanimelist.net/images/anime/1792/138022l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/O2SL5_Swgto",
+    "characters": [
+      { "name": "Gojou, Satoru", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/15/422168.jpg" },
+      { "name": "Itadori, Yuuji", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/6/467646.jpg" }
+    ],
+    "trending": true, "topRated": true
+  },
+  {
+    "mal_id": 40748, "title_alt": "Reserved", "skip": true
+  },
+  {
+    "mal_id": 14813, "title": "Yahari Ore no Seishun Love Comedy wa Machigatteiru.", "title_english": "My Teen Romantic Comedy SNAFU", "title_japanese": "やはり俺の青春ラブコメはまちがっている。",
+    "synopsis": "Hachiman Hikigaya is an apathetic high school student with narcissistic and semi-nihilistic tendencies. He is forced to join the Service Club alongside Yukino Yukinoshita. Together they deal with requests from students, slowly unraveling their own deep-seated emotional walls.",
+    "score": 7.82, "scored_by": 600000, "rank": 785, "popularity": 50,
+    "episodes": 13, "status": "Finished Airing", "type": "TV", "source": "Light novel", "duration": "24 min per ep", "rating": "PG-13",
+    "aired": { "string": "Apr 5, 2013 to Jun 28, 2013" }, "season": "spring", "year": 2013,
+    "genres": ["Comedy", "Romance"], "themes": ["School"], "demographics": [], "studios": ["Brain's Base"],
+    "image": "https://cdn.myanimelist.net/images/anime/11/49459l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/ZNhUPNMmxr0",
+    "characters": [
+      { "name": "Hikigaya, Hachiman", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/13/247881.jpg" },
+      { "name": "Yukinoshita, Yukino", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/14/247921.jpg" }
+    ],
+    "trending": false, "topRated": false
+  },
+  {
+    "mal_id": 2025, "title": "Darker than Black: Kuro no Keiyakusha", "title_english": "Darker than Black", "title_japanese": "ダーカーザンブラック 黒の契約者",
+    "synopsis": "After the mysterious appearance of Heaven's Gate and Hell's Gate, humans with supernatural powers called 'Contractors' emerged. Hei, known as the 'Black Reaper,' works with the Syndicate, navigating conspiracies involving the Gates and their connection to the stars.",
+    "score": 8.05, "scored_by": 300000, "rank": 515, "popularity": 115,
+    "episodes": 25, "status": "Finished Airing", "type": "TV", "source": "Original", "duration": "24 min per ep", "rating": "R - 17+",
+    "aired": { "string": "Apr 6, 2007 to Sep 28, 2007" }, "season": "spring", "year": 2007,
+    "genres": ["Action", "Sci-Fi"], "themes": ["Super Power"], "demographics": [], "studios": ["Bones"],
+    "image": "https://cdn.myanimelist.net/images/anime/1587/93279l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/v9ILh4cB-xk",
+    "characters": [
+      { "name": "Hei", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/7/87127.jpg" },
+      { "name": "Yin", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/6/82003.jpg" }
+    ],
+    "trending": false, "topRated": false
+  },
+  {
+    "mal_id": 457, "title": "Mushishi", "title_english": "Mushishi", "title_japanese": "蟲師",
+    "synopsis": "Mushi are beings that exist beyond normal sight. Ginko, a Mushishi, travels the countryside helping people affected by mushi while studying these ethereal creatures. Each episode tells a self-contained, contemplative story about the relationship between humans and nature.",
+    "score": 8.66, "scored_by": 200000, "rank": 61, "popularity": 200,
+    "episodes": 26, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "23 min per ep", "rating": "PG-13",
+    "aired": { "string": "Oct 23, 2005 to Jun 19, 2006" }, "season": "fall", "year": 2005,
+    "genres": ["Adventure", "Fantasy", "Slice of Life"], "themes": ["Adult Cast"], "demographics": ["Seinen"], "studios": ["Artland"],
+    "image": "https://cdn.myanimelist.net/images/anime/2/73862l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/TYlMSoeAfNw",
+    "characters": [
+      { "name": "Ginko", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/4/52003.jpg" }
+    ],
+    "trending": false, "topRated": true
+  },
+  {
+    "mal_id": 49596, "title": "86: Eighty Six Part 2", "title_english": "86 EIGHTY-SIX Part 2", "title_japanese": "86―エイティシックス― Part 2",
+    "synopsis": "The Republic of San Magnolia has been attacked by the Empire's autonomous drones. Shin and the remnants of Spearhead Squadron, now under Giad's flag, continue to fight against the Legion while confronting the ghosts of their past.",
+    "score": 8.57, "scored_by": 200000, "rank": 89, "popularity": 250,
+    "episodes": 12, "status": "Finished Airing", "type": "TV", "source": "Light novel", "duration": "23 min per ep", "rating": "R - 17+",
+    "aired": { "string": "Oct 3, 2021 to Mar 19, 2022" }, "season": "fall", "year": 2021,
+    "genres": ["Action", "Drama", "Sci-Fi"], "themes": ["Mecha", "Military"], "demographics": [], "studios": ["A-1 Pictures"],
+    "image": "https://cdn.myanimelist.net/images/anime/1321/117508l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/VS2oVfMRIVk",
+    "characters": [
+      { "name": "Nouzen, Shinei", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/4/435873.jpg" },
+      { "name": "Milizé, Vladilena", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/6/435871.jpg" }
+    ],
+    "trending": false, "topRated": true
+  },
+  {
+    "mal_id": 48569, "title": "86: Eighty Six", "title_english": "86 EIGHTY-SIX", "title_japanese": "86―エイティシックス―",
+    "synopsis": "The Republic of San Magnolia claims to have developed unmanned drones to fight the Empire's Legion. But the truth is darker: they use human soldiers from the despised Eighty-Six minority, sent to die on the front lines while the Republic pretends no lives are lost.",
+    "score": 8.17, "scored_by": 300000, "rank": 285, "popularity": 160,
+    "episodes": 11, "status": "Finished Airing", "type": "TV", "source": "Light novel", "duration": "23 min per ep", "rating": "R - 17+",
+    "aired": { "string": "Apr 11, 2021 to Jun 20, 2021" }, "season": "spring", "year": 2021,
+    "genres": ["Action", "Drama", "Sci-Fi"], "themes": ["Mecha", "Military"], "demographics": [], "studios": ["A-1 Pictures"],
+    "image": "https://cdn.myanimelist.net/images/anime/1987/117507l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/MCWH4-zkpfc",
+    "characters": [
+      { "name": "Nouzen, Shinei", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/4/435873.jpg" },
+      { "name": "Milizé, Vladilena", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/6/435871.jpg" }
+    ],
+    "trending": false, "topRated": false
+  },
+  {
+    "mal_id": 53887, "title": "Tengoku Daimakyou", "title_english": "Heavenly Delusion", "title_japanese": "天国大魔境",
+    "synopsis": "In post-apocalyptic Japan, two groups of people try to survive. Inside a mysterious facility, children live in comfort, unaware of the outside world. Meanwhile, two teenagers traverse the wasteland searching for a place called 'Heaven.' Their paths will eventually converge.",
+    "score": 8.28, "scored_by": 200000, "rank": 208, "popularity": 300,
+    "episodes": 13, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "24 min per ep", "rating": "R - 17+",
+    "aired": { "string": "Apr 1, 2023 to Jun 24, 2023" }, "season": "spring", "year": 2023,
+    "genres": ["Adventure", "Drama", "Mystery", "Sci-Fi"], "themes": [], "demographics": ["Seinen"], "studios": ["Production I.G"],
+    "image": "https://cdn.myanimelist.net/images/anime/1455/133372l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/8Hqfq2YM1jE",
+    "characters": [
+      { "name": "Maru", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/10/511063.jpg" },
+      { "name": "Kiruko", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/5/511065.jpg" }
+    ],
+    "trending": false, "topRated": false
+  },
+  {
+    "mal_id": 34599, "title": "Made in Abyss", "title_english": "Made in Abyss", "title_japanese": "メイドインアビス",
+    "synopsis": "The Abyss—a gaping chasm stretching down into the depths of the earth, filled with mysterious creatures and relics. Riko, daughter of a missing White Whistle delver, encounters a humanoid robot she names Reg. Together, they descend into the Abyss to find her mother.",
+    "score": 8.67, "scored_by": 600000, "rank": 58, "popularity": 60,
+    "episodes": 13, "status": "Finished Airing", "type": "TV", "source": "Web manga", "duration": "25 min per ep", "rating": "R - 17+",
+    "aired": { "string": "Jul 7, 2017 to Sep 29, 2017" }, "season": "summer", "year": 2017,
+    "genres": ["Adventure", "Drama", "Fantasy", "Sci-Fi"], "themes": [], "demographics": [], "studios": ["Kinema Citrus"],
+    "image": "https://cdn.myanimelist.net/images/anime/6/86733l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/e91G8m9uM_0",
+    "characters": [
+      { "name": "Riko", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/14/320893.jpg" },
+      { "name": "Reg", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/8/327261.jpg" },
+      { "name": "Nanachi", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/3/342145.jpg" }
+    ],
+    "trending": false, "topRated": true
+  },
+  {
+    "mal_id": 24833, "title": "Ansatsu Kyoushitsu", "title_english": "Assassination Classroom", "title_japanese": "暗殺教室",
+    "synopsis": "A powerful creature claims he will destroy the earth within a year, but offers humanity a chance: he becomes the teacher of Class 3-E at Kunugigaoka Junior High. The students must kill him before graduation. Under the guise of 'Koro-sensei,' this creature becomes the best teacher they've ever had.",
+    "score": 8.06, "scored_by": 700000, "rank": 505, "popularity": 34,
+    "episodes": 22, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "23 min per ep", "rating": "PG-13",
+    "aired": { "string": "Jan 10, 2015 to Jun 20, 2015" }, "season": "winter", "year": 2015,
+    "genres": ["Action", "Comedy"], "themes": ["School"], "demographics": ["Shounen"], "studios": ["Lerche"],
+    "image": "https://cdn.myanimelist.net/images/anime/5/75639l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/3KcMriXf2_s",
+    "characters": [
+      { "name": "Koro-sensei", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/6/270883.jpg" },
+      { "name": "Shiota, Nagisa", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/3/284103.jpg" }
+    ],
+    "trending": false, "topRated": false
+  },
+  {
+    "mal_id": 4181, "title": "Clannad: After Story", "title_english": "Clannad: After Story", "title_japanese": "クラナド アフターストーリー",
+    "synopsis": "Clannad: After Story continues the story of Tomoya Okazaki and Nagisa Furukawa as they navigate adulthood, marriage, and parenthood—experiencing both the beauty and tragedy that life brings. Often regarded as one of the most emotionally impactful anime ever made.",
+    "score": 8.93, "scored_by": 600000, "rank": 13, "popularity": 45,
+    "episodes": 24, "status": "Finished Airing", "type": "TV", "source": "Visual novel", "duration": "24 min per ep", "rating": "PG-13",
+    "aired": { "string": "Oct 3, 2008 to Mar 27, 2009" }, "season": "fall", "year": 2008,
+    "genres": ["Drama", "Romance", "Supernatural"], "themes": [], "demographics": [], "studios": ["Kyoto Animation"],
+    "image": "https://cdn.myanimelist.net/images/anime/1299/110774l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/RrhYiksBp0w",
+    "characters": [
+      { "name": "Okazaki, Tomoya", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/8/88527.jpg" },
+      { "name": "Furukawa, Nagisa", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/9/88529.jpg" }
+    ],
+    "trending": false, "topRated": true
+  },
+  {
+    "mal_id": 2904, "title": "Code Geass: Hangyaku no Lelouch R2", "title_english": "Code Geass: Lelouch of the Rebellion R2", "title_japanese": "コードギアス 反逆のルルーシュR2",
+    "synopsis": "One year has passed since the Black Rebellion. Lelouch, his memories erased, lives as a student—until C.C. restores his memories and he resumes his campaign as Zero against the Holy Britannian Empire, leading to one of anime's most iconic endings.",
+    "score": 8.91, "scored_by": 700000, "rank": 14, "popularity": 38,
+    "episodes": 25, "status": "Finished Airing", "type": "TV", "source": "Original", "duration": "24 min per ep", "rating": "R - 17+",
+    "aired": { "string": "Apr 6, 2008 to Sep 28, 2008" }, "season": "spring", "year": 2008,
+    "genres": ["Action", "Drama", "Sci-Fi"], "themes": ["Mecha", "Military"], "demographics": [], "studios": ["Sunrise"],
+    "image": "https://cdn.myanimelist.net/images/anime/1088/135103l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/Opl3jMGe4wE",
+    "characters": [
+      { "name": "Lamperouge, Lelouch", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/8/406163.jpg" },
+      { "name": "C.C.", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/5/406167.jpg" }
+    ],
+    "trending": false, "topRated": true
+  },
+  {
+    "mal_id": 1575, "title": "Code Geass: Hangyaku no Lelouch", "title_english": "Code Geass: Lelouch of the Rebellion", "title_japanese": "コードギアス 反逆のルルーシュ",
+    "synopsis": "In 2010, the Holy Empire of Britannia conquers Japan and renames it Area 11. Exiled prince Lelouch Lamperouge obtains the 'Power of Kings'—Geass—which allows him to command anyone. Under the mask of Zero, he leads a rebellion to destroy the empire and avenge his mother.",
+    "score": 8.70, "scored_by": 1000000, "rank": 43, "popularity": 33,
+    "episodes": 25, "status": "Finished Airing", "type": "TV", "source": "Original", "duration": "24 min per ep", "rating": "R - 17+",
+    "aired": { "string": "Oct 6, 2006 to Jul 29, 2007" }, "season": "fall", "year": 2006,
+    "genres": ["Action", "Drama", "Sci-Fi"], "themes": ["Mecha", "Military"], "demographics": [], "studios": ["Sunrise"],
+    "image": "https://cdn.myanimelist.net/images/anime/1032/135088l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/mNJmbQgYKr8",
+    "characters": [
+      { "name": "Lamperouge, Lelouch", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/8/406163.jpg" },
+      { "name": "C.C.", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/5/406167.jpg" },
+      { "name": "Kururugi, Suzaku", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/16/406165.jpg" }
+    ],
+    "trending": false, "topRated": true
+  },
+  {
+    "mal_id": 35849, "title": "Darling in the FranXX", "title_english": "DARLING in the FRANXX", "title_japanese": "ダーリン・イン・ザ・フランキス",
+    "synopsis": "In a post-apocalyptic future, humanity lives in mobile fortress cities called Plantations, piloting giant mechs called FranXX in male-female pairs. Hiro, a disgraced pilot, encounters Zero Two, a mysterious horned girl known as the 'Partner Killer,' and together they become the most powerful duo.",
+    "score": 7.23, "scored_by": 900000, "rank": 2820, "popularity": 37,
+    "episodes": 24, "status": "Finished Airing", "type": "TV", "source": "Original", "duration": "24 min per ep", "rating": "PG-13",
+    "aired": { "string": "Jan 13, 2018 to Jul 7, 2018" }, "season": "winter", "year": 2018,
+    "genres": ["Action", "Drama", "Romance", "Sci-Fi"], "themes": ["Mecha"], "demographics": [], "studios": ["A-1 Pictures", "Trigger", "CloverWorks"],
+    "image": "https://cdn.myanimelist.net/images/anime/1614/90408l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/JGdcNritDvM",
+    "characters": [
+      { "name": "Zero Two", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/2/344553.jpg" },
+      { "name": "Hiro", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/12/346591.jpg" }
+    ],
+    "trending": false, "topRated": false
+  },
+  {
+    "mal_id": 37510, "title": "Mob Psycho 100 II", "title_english": "Mob Psycho 100 II", "title_japanese": "モブサイコ100 II",
+    "synopsis": "Shigeo 'Mob' Kageyama continues to navigate school, psychic powers, and growing up. The second season deepens his relationships and challenges, exploring themes of self-improvement and the meaning of strength.",
+    "score": 8.78, "scored_by": 500000, "rank": 25, "popularity": 68,
+    "episodes": 13, "status": "Finished Airing", "type": "TV", "source": "Web manga", "duration": "24 min per ep", "rating": "PG-13",
+    "aired": { "string": "Jan 7, 2019 to Apr 1, 2019" }, "season": "winter", "year": 2019,
+    "genres": ["Action", "Comedy"], "themes": ["Psycho Powers"], "demographics": [], "studios": ["Bones"],
+    "image": "https://cdn.myanimelist.net/images/anime/1918/96303l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/Pr11tNczVn0",
+    "characters": [
+      { "name": "Kageyama, Shigeo", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/6/301481.jpg" },
+      { "name": "Reigen, Arataka", "role": "Supporting", "image": "https://cdn.myanimelist.net/images/characters/12/301483.jpg" }
+    ],
+    "trending": false, "topRated": true
+  },
+  {
+    "mal_id": 32182, "title": "Mob Psycho 100", "title_english": "Mob Psycho 100", "title_japanese": "モブサイコ100",
+    "synopsis": "Eighth grader Shigeo Kageyama, nicknamed 'Mob,' is a boy with immense psychic power but wants nothing more than to live a normal life. Working under the sham psychic Reigen Arataka, Mob suppresses his emotions to keep his abilities in check. But his bottled-up power is building to a breaking point.",
+    "score": 8.46, "scored_by": 700000, "rank": 128, "popularity": 46,
+    "episodes": 12, "status": "Finished Airing", "type": "TV", "source": "Web manga", "duration": "24 min per ep", "rating": "PG-13",
+    "aired": { "string": "Jul 12, 2016 to Sep 27, 2016" }, "season": "summer", "year": 2016,
+    "genres": ["Action", "Comedy"], "themes": ["Psycho Powers"], "demographics": [], "studios": ["Bones"],
+    "image": "https://cdn.myanimelist.net/images/anime/8/80356l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/Rl1sFdCwHSo",
+    "characters": [
+      { "name": "Kageyama, Shigeo", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/6/301481.jpg" },
+      { "name": "Reigen, Arataka", "role": "Supporting", "image": "https://cdn.myanimelist.net/images/characters/12/301483.jpg" }
+    ],
+    "trending": false, "topRated": true
+  },
+  {
+    "mal_id": 918, "title": "Gintama", "title_english": "Gintama", "title_japanese": "銀魂",
+    "synopsis": "In an era where samurai are no longer needed, Gintoki Sakata still possesses the heart of a samurai. Working odd jobs alongside Shinpachi Shimura and Kagura, they tackle various problems in Edo—aliens, corruption, and absurdity—with unmatched comedy and heart.",
+    "score": 8.93, "scored_by": 300000, "rank": 11, "popularity": 100,
+    "episodes": 201, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "24 min per ep", "rating": "PG-13",
+    "aired": { "string": "Apr 4, 2006 to Mar 25, 2010" }, "season": "spring", "year": 2006,
+    "genres": ["Action", "Comedy", "Sci-Fi"], "themes": ["Gag Humor", "Historical", "Parody", "Samurai"], "demographics": ["Shounen"], "studios": ["Sunrise"],
+    "image": "https://cdn.myanimelist.net/images/anime/10/73274l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/YCBjzluEQuY",
+    "characters": [
+      { "name": "Sakata, Gintoki", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/4/265831.jpg" },
+      { "name": "Shimura, Shinpachi", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/14/120232.jpg" },
+      { "name": "Kagura", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/9/120229.jpg" }
+    ],
+    "trending": false, "topRated": true
+  },
+  {
+    "mal_id": 15417, "title": "Gintama°", "title_english": "Gintama Season 4", "title_japanese": "銀魂°",
+    "synopsis": "Gintoki and friends continue their wacky adventures. This season delivers some of the series' most acclaimed arcs with a perfect blend of comedy and emotional storytelling.",
+    "score": 9.06, "scored_by": 200000, "rank": 3, "popularity": 200,
+    "episodes": 51, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "24 min per ep", "rating": "PG-13",
+    "aired": { "string": "Apr 8, 2015 to Mar 30, 2016" }, "season": "spring", "year": 2015,
+    "genres": ["Action", "Comedy", "Sci-Fi"], "themes": ["Gag Humor", "Historical", "Parody", "Samurai"], "demographics": ["Shounen"], "studios": ["Bandai Namco Pictures"],
+    "image": "https://cdn.myanimelist.net/images/anime/3/72078l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/YCBjzluEQuY",
+    "characters": [
+      { "name": "Sakata, Gintoki", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/4/265831.jpg" }
+    ],
+    "trending": false, "topRated": true
+  },
+  {
+    "mal_id": 43608, "title_alt": "Reserved", "skip": true
+  },
+  {
+    "mal_id": 20507, "title": "Noragami", "title_english": "Noragami", "title_japanese": "ノラガミ",
+    "synopsis": "In times of need, if you look in the right place, you just may see a mysterious phone number scrawled in red. Those who call receive help from Yato, a minor deity who dreams of having millions of worshippers. Together with his weapon partner, he takes on supernatural threats.",
+    "score": 7.95, "scored_by": 900000, "rank": 641, "popularity": 41,
+    "episodes": 12, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "24 min per ep", "rating": "PG-13",
+    "aired": { "string": "Jan 5, 2014 to Mar 23, 2014" }, "season": "winter", "year": 2014,
+    "genres": ["Action", "Fantasy"], "themes": [], "demographics": ["Shounen"], "studios": ["Bones"],
+    "image": "https://cdn.myanimelist.net/images/anime/9/67437l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/t2_yYAp9m6c",
+    "characters": [
+      { "name": "Yato", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/16/240195.jpg" },
+      { "name": "Iki, Hiyori", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/9/240197.jpg" },
+      { "name": "Yukine", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/4/244563.jpg" }
+    ],
+    "trending": false, "topRated": false
+  },
+  {
+    "mal_id": 13601, "title": "Psycho-Pass", "title_english": "Psycho-Pass", "title_japanese": "サイコパス",
+    "synopsis": "In the 22nd century, Japan has implemented the Sibyl System, which measures citizens' mental states to determine their criminal tendencies. Inspector Akane Tsunemori, alongside Enforcer Shinya Kougami, must navigate the moral complexities of this dystopian society when they encounter criminals the system cannot judge.",
+    "score": 8.34, "scored_by": 700000, "rank": 177, "popularity": 43,
+    "episodes": 22, "status": "Finished Airing", "type": "TV", "source": "Original", "duration": "23 min per ep", "rating": "R - 17+",
+    "aired": { "string": "Oct 12, 2012 to Mar 22, 2013" }, "season": "fall", "year": 2012,
+    "genres": ["Action", "Sci-Fi", "Suspense"], "themes": ["Adult Cast", "Psychological"], "demographics": [], "studios": ["Production I.G"],
+    "image": "https://cdn.myanimelist.net/images/anime/5/43399l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/irqFRZqptWg",
+    "characters": [
+      { "name": "Tsunemori, Akane", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/16/176968.jpg" },
+      { "name": "Kougami, Shinya", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/11/175489.jpg" }
+    ],
+    "trending": false, "topRated": true
+  },
+  {
+    "mal_id": 51535, "title": "Shingeki no Kyojin: The Final Season - Kanketsu-hen", "title_english": "Attack on Titan: The Final Season Final Part", "title_japanese": "進撃の巨人 The Final Season 完結編",
+    "synopsis": "As the final chapters of the epic unfold, former allies become enemies and the fate of all Eldians hangs in the balance. The conclusion to one of anime's most monumental series.",
+    "score": 8.80, "scored_by": 500000, "rank": 24, "popularity": 60,
+    "episodes": 2, "status": "Finished Airing", "type": "Special", "source": "Manga", "duration": "1 hr", "rating": "R - 17+",
+    "aired": { "string": "Mar 4, 2023 to Nov 5, 2023" }, "season": null, "year": 2023,
+    "genres": ["Action", "Drama"], "themes": ["Gore", "Military", "Survival"], "demographics": ["Shounen"], "studios": ["MAPPA"],
+    "image": "https://cdn.myanimelist.net/images/anime/1279/131078l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/lFYnEMsv4Q8",
+    "characters": [
+      { "name": "Yeager, Eren", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/10/216895.jpg" },
+      { "name": "Ackerman, Mikasa", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/9/215563.jpg" }
+    ],
+    "trending": false, "topRated": true
+  },
+  {
+    "mal_id": 36098, "title": "Kimetsu no Yaiba: Mugen Ressha-hen", "title_english": "Demon Slayer: Mugen Train", "title_japanese": "劇場版 鬼滅の刃 無限列車編",
+    "synopsis": "After their adventure in the Entertainment District, Tanjirou and the gang board the Mugen Train to aid the Flame Hashira, Kyoujurou Rengoku, in investigating a series of mysterious disappearances. They face one of the most powerful demons yet.",
+    "score": 8.47, "scored_by": 900000, "rank": 123, "popularity": 44,
+    "episodes": 1, "status": "Finished Airing", "type": "Movie", "source": "Manga", "duration": "1 hr 57 min", "rating": "R - 17+",
+    "aired": { "string": "Oct 16, 2020" }, "season": null, "year": 2020,
+    "genres": ["Action", "Fantasy"], "themes": ["Historical"], "demographics": ["Shounen"], "studios": ["ufotable"],
+    "image": "https://cdn.myanimelist.net/images/anime/1704/106947l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/ATJYac_dORw",
+    "characters": [
+      { "name": "Kamado, Tanjirou", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/6/386735.jpg" },
+      { "name": "Rengoku, Kyoujurou", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/3/398505.jpg" }
+    ],
+    "trending": false, "topRated": true
+  },
+  {
+    "mal_id": 46102, "title": "Sono Bisque Doll wa Koi wo Suru", "title_alt": "Reserved", "skip": true
+  },
+  {
+    "mal_id": 15335, "title": "Gintama': Enchousen", "title_english": "Gintama: Enchousen", "title_japanese": "銀魂' 延長戦",
+    "synopsis": "Continuation of Gintama'. More adventures with Gintoki and friends.",
+    "score": 8.98, "scored_by": 120000, "rank": 8, "popularity": 350,
+    "episodes": 13, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "24 min per ep", "rating": "PG-13",
+    "aired": { "string": "Oct 4, 2012 to Mar 28, 2013" }, "season": "fall", "year": 2012,
+    "genres": ["Action", "Comedy", "Sci-Fi"], "themes": ["Gag Humor", "Historical", "Parody", "Samurai"], "demographics": ["Shounen"], "studios": ["Sunrise"],
+    "image": "https://cdn.myanimelist.net/images/anime/13/45753l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/YCBjzluEQuY",
+    "characters": [
+      { "name": "Sakata, Gintoki", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/4/265831.jpg" }
+    ],
+    "trending": false, "topRated": true
+  },
+  {
+    "mal_id": 10087, "title": "Fate/Zero", "title_english": "Fate/Zero", "title_japanese": "フェイト/ゼロ",
+    "synopsis": "The Fourth Holy Grail War. Seven magi summon legendary heroes as Servants to battle for the omnipotent Holy Grail. Kiritsugu Emiya, a feared assassin hired by the Einzberns, will do whatever it takes to win, even if it means sacrificing his humanity.",
+    "score": 8.29, "scored_by": 800000, "rank": 203, "popularity": 47,
+    "episodes": 13, "status": "Finished Airing", "type": "TV", "source": "Light novel", "duration": "24 min per ep", "rating": "R - 17+",
+    "aired": { "string": "Oct 2, 2011 to Dec 25, 2011" }, "season": "fall", "year": 2011,
+    "genres": ["Action", "Fantasy", "Supernatural"], "themes": [], "demographics": [], "studios": ["ufotable"],
+    "image": "https://cdn.myanimelist.net/images/anime/2/73249l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/Kwrg4VsH1IM",
+    "characters": [
+      { "name": "Emiya, Kiritsugu", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/2/128703.jpg" },
+      { "name": "Saber", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/3/297071.jpg" }
+    ],
+    "trending": false, "topRated": true
+  },
+  {
+    "mal_id": 11741, "title": "Fate/Zero 2nd Season", "title_english": "Fate/Zero Season 2", "title_japanese": "フェイト/ゼロ 2ndシーズン",
+    "synopsis": "The Holy Grail War rages on with its deadly participants. Kiritsugu Emiya continues his merciless quest, but the War holds a devastating secret.",
+    "score": 8.56, "scored_by": 600000, "rank": 93, "popularity": 53,
+    "episodes": 12, "status": "Finished Airing", "type": "TV", "source": "Light novel", "duration": "24 min per ep", "rating": "R - 17+",
+    "aired": { "string": "Apr 8, 2012 to Jun 24, 2012" }, "season": "spring", "year": 2012,
+    "genres": ["Action", "Fantasy", "Supernatural"], "themes": [], "demographics": [], "studios": ["ufotable"],
+    "image": "https://cdn.myanimelist.net/images/anime/1522/117310l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/Kwrg4VsH1IM",
+    "characters": [
+      { "name": "Emiya, Kiritsugu", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/2/128703.jpg" },
+      { "name": "Saber", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/3/297071.jpg" }
+    ],
+    "trending": false, "topRated": true
+  },
+  {
+    "mal_id": 41467, "title": "Bleach: Sennen Kessen-hen", "title_english": "Bleach: Thousand-Year Blood War", "title_japanese": "ブリーチ 千年血戦篇",
+    "synopsis": "The Wandenreich, an army of Quincies, declare war on the Soul Society, seeking to destroy it. Ichigo must face enemies who can steal Bankai, the Soul Reapers' ultimate power. The final arc of the Bleach saga begins.",
+    "score": 9.05, "scored_by": 400000, "rank": 4, "popularity": 65,
+    "episodes": 13, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "24 min per ep", "rating": "R - 17+",
+    "aired": { "string": "Oct 11, 2022 to Dec 27, 2022" }, "season": "fall", "year": 2022,
+    "genres": ["Action", "Adventure", "Fantasy"], "themes": [], "demographics": ["Shounen"], "studios": ["Pierrot"],
+    "image": "https://cdn.myanimelist.net/images/anime/1764/126627l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/1jPI0JHOaug",
+    "characters": [
+      { "name": "Kurosaki, Ichigo", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/2/78607.jpg" },
+      { "name": "Yhwach", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/2/485543.jpg" }
+    ],
+    "trending": true, "topRated": true
+  },
+  {
+    "mal_id": 37521, "title": "Vinland Saga", "title_english": "Vinland Saga", "title_japanese": "ヴィンランド・サガ",
+    "synopsis": "Young Thorfinn grew up hearing tales of old sailors who had traversed the ocean and reached a place called Vinland. After his father, a former warrior, is killed by the mercenary leader Askeladd, Thorfinn swears revenge and joins Askeladd's band. Set against the backdrop of the Viking Age and the wars between England and Denmark.",
+    "score": 8.72, "scored_by": 700000, "rank": 37, "popularity": 48,
+    "episodes": 24, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "24 min per ep", "rating": "R - 17+",
+    "aired": { "string": "Jul 8, 2019 to Dec 30, 2019" }, "season": "summer", "year": 2019,
+    "genres": ["Action", "Adventure", "Drama"], "themes": ["Adult Cast", "Historical"], "demographics": ["Seinen"], "studios": ["Wit Studio"],
+    "image": "https://cdn.myanimelist.net/images/anime/1500/103005l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/BRubJuMCUkI",
+    "characters": [
+      { "name": "Thorfinn", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/6/281814.jpg" },
+      { "name": "Askeladd", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/14/370267.jpg" }
+    ],
+    "trending": false, "topRated": true
+  },
+  {
+    "mal_id": 235, "title": "Meitantei Conan", "title_english": "Detective Conan", "title_japanese": "名探偵コナン",
+    "synopsis": "Shinichi Kudou, a brilliant teenage detective, witnesses a suspicious transaction and is discovered. He is given a poison that shrinks him to the size of a seven-year-old. Now as 'Conan Edogawa,' he solves case after case while searching for the mysterious Black Organization.",
+    "score": 8.16, "scored_by": 150000, "rank": 290, "popularity": 200,
+    "episodes": 1130, "status": "Currently Airing", "type": "TV", "source": "Manga", "duration": "25 min per ep", "rating": "PG-13",
+    "aired": { "string": "Jan 8, 1996 to ?" }, "season": "winter", "year": 1996,
+    "genres": ["Adventure", "Comedy", "Mystery"], "themes": [], "demographics": ["Shounen"], "studios": ["TMS Entertainment"],
+    "image": "https://cdn.myanimelist.net/images/anime/7/75199l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/ZVExGLcRBkI",
+    "characters": [
+      { "name": "Edogawa, Conan", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/8/83549.jpg" }
+    ],
+    "trending": false, "topRated": false
+  },
+  {
+    "mal_id": 40834, "title": "Ousama Ranking", "title_english": "Ranking of Kings", "title_japanese": "王様ランキング",
+    "synopsis": "Bojji, a deaf and powerless young prince, is looked down upon by everyone for his lack of kingly qualities. However, his unexpected encounter with Kage, a shadow creature, gives him his first real friend. Together, they embark on a journey that will defy expectations.",
+    "score": 8.47, "scored_by": 300000, "rank": 124, "popularity": 100,
+    "episodes": 23, "status": "Finished Airing", "type": "TV", "source": "Web manga", "duration": "23 min per ep", "rating": "PG-13",
+    "aired": { "string": "Oct 15, 2021 to Mar 25, 2022" }, "season": "fall", "year": 2021,
+    "genres": ["Adventure", "Fantasy"], "themes": [], "demographics": ["Seinen"], "studios": ["Wit Studio"],
+    "image": "https://cdn.myanimelist.net/images/anime/1347/117828l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/byPofX4t0jo",
+    "characters": [
+      { "name": "Bojji", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/10/449631.jpg" },
+      { "name": "Kage", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/3/449633.jpg" }
+    ],
+    "trending": false, "topRated": true
+  },
+  {
+    "mal_id": 52034, "title": "Kimetsu no Yaiba: Katanakaji no Sato-hen", "title_english": "Demon Slayer: Swordsmith Village Arc", "title_japanese": "鬼滅の刃 刀鍛冶の里編",
+    "synopsis": "Tanjirou's journey continues to the hidden Swordsmith Village, where he meets the Love Hashira and the Mist Hashira. When Upper Rank demons attack the village, Tanjirou must fight alongside the Hashira to protect the swordsmiths who forge the Demon Slayer blades.",
+    "score": 8.15, "scored_by": 500000, "rank": 291, "popularity": 55,
+    "episodes": 11, "status": "Finished Airing", "type": "TV", "source": "Manga", "duration": "24 min per ep", "rating": "R - 17+",
+    "aired": { "string": "Apr 9, 2023 to Jun 18, 2023" }, "season": "spring", "year": 2023,
+    "genres": ["Action", "Fantasy"], "themes": ["Historical"], "demographics": ["Shounen"], "studios": ["ufotable"],
+    "image": "https://cdn.myanimelist.net/images/anime/1765/135099l.jpg",
+    "trailer_url": "https://www.youtube.com/embed/a9tq0aS5Xjw",
+    "characters": [
+      { "name": "Kamado, Tanjirou", "role": "Main", "image": "https://cdn.myanimelist.net/images/characters/6/386735.jpg" },
+      { "name": "Tokitou, Muichirou", "role": "Supporting", "image": "https://cdn.myanimelist.net/images/characters/5/398511.jpg" }
+    ],
+    "trending": true, "topRated": false
+  }
+]

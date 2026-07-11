@@ -6,6 +6,7 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState(null)
   const [token, setToken] = useState(() => localStorage.getItem("av_token"))
   const [loading, setLoading] = useState(true)
+  const [viewMode, setViewMode] = useState("default") // "default" or "user" (for admin toggle)
 
   // Restore session on mount
   useEffect(() => {
@@ -16,7 +17,6 @@ export function AuthProvider({ children }) {
         .then((r) => (r.ok ? r.json() : Promise.reject()))
         .then((data) => setUser(data.user))
         .catch(() => {
-          // Token expired or invalid — clear it
           localStorage.removeItem("av_token")
           setToken(null)
         })
@@ -35,11 +35,34 @@ export function AuthProvider({ children }) {
   const logout = () => {
     setUser(null)
     setToken(null)
+    setViewMode("default")
     localStorage.removeItem("av_token")
   }
 
+  // Role helpers
+  const isAdmin = user && (user.role === "admin" || user.role === "super_admin") && viewMode === "default"
+  const isSuperAdmin = user && user.role === "super_admin" && viewMode === "default"
+  const actualRole = user?.role || "user"
+
+  // Permission check for regular admins
+  const hasPermission = (perm) => {
+    if (!user) return false
+    if (user.role === "super_admin") return true
+    if (user.role !== "admin") return false
+    return user.admin_permissions?.[perm] === true
+  }
+
+  // Toggle between admin and user view
+  const toggleViewMode = () => {
+    setViewMode(v => v === "default" ? "user" : "default")
+  }
+
   return (
-    <AuthContext.Provider value={{ user, token, loading, login, logout }}>
+    <AuthContext.Provider value={{
+      user, token, loading, login, logout,
+      isAdmin, isSuperAdmin, actualRole,
+      hasPermission, viewMode, toggleViewMode
+    }}>
       {children}
     </AuthContext.Provider>
   )

@@ -1,11 +1,18 @@
 import jwt from "jsonwebtoken";
 
 const SECRET = process.env.JWT_SECRET || "fallback_secret_change_me";
+const SUPER_ADMIN_EMAIL = process.env.SUPER_ADMIN_EMAIL || "";
 
-// Generate a JWT token for a user
+// Generate a JWT token for a user (includes role + permissions)
 export function signToken(user) {
   return jwt.sign(
-    { id: user.id, email: user.email, username: user.username },
+    {
+      id: user.id,
+      email: user.email,
+      username: user.username,
+      role: user.role || "user",
+      admin_permissions: user.admin_permissions || null,
+    },
     SECRET,
     { expiresIn: "7d" }
   );
@@ -20,6 +27,38 @@ export function getUserFromRequest(req) {
   } catch {
     return null;
   }
+}
+
+// Check if user is any admin (admin or super_admin)
+export function requireAdmin(req) {
+  const user = getUserFromRequest(req);
+  if (!user) return null;
+  if (user.role !== "admin" && user.role !== "super_admin") return null;
+  return user;
+}
+
+// Check if user is the super admin
+export function requireSuperAdmin(req) {
+  const user = getUserFromRequest(req);
+  if (!user) return null;
+  if (user.role !== "super_admin") return null;
+  return user;
+}
+
+// Check if an email is the super admin email
+export function isSuperAdminEmail(email) {
+  if (!SUPER_ADMIN_EMAIL) return false;
+  return email.toLowerCase().trim() === SUPER_ADMIN_EMAIL.toLowerCase().trim();
+}
+
+// Check if admin has a specific permission
+export function hasPermission(user, permission) {
+  if (!user) return false;
+  if (user.role === "super_admin") return true; // Super admin can do everything
+  if (user.role !== "admin") return false;
+  const perms = user.admin_permissions;
+  if (!perms) return false;
+  return perms[permission] === true;
 }
 
 // Helper to send JSON responses

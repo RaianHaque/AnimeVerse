@@ -8,7 +8,7 @@ export default function Navbar() {
   const [search, setSearch] = useState("")
   const loc = useLocation()
   const navigate = useNavigate()
-  const { user, logout } = useAuth()
+  const { user, logout, isAdmin, isSuperAdmin, actualRole, viewMode, toggleViewMode } = useAuth()
   const isActive = (p) => loc.pathname === p
 
   const links = [
@@ -52,6 +52,21 @@ export default function Navbar() {
               )}
             </div>
 
+            {/* Admin view toggle badge */}
+            {user && (actualRole === "admin" || actualRole === "super_admin") && (
+              <button
+                onClick={toggleViewMode}
+                className={`hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider transition-all ${
+                  viewMode === "default"
+                    ? "bg-amber-500/20 border border-amber-500/30 text-amber-300 hover:bg-amber-500/30"
+                    : "bg-gray-500/20 border border-gray-500/30 text-gray-400 hover:bg-gray-500/30"
+                }`}
+                title={viewMode === "default" ? "Viewing as Admin — Click to view as User" : "Viewing as User — Click to view as Admin"}
+              >
+                {viewMode === "default" ? "👑 Admin" : "👤 User"} View
+              </button>
+            )}
+
             {user ? (
               <div className="hidden sm:flex items-center gap-2">
                 <Link to="/profile" className="flex items-center gap-2 px-3 py-1.5 rounded-full hover:bg-purple-500/10 transition-all group">
@@ -82,6 +97,25 @@ export default function Navbar() {
             {links.map(l => (
               <Link key={l.to} to={l.to} onClick={() => setMobileOpen(false)} className={`block px-4 py-2.5 rounded-lg text-sm font-semibold ${isActive(l.to) ? "bg-purple-500/20 text-purple-300" : "text-gray-300 hover:bg-purple-500/10"}`}>{l.label}</Link>
             ))}
+
+            {/* Admin Dashboard link in hamburger menu */}
+            {user && (actualRole === "admin" || actualRole === "super_admin") && (
+              <>
+                <div className="border-t border-purple-500/10 my-2" />
+                <Link to="/admin" onClick={() => setMobileOpen(false)} className={`block px-4 py-2.5 rounded-lg text-sm font-semibold ${isActive("/admin") ? "bg-amber-500/20 text-amber-300" : "text-amber-400 hover:bg-amber-500/10"}`}>
+                  <span className="flex items-center gap-2">
+                    👑 Admin Dashboard
+                  </span>
+                </Link>
+                <button
+                  onClick={() => { toggleViewMode(); setMobileOpen(false) }}
+                  className="block w-full text-left px-4 py-2.5 rounded-lg text-sm font-semibold text-gray-400 hover:bg-purple-500/10"
+                >
+                  {viewMode === "default" ? "👤 Switch to User View" : "👑 Switch to Admin View"}
+                </button>
+              </>
+            )}
+
             {user ? (
               <>
                 <Link to="/profile" onClick={() => setMobileOpen(false)} className="block px-4 py-2.5 rounded-lg text-sm font-semibold text-gray-300 hover:bg-purple-500/10">
