@@ -39,6 +39,20 @@ export default function Navbar() {
                 {l.label}
               </Link>
             ))}
+            {/* Desktop Admin Dropdown */}
+            {user && (actualRole === "admin" || actualRole === "super_admin") && (
+              <div className="relative group">
+                <button className={`px-4 py-2 rounded-lg text-sm font-semibold tracking-wide transition-all duration-300 flex items-center gap-1 ${isActive("/admin") ? "bg-amber-500/20 text-amber-300" : "text-amber-400 hover:text-amber-300 hover:bg-amber-500/10"}`}>
+                  👑 Admin <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                </button>
+                <div className="absolute top-full left-0 mt-1 w-48 rounded-xl bg-[#0a0710] border border-purple-500/30 shadow-[0_0_20px_rgba(180,79,255,0.2)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 overflow-hidden flex flex-col py-1">
+                  <Link to="/admin" className="px-4 py-2 text-sm text-gray-300 hover:bg-purple-500/20 hover:text-purple-300 font-semibold">📊 Full Dashboard</Link>
+                  <Link to="/admin" className="px-4 py-2 text-sm text-gray-300 hover:bg-purple-500/20 hover:text-purple-300 font-semibold">🎬 Manage Anime</Link>
+                  <Link to="/admin" className="px-4 py-2 text-sm text-gray-300 hover:bg-purple-500/20 hover:text-purple-300 font-semibold">👥 Manage Users</Link>
+                  <Link to="/admin" className="px-4 py-2 text-sm text-gray-300 hover:bg-purple-500/20 hover:text-purple-300 font-semibold">⭐ Manage Reviews</Link>
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="flex items-center gap-3">
