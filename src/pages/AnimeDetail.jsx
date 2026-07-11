@@ -108,8 +108,8 @@ export default function AnimeDetail() {
       await apiPost("/api/watchlist", {
         anime_mal_id: parseInt(id),
         title: anime?.title || "Unknown",
-        image: anime?.images?.jpg?.large_image_url || "",
-        genres: JSON.stringify((anime?.genres || []).map(g => g.name)),
+        image: anime?.image || anime?.images?.jpg?.large_image_url || "",
+        genres: JSON.stringify(anime?.genres || []),
         rating: anime?.score || 0,
         episodes: anime?.episodes || 0,
       })
@@ -140,10 +140,24 @@ export default function AnimeDetail() {
   )
 
   const a = anime
-  const image = a.images?.jpg?.large_image_url || a.images?.jpg?.image_url
-  const genreList = [...(a.genres || []), ...(a.themes || [])].map(g => g.name)
+  const image = a.image || a.images?.jpg?.large_image_url || a.images?.jpg?.image_url || ""
+  const genreList = [...(a.genres || []), ...(a.themes || [])].map(g => typeof g === "string" ? g : g.name)
   const isOngoing = a.airing || a.status === "Currently Airing"
-  const trailerUrl = a.trailer_url
+
+  // Normalize any YouTube URL into embed format
+  function getEmbedUrl(url) {
+    if (!url) return null
+    // Already embed format
+    if (url.includes("/embed/")) return url
+    // youtu.be short URL
+    const shortMatch = url.match(/youtu\.be\/([a-zA-Z0-9_-]+)/)
+    if (shortMatch) return `https://www.youtube.com/embed/${shortMatch[1]}`
+    // youtube.com/watch?v= format
+    const watchMatch = url.match(/[?&]v=([a-zA-Z0-9_-]+)/)
+    if (watchMatch) return `https://www.youtube.com/embed/${watchMatch[1]}`
+    return url
+  }
+  const trailerUrl = getEmbedUrl(a.trailer_url)
 
   return (
     <div className="min-h-screen pt-16">
@@ -252,10 +266,12 @@ export default function AnimeDetail() {
             <div className="relative rounded-2xl overflow-hidden glass" style={{ aspectRatio: "16/9", maxWidth: "800px" }}>
               {showTrailer ? (
                 <iframe
-                  src={`${trailerUrl}?autoplay=1&rel=0`}
+                  src={`${trailerUrl.replace('youtube.com', 'youtube-nocookie.com')}?autoplay=1&rel=0&modestbranding=1`}
                   title={`${a.title} Trailer`}
                   className="absolute inset-0 w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  frameBorder="0"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
                 />
               ) : (
