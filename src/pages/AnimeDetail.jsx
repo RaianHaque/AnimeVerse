@@ -266,7 +266,7 @@ export default function AnimeDetail() {
             <div className="relative rounded-2xl overflow-hidden glass" style={{ aspectRatio: "16/9", maxWidth: "800px" }}>
               {showTrailer ? (
                 <iframe
-                  src={`${trailerUrl.replace('youtube.com', 'youtube-nocookie.com')}?autoplay=1&rel=0&modestbranding=1`}
+                  src={`${trailerUrl}?autoplay=1&rel=0&modestbranding=1`}
                   title={`${a.title} Trailer`}
                   className="absolute inset-0 w-full h-full"
                   frameBorder="0"
