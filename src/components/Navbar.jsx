@@ -102,10 +102,19 @@ export default function Navbar() {
             {user && (actualRole === "admin" || actualRole === "super_admin") && (
               <>
                 <div className="border-t border-purple-500/10 my-2" />
+                <span className="block px-4 py-1 text-[10px] font-bold uppercase text-amber-500/50 tracking-wider">Admin Controls</span>
                 <Link to="/admin" onClick={() => setMobileOpen(false)} className={`block px-4 py-2.5 rounded-lg text-sm font-semibold ${isActive("/admin") ? "bg-amber-500/20 text-amber-300" : "text-amber-400 hover:bg-amber-500/10"}`}>
-                  <span className="flex items-center gap-2">
-                    👑 Admin Dashboard
-                  </span>
+                  👑 Full Dashboard
+                </Link>
+                {/* Note: In a real app we might pass a tab query param, but for now we link to /admin and let them use the tabs */}
+                <Link to="/admin" onClick={() => setMobileOpen(false)} className="block px-4 py-2.5 rounded-lg text-sm font-semibold text-gray-300 hover:bg-purple-500/10">
+                  🎬 Manage Anime
+                </Link>
+                <Link to="/admin" onClick={() => setMobileOpen(false)} className="block px-4 py-2.5 rounded-lg text-sm font-semibold text-gray-300 hover:bg-purple-500/10">
+                  👥 Manage Users
+                </Link>
+                <Link to="/admin" onClick={() => setMobileOpen(false)} className="block px-4 py-2.5 rounded-lg text-sm font-semibold text-gray-300 hover:bg-purple-500/10">
+                  ⭐ Manage Reviews
                 </Link>
                 <button
                   onClick={() => { toggleViewMode(); setMobileOpen(false) }}

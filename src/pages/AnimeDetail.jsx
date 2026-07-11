@@ -2,13 +2,13 @@ import { useState, useEffect } from "react"
 import { useParams, Link, useNavigate } from "react-router-dom"
 import { getAnimeById, getAnimeCharacters, getAnimeEpisodes, getAnimeRecommendations, normalizeAnime } from "../services/api"
 import { useAuth } from "../context/AuthContext"
-import { apiGet, apiPost } from "../services/db"
+import { apiGet, apiPost, apiDelete } from "../services/db"
 import AnimeCard from "../components/AnimeCard"
 
 export default function AnimeDetail() {
   const { id } = useParams()
   const navigate = useNavigate()
-  const { user } = useAuth()
+  const { user, isAdmin, isSuperAdmin } = useAuth()
   const [anime, setAnime] = useState(null)
   const [characters, setCharacters] = useState([])
   const [episodes, setEpisodes] = useState([])
@@ -121,6 +121,40 @@ export default function AnimeDetail() {
     }
   }
 
+  async function handleDeleteAnime() {
+    if (!confirm("Are you sure you want to delete this anime?")) return;
+    try {
+      await apiDelete("/api/admin?action=anime", { anime_id: parseInt(id) });
+      navigate("/");
+    } catch (err) {
+      setReviewMsg(err.message || "Failed to delete anime");
+      setTimeout(() => setReviewMsg(""), 3000);
+    }
+  }
+
+  async function handleDeleteReview(reviewId) {
+    if (!confirm("Delete this review permanently?")) return;
+    try {
+      await apiDelete("/api/admin?action=reviews", { review_id: reviewId });
+      setSiteReviews(siteReviews.filter(r => r.id !== reviewId));
+      setReviewMsg("Review deleted.");
+      setTimeout(() => setReviewMsg(""), 3000);
+    } catch (err) {
+      setReviewMsg(err.message);
+      setTimeout(() => setReviewMsg(""), 3000);
+    }
+  }
+
+  async function handleHideReview(reviewId, currentStatus) {
+    try {
+      await apiPost("/api/admin?action=reviews", { review_id: reviewId, hide: !currentStatus });
+      setSiteReviews(siteReviews.map(r => r.id === reviewId ? { ...r, is_hidden: !currentStatus } : r));
+    } catch (err) {
+      setReviewMsg(err.message);
+      setTimeout(() => setReviewMsg(""), 3000);
+    }
+  }
+
   const tabs = ["overview", "episodes", "characters", "reviews"]
 
   if (loading) return (
@@ -228,18 +262,25 @@ export default function AnimeDetail() {
                   <div className="w-px h-10 bg-purple-500/20" />
                   <div className="text-center">
                     <div className="text-gray-300 font-bold text-sm">{a.score}</div>
-                    <div className="text-gray-600 text-[10px]">Base</div>
+                    <div className="text-gray-600 text-[10px]">MAL Base</div>
                   </div>
                   {userReviewCount > 0 && (
                     <>
                       <div className="text-gray-600 text-xs">+</div>
                       <div className="text-center">
-                        <div className="text-cyan-300 font-bold text-sm">{avgUserRating}</div>
-                        <div className="text-gray-600 text-[10px]">{userReviewCount} reviews</div>
+                         <div className="text-cyan-300 font-bold text-sm">{avgUserRating.toFixed(2)}</div>
+                         <div className="text-gray-600 text-[10px]">{userReviewCount} User Avg</div>
                       </div>
                     </>
                   )}
                 </div>
+              </div>
+            )}
+
+            {isAdmin && (
+              <div className="flex gap-3 mb-6 animate-fade-in">
+                <Link to="/admin" className="px-4 py-1.5 rounded-lg border border-amber-500/30 text-amber-300 text-xs font-bold uppercase hover:bg-amber-500/10">Edit in Admin Dashboard</Link>
+                <button onClick={handleDeleteAnime} className="px-4 py-1.5 rounded-lg border border-red-500/30 text-red-300 text-xs font-bold uppercase hover:bg-red-500/10">Delete Anime</button>
               </div>
             )}
 
@@ -420,11 +461,23 @@ export default function AnimeDetail() {
                             {r.username[0].toUpperCase()}
                           </div>
                           <div>
-                            <h4 className="text-white font-semibold text-sm">{r.username}</h4>
+                            <h4 className="text-white font-semibold text-sm">{r.username} {r.is_hidden && <span className="ml-2 text-red-400 text-[10px] font-bold uppercase border border-red-500/30 px-1.5 py-0.5 rounded">Hidden</span>}</h4>
                             <span className="text-gray-500 text-xs">{new Date(r.created_at).toLocaleDateString()}</span>
                           </div>
                         </div>
-                        <span className="text-yellow-400 font-bold">⭐ {r.rating}/10</span>
+                        <div className="flex flex-col items-end gap-1">
+                          <span className="text-yellow-400 font-bold">⭐ {r.rating}/10</span>
+                          {isAdmin && (
+                             <div className="flex gap-2 mt-1">
+                               <button onClick={() => handleHideReview(r.id, r.is_hidden)} className={`text-[10px] font-bold uppercase px-2 py-0.5 rounded border ${r.is_hidden ? "border-green-500/30 text-green-300 hover:bg-green-500/10" : "border-amber-500/30 text-amber-300 hover:bg-amber-500/10"}`}>
+                                 {r.is_hidden ? "Restore" : "Hide"}
+                               </button>
+                               {isSuperAdmin && (
+                                 <button onClick={() => handleDeleteReview(r.id)} className="text-[10px] font-bold uppercase px-2 py-0.5 rounded border border-red-500/30 text-red-300 hover:bg-red-500/10">Delete</button>
+                               )}
+                             </div>
+                          )}
+                        </div>
                       </div>
                       <p className="text-gray-300 text-sm leading-relaxed">{r.review_text}</p>
                     </div>
