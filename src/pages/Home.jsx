@@ -123,11 +123,11 @@ export default function Home() {
           </div>
           <div className="relative rounded-2xl overflow-hidden glass">
             <div className="absolute inset-0">
-              <img src={featured.image} alt={featured.title} className="w-full h-full object-cover opacity-20 blur-sm" onError={(e) => { e.target.onerror = null; e.target.src = "https://image.tmdb.org/t/p/w600_and_h900_bestv2/tN1511AAsz5D6H90zRGEqjAGr4q.jpg"; }} />
+              <img src={featured.image} alt={featured.title} className="w-full h-full object-cover opacity-20 blur-sm" onError={(e) => { e.target.onerror = null; e.target.src = "https://cdn.myanimelist.net/images/anime/1448/147351l.jpg"; }} />
               <div className="absolute inset-0 bg-gradient-to-r from-[#0d0a1a] via-[#0d0a1a]/90 to-transparent" />
             </div>
             <div className="relative grid md:grid-cols-[250px_1fr] gap-8 p-8">
-              <img src={featured.image} alt={featured.title} className="rounded-xl w-full max-w-[250px] shadow-[0_0_30px_rgba(180,79,255,0.2)]" onError={(e) => { e.target.onerror = null; e.target.src = "https://image.tmdb.org/t/p/w600_and_h900_bestv2/tN1511AAsz5D6H90zRGEqjAGr4q.jpg"; }} />
+              <img src={featured.image} alt={featured.title} className="rounded-xl w-full max-w-[250px] shadow-[0_0_30px_rgba(180,79,255,0.2)]" onError={(e) => { e.target.onerror = null; e.target.src = "https://cdn.myanimelist.net/images/anime/1448/147351l.jpg"; }} />
               <div className="flex flex-col justify-center">
                 <div className="flex flex-wrap gap-2 mb-3">
                   {featured.genre.map(g => (

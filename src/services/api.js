@@ -7,25 +7,29 @@ const animeDB = animeRawData.filter(a => !a.skip)
 // Intercept and repair broken media URLs (like old MAL CDN 404s or invalid short YouTube embed IDs)
 export function fixBrokenAnimeMedia(title, image, trailer_url) {
   const t = (title || "").toString().toLowerCase();
-  const img = (image || "").toString().toLowerCase();
   let newImg = image || "";
   let newTr = trailer_url || null;
 
-  if (t.includes("solo leveling") || img.includes("140461") || img.includes("141019")) {
-    newImg = "https://image.tmdb.org/t/p/w600_and_h900_bestv2/tN1511AAsz5D6H90zRGEqjAGr4q.jpg";
-    if (!newTr || newTr.includes("2u321155") || newTr.length < 25) newTr = "https://www.youtube.com/embed/94r_Y4vP5C8";
-  } else if (t.includes("reze") || t.includes("chainsaw man") || img.includes("140082") || img.includes("126216")) {
-    newImg = "https://image.tmdb.org/t/p/w600_and_h900_bestv2/100K0d8WJ56qgK90Z1uA2b34720.jpg";
-    if (!newTr || newTr.length < 25) newTr = "https://www.youtube.com/embed/1vRzTzW6c6c";
-  } else if (t.includes("one punch man") || img.includes("122627") || img.includes("76049")) {
-    newImg = "https://image.tmdb.org/t/p/w600_and_h900_bestv2/iE3s0lG5QlH8N6Q80pXpT09XW9e.jpg";
-    if (!newTr || newTr.includes("2u321155") || newTr.length < 25) newTr = "https://www.youtube.com/embed/e_q8D6bX604";
-  } else if (t.includes("bleach") || img.includes("138036") || img.includes("126627")) {
-    newImg = "https://image.tmdb.org/t/p/w600_and_h900_bestv2/2EewmxXe72ogD0EaWM8gqa0ccIw.jpg";
-    if (!newTr || newTr.includes("5a2223432") || newTr.length < 25) newTr = "https://www.youtube.com/embed/t0d2z9j39q8";
-  } else if (t.includes("jujutsu kaisen") || img.includes("141018") || img.includes("138022")) {
-    newImg = "https://image.tmdb.org/t/p/w600_and_h900_bestv2/f4Yq7A42E351U220u2E98U4G8A5.jpg";
-    if (!newTr || newTr.includes("6b3334232") || newTr.length < 25) newTr = "https://www.youtube.com/embed/8n_7y7e44t0";
+  if (t.includes("solo leveling")) {
+    newImg = "https://cdn.myanimelist.net/images/anime/1448/147351l.jpg";
+    newTr = "https://www.youtube.com/embed/GDMXGzjJzS4";
+  } else if (t.includes("reze") || t.includes("chainsaw man")) {
+    newImg = "https://cdn.myanimelist.net/images/anime/1806/126216l.jpg";
+    newTr = "https://www.youtube.com/embed/jk7QSGwupPA";
+  } else if (t.includes("one punch man")) {
+    newImg = "https://cdn.myanimelist.net/images/anime/12/76049l.jpg";
+    newTr = "https://www.youtube.com/embed/ExUMiF1L0HA";
+  } else if (t.includes("bleach")) {
+    newImg = "https://cdn.myanimelist.net/images/anime/1541/147774l.jpg";
+    newTr = "https://www.youtube.com/embed/0yk5H6vvfG4";
+  } else if (t.includes("jujutsu kaisen") || t.includes("culling game")) {
+    newImg = "https://cdn.myanimelist.net/images/anime/1792/138022l.jpg";
+    newTr = "https://www.youtube.com/embed/PKHQuQF1S8k";
+  }
+
+  // Clean trailer_url if it has query params or nocookie to standard embed format
+  if (newTr && typeof newTr === "string") {
+    newTr = newTr.split('?')[0].replace('youtube-nocookie.com/embed/', 'youtube.com/embed/');
   }
 
   return { image: newImg, trailer_url: newTr };
@@ -356,62 +360,62 @@ const DEMO_CUSTOM_ANIME = [
   {
     mal_id: 9001, id: 9001, title: "Solo Leveling Season 2: Arise from the Shadow",
     title_english: "Solo Leveling Season 2",
-    image: "https://image.tmdb.org/t/p/w600_and_h900_bestv2/tN1511AAsz5D6H90zRGEqjAGr4q.jpg",
+    image: "https://cdn.myanimelist.net/images/anime/1448/147351l.jpg",
     score: 9.2, rating: 9.2, episodes: 12, status: "Currently Airing", year: 2025,
     synopsis: "After surviving the Double Dungeon and unlocking the mysterious System, Sung Jinwoo continues his ascent as the world's only leveling hunter. With new shadow monarchs at his command, he must face threats that could destroy both hunters and humanity.",
     description: "After surviving the Double Dungeon and unlocking the mysterious System, Sung Jinwoo continues his ascent as the world's only leveling hunter. With new shadow monarchs at his command, he must face threats that could destroy both hunters and humanity.",
     genre: ["Action", "Fantasy", "Adventure"], genres: ["Action", "Fantasy", "Adventure"],
     type: "TV", source: "Web Manhwa", duration: "24 min per ep", airing: true,
     studios: ["A-1 Pictures"], scored_by: 145000, rank: 5, popularity: 12,
-    trailer_url: "https://www.youtube.com/embed/94r_Y4vP5C8", isCustom: true, isDemo: true, trending: true, topRated: true
+    trailer_url: "https://www.youtube.com/embed/GDMXGzjJzS4", isCustom: true, isDemo: true, trending: true, topRated: true
   },
   {
     mal_id: 9002, id: 9002, title: "Chainsaw Man - The Movie: Reze Arc",
     title_english: "Chainsaw Man - The Movie: Reze Arc",
-    image: "https://image.tmdb.org/t/p/w600_and_h900_bestv2/100K0d8WJ56qgK90Z1uA2b34720.jpg",
+    image: "https://cdn.myanimelist.net/images/anime/1806/126216l.jpg",
     score: 9.1, rating: 9.1, episodes: 1, status: "Not yet aired", year: 2025,
     synopsis: "Denji meets a mysterious girl named Reze in a cafe who shows him affection he has never experienced before. However, Reze harbors a deadly secret that will plunge Denji and Public Safety into one of their most explosive battles yet.",
     description: "Denji meets a mysterious girl named Reze in a cafe who shows him affection he has never experienced before. However, Reze harbors a deadly secret that will plunge Denji and Public Safety into one of their most explosive battles yet.",
     genre: ["Action", "Supernatural", "Romance"], genres: ["Action", "Supernatural", "Romance"],
     type: "Movie", source: "Manga", duration: "1 hr 45 min", airing: false,
     studios: ["MAPPA"], scored_by: 98000, rank: 12, popularity: 18,
-    trailer_url: "https://www.youtube.com/embed/1vRzTzW6c6c", isCustom: true, isDemo: true, trending: true, topRated: true
+    trailer_url: "https://www.youtube.com/embed/jk7QSGwupPA", isCustom: true, isDemo: true, trending: true, topRated: true
   },
   {
     mal_id: 9003, id: 9003, title: "One Punch Man Season 3",
     title_english: "One Punch Man Season 3",
-    image: "https://image.tmdb.org/t/p/w600_and_h900_bestv2/iE3s0lG5QlH8N6Q80pXpT09XW9e.jpg",
+    image: "https://cdn.myanimelist.net/images/anime/12/76049l.jpg",
     score: 8.9, rating: 8.9, episodes: 12, status: "Not yet aired", year: 2025,
     synopsis: "The Monster Association launches an all-out war against the Hero Association. While S-Class heroes engage in brutal combat with dragon-level threats beneath City Z, Saitama is drawn into the subterranean battlefield.",
     description: "The Monster Association launches an all-out war against the Hero Association. While S-Class heroes engage in brutal combat with dragon-level threats beneath City Z, Saitama is drawn into the subterranean battlefield.",
     genre: ["Action", "Comedy", "Sci-Fi"], genres: ["Action", "Comedy", "Sci-Fi"],
     type: "TV", source: "Web Manga", duration: "24 min per ep", airing: false,
     studios: ["J.C.Staff"], scored_by: 210000, rank: 25, popularity: 8,
-    trailer_url: "https://www.youtube.com/embed/e_q8D6bX604", isCustom: true, isDemo: true, trending: true, topRated: false
+    trailer_url: "https://www.youtube.com/embed/ExUMiF1L0HA", isCustom: true, isDemo: true, trending: true, topRated: false
   },
   {
     mal_id: 9004, id: 9004, title: "Bleach: Thousand-Year Blood War - Part 3",
     title_english: "Bleach: Thousand-Year Blood War - The Conflict",
-    image: "https://image.tmdb.org/t/p/w600_and_h900_bestv2/2EewmxXe72ogD0EaWM8gqa0ccIw.jpg",
+    image: "https://cdn.myanimelist.net/images/anime/1541/147774l.jpg",
     score: 9.0, rating: 9.0, episodes: 13, status: "Currently Airing", year: 2024,
     synopsis: "The war between the Soul Reapers and the Quincy reaches the Royal Palace. Ichigo Kurosaki and his allies must confront Yhwach and his elite Schutzstaffel before the Soul King is destroyed and the realms collapse.",
     description: "The war between the Soul Reapers and the Quincy reaches the Royal Palace. Ichigo Kurosaki and his allies must confront Yhwach and his elite Schutzstaffel before the Soul King is destroyed and the realms collapse.",
     genre: ["Action", "Supernatural"], genres: ["Action", "Supernatural"],
     type: "TV", source: "Manga", duration: "24 min per ep", airing: true,
     studios: ["Pierrot"], scored_by: 120000, rank: 15, popularity: 30,
-    trailer_url: "https://www.youtube.com/embed/t0d2z9j39q8", isCustom: true, isDemo: true, trending: false, topRated: true
+    trailer_url: "https://www.youtube.com/embed/0yk5H6vvfG4", isCustom: true, isDemo: true, trending: false, topRated: true
   },
   {
     mal_id: 9005, id: 9005, title: "Jujutsu Kaisen Season 3: Culling Game",
     title_english: "Jujutsu Kaisen Season 3",
-    image: "https://image.tmdb.org/t/p/w600_and_h900_bestv2/f4Yq7A42E351U220u2E98U4G8A5.jpg",
+    image: "https://cdn.myanimelist.net/images/anime/1792/138022l.jpg",
     score: 9.3, rating: 9.3, episodes: 24, status: "Not yet aired", year: 2025,
     synopsis: "Following the catastrophic Shibuya Incident, Kenjaku initiates the Culling Game—a battle royale involving newly awakened sorcerers and ancient curses across Japan. Megumi Fushiguro and Yuji Itadori enter the deadly game to rescue Tsumiki and unseal Satoru Gojo.",
     description: "Following the catastrophic Shibuya Incident, Kenjaku initiates the Culling Game—a battle royale involving newly awakened sorcerers and ancient curses across Japan. Megumi Fushiguro and Yuji Itadori enter the deadly game to rescue Tsumiki and unseal Satoru Gojo.",
     genre: ["Action", "Supernatural", "Dark Fantasy"], genres: ["Action", "Supernatural", "Dark Fantasy"],
     type: "TV", source: "Manga", duration: "24 min per ep", airing: false,
     studios: ["MAPPA"], scored_by: 310000, rank: 3, popularity: 4,
-    trailer_url: "https://www.youtube.com/embed/8n_7y7e44t0", isCustom: true, isDemo: true, trending: true, topRated: true
+    trailer_url: "https://www.youtube.com/embed/PKHQuQF1S8k", isCustom: true, isDemo: true, trending: true, topRated: true
   }
 ];
 

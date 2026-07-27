@@ -11,7 +11,7 @@ export default function AnimeCard({ anime }) {
   return (
     <Link to={`/anime/${anime.mal_id}`} className="anime-card block rounded-xl overflow-hidden bg-[#0d0a1a] border border-purple-500/10 hover:border-purple-500/30 group relative">
       <div className="relative overflow-hidden aspect-[3/4]">
-        <img src={fixedMedia.image} alt={anime.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onError={(e) => { e.target.onerror = null; e.target.src = "https://image.tmdb.org/t/p/w600_and_h900_bestv2/tN1511AAsz5D6H90zRGEqjAGr4q.jpg"; }} />
+        <img src={fixedMedia.image} alt={anime.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onError={(e) => { e.target.onerror = null; e.target.src = "https://cdn.myanimelist.net/images/anime/1448/147351l.jpg"; }} />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0d0a1a] via-transparent to-transparent" />
         <span className={`absolute top-3 left-3 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider ${isOngoing ? "bg-green-500/20 text-green-300 border border-green-500/30" : "bg-cyan-500/20 text-cyan-300 border border-cyan-500/30"}`}>{statusText}</span>
         {rating > 0 && <span className="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-yellow-500/20 border border-yellow-500/30 text-yellow-300 text-xs font-bold">&#11088; {rating}</span>}

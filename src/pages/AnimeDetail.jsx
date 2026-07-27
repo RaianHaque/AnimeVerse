@@ -183,15 +183,13 @@ export default function AnimeDetail() {
   // Normalize any YouTube URL into embed format
   function getEmbedUrl(url) {
     if (!url) return null
-    // Already embed format
-    if (url.includes("/embed/")) return url
-    // youtu.be short URL
-    const shortMatch = url.match(/youtu\.be\/([a-zA-Z0-9_-]+)/)
+    let clean = url.split('?')[0].replace('youtube-nocookie.com/embed/', 'youtube.com/embed/')
+    if (clean.includes("/embed/")) return clean
+    const shortMatch = clean.match(/youtu\.be\/([a-zA-Z0-9_-]+)/)
     if (shortMatch) return `https://www.youtube.com/embed/${shortMatch[1]}`
-    // youtube.com/watch?v= format
-    const watchMatch = url.match(/[?&]v=([a-zA-Z0-9_-]+)/)
+    const watchMatch = clean.match(/[?&]v=([a-zA-Z0-9_-]+)/)
     if (watchMatch) return `https://www.youtube.com/embed/${watchMatch[1]}`
-    return url
+    return clean
   }
   const trailerUrl = getEmbedUrl(fixedMedia.trailer_url)
 
