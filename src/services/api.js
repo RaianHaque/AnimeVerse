@@ -18,7 +18,7 @@ export function fixBrokenAnimeMedia(title, image, trailer_url) {
     newImg = "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx171018-bngyqUo15u4I.jpg";
     if (!newTr || newTr.length < 25) newTr = "https://www.youtube.com/embed/1vRzTzW6c6c";
   } else if (t.includes("one punch man") || img.includes("122627")) {
-    newImg = "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx153682-9t1FSt1WftLz.png";
+    newImg = "https://cdn.myanimelist.net/images/anime/1160/122627l.jpg";
     if (!newTr || newTr.includes("2u321155") || newTr.length < 25) newTr = "https://www.youtube.com/embed/e_q8D6bX604";
   } else if (t.includes("bleach") || img.includes("138036")) {
     newImg = "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx171638-q5tD5z6Rj75J.jpg";
@@ -380,7 +380,7 @@ const DEMO_CUSTOM_ANIME = [
   {
     mal_id: 9003, id: 9003, title: "One Punch Man Season 3",
     title_english: "One Punch Man Season 3",
-    image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx153682-9t1FSt1WftLz.png",
+    image: "https://cdn.myanimelist.net/images/anime/1160/122627l.jpg",
     score: 8.9, rating: 8.9, episodes: 12, status: "Not yet aired", year: 2025,
     synopsis: "The Monster Association launches an all-out war against the Hero Association. While S-Class heroes engage in brutal combat with dragon-level threats beneath City Z, Saitama is drawn into the subterranean battlefield.",
     description: "The Monster Association launches an all-out war against the Hero Association. While S-Class heroes engage in brutal combat with dragon-level threats beneath City Z, Saitama is drawn into the subterranean battlefield.",
