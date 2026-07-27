@@ -62,7 +62,8 @@ function paginate(arr, page = 1, limit = 25) {
 
 // Get top anime (sorted by score)
 export async function getTopAnime(page = 1, limit = 25, filter = "") {
-  let filtered = [...allAnime]
+  const customList = await getCustomAnime()
+  let filtered = [...customList, ...allAnime]
 
   if (filter === "airing") {
     filtered = filtered.filter(a => a.airing)
@@ -82,7 +83,8 @@ export async function getTopAnime(page = 1, limit = 25, filter = "") {
 
 // Search anime with filters
 export async function searchAnime(query = "", page = 1, params = {}) {
-  let filtered = [...allAnime]
+  const customList = await getCustomAnime()
+  let filtered = [...customList, ...allAnime]
 
   // Text search
   if (query) {
@@ -145,8 +147,46 @@ export async function searchAnime(query = "", page = 1, params = {}) {
 // Get single anime by ID
 export async function getAnimeById(id) {
   const numId = parseInt(id)
-  const anime = animeDB.find(a => a.mal_id === numId && !a.skip)
-  if (!anime) return null
+  let anime = animeDB.find(a => a.mal_id === numId && !a.skip)
+  if (!anime) {
+    const customList = await getCustomAnime()
+    const customMatch = customList.find(a => a.mal_id === numId || a.id === numId)
+    if (customMatch) {
+      return {
+        mal_id: customMatch.mal_id,
+        title: customMatch.title,
+        title_english: customMatch.title_english,
+        title_japanese: customMatch.title_japanese,
+        synopsis: customMatch.synopsis,
+        score: customMatch.score,
+        scored_by: customMatch.scored_by,
+        rank: customMatch.rank,
+        popularity: customMatch.popularity,
+        episodes: customMatch.episodes,
+        status: customMatch.status,
+        type: customMatch.type,
+        source: customMatch.source,
+        duration: customMatch.duration,
+        rating: customMatch.rating_label,
+        aired: customMatch.aired,
+        season: customMatch.season,
+        year: customMatch.year,
+        airing: customMatch.airing,
+        genres: (customMatch.genre || []).map(g => ({ name: g, mal_id: g })),
+        themes: [],
+        demographics: [],
+        studios: (customMatch.studios || []).map(s => ({ name: s, mal_id: s })),
+        images: { jpg: { large_image_url: customMatch.image, image_url: customMatch.image } },
+        trailer_url: customMatch.trailer_url,
+        characters: [],
+        members: customMatch.members || 0,
+        favorites: 0,
+        isCustom: true,
+        id: customMatch.id
+      }
+    }
+    return null
+  }
 
   // Return full data in the shape the detail page expects
   return {
@@ -233,7 +273,9 @@ export async function getAnimeReviews(id) {
 
 // Get currently airing / seasonal anime
 export async function getSeasonNow(page = 1) {
-  const trending = allAnime.filter(a => a.trending || a.airing)
+  const customList = await getCustomAnime()
+  const combined = [...customList, ...allAnime]
+  const trending = combined.filter(a => a.trending || a.airing)
   const sorted = trending.sort((a, b) => (b.score || 0) - (a.score || 0))
   return paginate(sorted, page, 25)
 }
@@ -277,3 +319,83 @@ export async function getGenres() {
 export function getAllAnimeRaw() {
   return animeDB.filter(a => !a.skip)
 }
+
+let customAnimeCache = null
+let customAnimePromise = null
+
+export async function getCustomAnime() {
+  if (customAnimeCache) return customAnimeCache
+  if (!customAnimePromise) {
+    customAnimePromise = fetch("/api/custom-anime")
+      .then(res => res.json())
+      .then(data => {
+        const list = (data.anime || []).map(a => {
+          let parsedGenres = []
+          try { parsedGenres = typeof a.genres === "string" ? JSON.parse(a.genres) : (a.genres || []) } catch (e) {}
+          let parsedStudios = []
+          try { parsedStudios = typeof a.studios === "string" ? JSON.parse(a.studios) : (a.studios || []) } catch (e) {}
+          return {
+            mal_id: a.mal_id || a.id,
+            title: a.title,
+            title_english: a.title_english,
+            title_japanese: a.title_japanese,
+            image: a.image || "",
+            rating: a.score || 0,
+            episodes: a.episodes || "?",
+            status: a.status || "Unknown",
+            year: a.year || "N/A",
+            description: a.synopsis || "No description available.",
+            genre: parsedGenres,
+            type: a.type || "TV",
+            source: a.source || "",
+            duration: a.duration || "",
+            airing: a.status === "Currently Airing",
+            studios: parsedStudios,
+            score: Number(a.score || 0),
+            scored_by: Number(a.scored_by || 0),
+            rank: a.rank_num || 999,
+            popularity: a.popularity || 999,
+            aired: { string: a.aired_string || "" },
+            season: a.season || "",
+            themes: [],
+            demographics: [],
+            trailer_url: a.trailer_url || null,
+            characters: [],
+            trending: a.trending || false,
+            topRated: a.top_rated || false,
+            synopsis: a.synopsis || "",
+            rating_label: a.rating || "",
+            favorites: 0,
+            members: Number(a.scored_by || 0),
+            isCustom: true,
+            id: a.id
+          }
+        })
+        customAnimeCache = list
+        return list
+      })
+      .catch(err => {
+        console.error("Failed to load custom anime:", err)
+        return []
+      })
+  }
+  return customAnimePromise
+}
+
+export function clearCustomAnimeCache() {
+  customAnimeCache = null
+  customAnimePromise = null
+}
+
+export async function quickSearchAnime(query) {
+  if (!query || query.trim().length === 0) return []
+  const customList = await getCustomAnime()
+  const combined = [...customList, ...allAnime]
+  const q = query.toLowerCase().trim()
+  return combined.filter(a =>
+    (a.title && a.title.toLowerCase().includes(q)) ||
+    (a.title_english && a.title_english.toLowerCase().includes(q)) ||
+    (a.title_japanese && a.title_japanese.toLowerCase().includes(q))
+  ).slice(0, 6)
+}
+

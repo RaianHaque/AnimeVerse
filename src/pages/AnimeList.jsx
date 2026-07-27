@@ -1,12 +1,15 @@
 import { useState, useEffect, useCallback } from "react"
+import { useSearchParams } from "react-router-dom"
 import { searchAnime, getGenres, normalizeAnime } from "../services/api"
 import AnimeCard from "../components/AnimeCard"
 
 export default function AnimeList() {
+  const [searchParams, setSearchParams] = useSearchParams()
+  const initialSearch = searchParams.get("search") || ""
   const [anime, setAnime] = useState([])
   const [loading, setLoading] = useState(true)
-  const [search, setSearch] = useState("")
-  const [searchInput, setSearchInput] = useState("")
+  const [search, setSearch] = useState(initialSearch)
+  const [searchInput, setSearchInput] = useState(initialSearch)
   const [page, setPage] = useState(1)
   const [totalPages, setTotalPages] = useState(1)
   const [genres, setGenres] = useState([])
@@ -40,10 +43,22 @@ export default function AnimeList() {
 
   useEffect(() => { fetchAnime() }, [fetchAnime])
 
+  useEffect(() => {
+    const q = searchParams.get("search") || ""
+    setSearch(q)
+    setSearchInput(q)
+    setPage(1)
+  }, [searchParams])
+
   const handleSearch = (e) => {
-    e.preventDefault()
+    if (e) e.preventDefault()
     setPage(1)
     setSearch(searchInput)
+    if (searchInput.trim()) {
+      setSearchParams({ search: searchInput.trim() })
+    } else {
+      setSearchParams({})
+    }
   }
 
   const statusOptions = [

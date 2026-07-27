@@ -1,15 +1,54 @@
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import { useAuth } from "../context/AuthContext"
+import { quickSearchAnime } from "../services/api"
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
   const [search, setSearch] = useState("")
+  const [suggestions, setSuggestions] = useState([])
+  const [showSuggestions, setShowSuggestions] = useState(false)
+  const searchRef = useRef(null)
   const loc = useLocation()
   const navigate = useNavigate()
   const { user, logout, isAdmin, isSuperAdmin, actualRole, viewMode, toggleViewMode } = useAuth()
   const isActive = (p) => loc.pathname === p
+
+  useEffect(() => {
+    if (!search || search.trim().length === 0) {
+      setSuggestions([])
+      setShowSuggestions(false)
+      return
+    }
+    let active = true
+    quickSearchAnime(search).then(res => {
+      if (active) {
+        setSuggestions(res)
+        setShowSuggestions(true)
+      }
+    })
+    return () => { active = false }
+  }, [search])
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (searchRef.current && !searchRef.current.contains(e.target)) {
+        setShowSuggestions(false)
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => document.removeEventListener("mousedown", handleClickOutside)
+  }, [])
+
+  const submitSearch = (e) => {
+    if (e) e.preventDefault()
+    if (!search.trim()) return
+    setShowSuggestions(false)
+    setSearchOpen(false)
+    setMobileOpen(false)
+    navigate(`/anime?search=${encodeURIComponent(search.trim())}`)
+  }
 
   const links = [
     { to: "/", label: "Home" },
@@ -56,9 +95,77 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="relative hidden sm:block">
-              {searchOpen ? (
-                <input autoFocus value={search} onChange={e => setSearch(e.target.value)} onBlur={() => { if (!search) setSearchOpen(false) }} placeholder="Search anime..." className="w-56 px-4 py-1.5 rounded-full bg-[#0d0a1a] border border-purple-500/30 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-purple-400 focus:shadow-[0_0_15px_rgba(180,79,255,0.3)] transition-all" />
+            <div ref={searchRef} className="relative hidden sm:block">
+              {searchOpen || search.length > 0 ? (
+                <form onSubmit={submitSearch} className="relative flex items-center">
+                  <input
+                    autoFocus
+                    value={search}
+                    onChange={e => {
+                      setSearch(e.target.value)
+                      if (e.target.value.trim().length > 0) setShowSuggestions(true)
+                    }}
+                    onFocus={() => { if (search.trim().length > 0) setShowSuggestions(true) }}
+                    placeholder="Search anime..."
+                    className="w-64 pl-4 pr-10 py-1.5 rounded-full bg-[#0d0a1a] border border-purple-500/50 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-purple-400 focus:shadow-[0_0_20px_rgba(180,79,255,0.4)] transition-all"
+                  />
+                  <button
+                    type="submit"
+                    className="absolute right-2 p-1 text-gray-400 hover:text-purple-300 transition-colors"
+                    title="Search"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                  </button>
+
+                  {/* Autocomplete Suggestions Dropdown */}
+                  {showSuggestions && suggestions.length > 0 && (
+                    <div className="absolute top-full left-0 right-0 mt-2 bg-[#0d0a1a]/95 backdrop-blur-xl border border-purple-500/40 rounded-2xl shadow-[0_15px_35px_rgba(0,0,0,0.8)] overflow-hidden z-50 animate-fadeIn">
+                      <div className="p-2 text-[10px] font-orbitron font-bold uppercase tracking-wider text-purple-400 border-b border-white/5 bg-purple-950/20">
+                        Top Suggestions ({suggestions.length})
+                      </div>
+                      <div className="max-h-80 overflow-y-auto divide-y divide-white/5">
+                        {suggestions.map(item => (
+                          <div
+                            key={item.mal_id || item.id}
+                            onClick={() => {
+                              setShowSuggestions(false)
+                              setSearchOpen(false)
+                              navigate(`/anime/${item.mal_id || item.id}`)
+                            }}
+                            className="flex items-center gap-3 p-2.5 hover:bg-purple-500/20 transition-all cursor-pointer group"
+                          >
+                            <img
+                              src={item.image || (item.images?.jpg?.image_url) || "https://cdn.myanimelist.net/images/anime/10/47347.jpg"}
+                              alt={item.title}
+                              className="w-10 h-14 object-cover rounded-md shadow-md flex-shrink-0 group-hover:scale-105 transition-transform"
+                            />
+                            <div className="flex-1 min-w-0 text-left">
+                              <h4 className="text-sm font-bold text-white group-hover:text-purple-300 truncate transition-colors">
+                                {item.title}
+                              </h4>
+                              <div className="flex items-center gap-2 text-xs text-gray-400 mt-0.5">
+                                <span>{item.year !== "N/A" ? item.year : "TV"}</span>
+                                <span>•</span>
+                                <span className="truncate">{item.genre?.slice(0, 2).join(", ") || "Anime"}</span>
+                              </div>
+                            </div>
+                            {item.score && item.score > 0 ? (
+                              <div className="bg-amber-500/20 text-amber-300 border border-amber-500/30 px-1.5 py-0.5 rounded text-[11px] font-bold font-orbitron flex items-center gap-0.5 flex-shrink-0">
+                                ⭐ {Number(item.score).toFixed(1)}
+                              </div>
+                            ) : null}
+                          </div>
+                        ))}
+                      </div>
+                      <div
+                        onClick={submitSearch}
+                        className="p-2.5 text-center text-xs font-bold text-cyan-400 hover:bg-cyan-500/10 cursor-pointer border-t border-white/5 transition-colors"
+                      >
+                        See all results for "{search}" →
+                      </div>
+                    </div>
+                  )}
+                </form>
               ) : (
                 <button onClick={() => setSearchOpen(true)} className="p-2 rounded-full hover:bg-purple-500/10 text-gray-400 hover:text-purple-300 transition-colors">
                   <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
@@ -108,6 +215,22 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="md:hidden glass border-t border-purple-500/20 animate-slide-up">
           <div className="px-4 py-4 space-y-1">
+            {/* Mobile Search */}
+            <form onSubmit={submitSearch} className="relative mb-3">
+              <input
+                value={search}
+                onChange={e => {
+                  setSearch(e.target.value)
+                  if (e.target.value.trim().length > 0) setShowSuggestions(true)
+                }}
+                placeholder="Search anime..."
+                className="w-full pl-4 pr-10 py-2 rounded-full bg-[#0d0a1a] border border-purple-500/50 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-purple-400"
+              />
+              <button type="submit" className="absolute right-3 top-2.5 text-gray-400 hover:text-purple-300">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+              </button>
+            </form>
+
             {links.map(l => (
               <Link key={l.to} to={l.to} onClick={() => setMobileOpen(false)} className={`block px-4 py-2.5 rounded-lg text-sm font-semibold ${isActive(l.to) ? "bg-purple-500/20 text-purple-300" : "text-gray-300 hover:bg-purple-500/10"}`}>{l.label}</Link>
             ))}
