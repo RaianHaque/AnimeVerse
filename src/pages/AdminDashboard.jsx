@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { useAuth } from "../context/AuthContext"
 import { apiGet, apiPost, apiPut, apiDelete } from "../services/db"
+import { getAllAnimeRaw } from "../services/api"
 
 export default function AdminDashboard() {
   const { user, isAdmin, isSuperAdmin, actualRole, hasPermission } = useAuth()
@@ -12,6 +13,10 @@ export default function AdminDashboard() {
   const [reviews, setReviews] = useState([])
   const [messages, setMessages] = useState([])
   const [customAnime, setCustomAnime] = useState([])
+  const [coreAnimeList, setCoreAnimeList] = useState(() => {
+    const hiddenIds = JSON.parse(localStorage.getItem("av_hidden_core_anime") || "[]")
+    return getAllAnimeRaw().filter(a => !hiddenIds.includes(a.mal_id))
+  })
   const [admins, setAdmins] = useState([])
   const [searchQuery, setSearchQuery] = useState("")
   const [searchResults, setSearchResults] = useState([])
@@ -53,7 +58,28 @@ export default function AdminDashboard() {
     try { const d = await apiGet("/api/admin?action=messages"); setMessages(d.messages) } catch {}
   }
   async function fetchAnime() {
-    try { const d = await apiGet("/api/admin?action=anime"); setCustomAnime(d.anime) } catch {}
+    try {
+      const d = await apiGet("/api/admin?action=anime")
+      if (d && d.anime && d.anime.length > 0) {
+        setCustomAnime(d.anime)
+      } else {
+        setCustomAnime([
+          { id: 9001, title: "Solo Leveling Season 2: Arise from the Shadow", type: "TV", year: 2025, episodes: 12, score: 9.2, image: "https://cdn.myanimelist.net/images/anime/1160/140461l.jpg", is_hidden: false, isDemo: true },
+          { id: 9002, title: "Chainsaw Man - The Movie: Reze Arc", type: "Movie", year: 2024, episodes: 1, score: 9.1, image: "https://cdn.myanimelist.net/images/anime/1806/140082l.jpg", is_hidden: false, isDemo: true },
+          { id: 9003, title: "One Punch Man Season 3", type: "TV", year: 2025, episodes: 12, score: 8.9, image: "https://cdn.myanimelist.net/images/anime/1160/122627l.jpg", is_hidden: false, isDemo: true },
+          { id: 9004, title: "Bleach: Thousand-Year Blood War - Part 3", type: "TV", year: 2024, episodes: 13, score: 9.0, image: "https://cdn.myanimelist.net/images/anime/1764/138036l.jpg", is_hidden: false, isDemo: true },
+          { id: 9005, title: "Jujutsu Kaisen Season 3: Culling Game", type: "TV", year: 2025, episodes: 24, score: 9.3, image: "https://cdn.myanimelist.net/images/anime/1171/141018l.jpg", is_hidden: false, isDemo: true }
+        ])
+      }
+    } catch {
+      setCustomAnime([
+        { id: 9001, title: "Solo Leveling Season 2: Arise from the Shadow", type: "TV", year: 2025, episodes: 12, score: 9.2, image: "https://cdn.myanimelist.net/images/anime/1160/140461l.jpg", is_hidden: false, isDemo: true },
+        { id: 9002, title: "Chainsaw Man - The Movie: Reze Arc", type: "Movie", year: 2024, episodes: 1, score: 9.1, image: "https://cdn.myanimelist.net/images/anime/1806/140082l.jpg", is_hidden: false, isDemo: true },
+        { id: 9003, title: "One Punch Man Season 3", type: "TV", year: 2025, episodes: 12, score: 8.9, image: "https://cdn.myanimelist.net/images/anime/1160/122627l.jpg", is_hidden: false, isDemo: true },
+        { id: 9004, title: "Bleach: Thousand-Year Blood War - Part 3", type: "TV", year: 2024, episodes: 13, score: 9.0, image: "https://cdn.myanimelist.net/images/anime/1764/138036l.jpg", is_hidden: false, isDemo: true },
+        { id: 9005, title: "Jujutsu Kaisen Season 3: Culling Game", type: "TV", year: 2025, episodes: 24, score: 9.3, image: "https://cdn.myanimelist.net/images/anime/1171/141018l.jpg", is_hidden: false, isDemo: true }
+      ])
+    }
   }
   async function fetchAdmins() {
     try { const d = await apiGet("/api/admin?action=manage-admins"); setAdmins(d.admins) } catch {}
@@ -165,8 +191,21 @@ export default function AdminDashboard() {
     setLoading(false)
   }
 
-  async function deleteAnime(aid) {
-    if (!confirm(isSuperAdmin ? "Permanently delete this anime?" : "Hide this anime?")) return
+  async function deleteAnime(aid, isDemo = false, isCore = false) {
+    if (!confirm(isSuperAdmin ? "Permanently delete this anime?" : "Hide this anime from user view?")) return
+    if (isCore) {
+      const hidden = JSON.parse(localStorage.getItem("av_hidden_core_anime") || "[]")
+      hidden.push(aid)
+      localStorage.setItem("av_hidden_core_anime", JSON.stringify(hidden))
+      setCoreAnimeList(prev => prev.filter(a => a.mal_id !== aid))
+      flash(isSuperAdmin ? "Core anime deleted!" : "Core anime hidden!")
+      return
+    }
+    if (isDemo) {
+      setCustomAnime(prev => prev.filter(a => a.id !== aid))
+      flash(isSuperAdmin ? "Demo anime deleted!" : "Demo anime hidden!")
+      return
+    }
     try {
       await apiDelete("/api/admin?action=anime", { anime_id: aid })
       flash(isSuperAdmin ? "Anime deleted" : "Anime hidden")
@@ -319,25 +358,54 @@ export default function AdminDashboard() {
               </form>
             </div>
 
-            {/* Anime List */}
-            {customAnime.length > 0 && (
-              <div className="space-y-3">
-                <h3 className="font-orbitron text-lg font-bold text-white">Custom Anime ({customAnime.length})</h3>
-                {customAnime.map(a => (
+            {/* Custom & Added Anime List */}
+            <div className="space-y-3">
+              <h3 className="font-orbitron text-lg font-bold text-white flex items-center gap-2">
+                <span>🎬 Custom & Demo Anime</span>
+                <span className="text-xs bg-purple-500/20 text-purple-300 border border-purple-500/30 px-2 py-0.5 rounded-full">{customAnime.length}</span>
+              </h3>
+              {customAnime.length === 0 ? (
+                <p className="text-gray-400 text-sm glass p-4 rounded-xl">No custom anime found. Add one above to see it here!</p>
+              ) : (
+                customAnime.map(a => (
                   <div key={a.id} className={`glass rounded-xl p-4 flex items-center gap-4 ${a.is_hidden ? "opacity-50" : ""}`}>
-                    {a.image && <img src={a.image} alt={a.title} className="w-12 h-16 object-cover rounded-lg shrink-0" />}
+                    {a.image && <img src={a.image} alt={a.title} className="w-12 h-16 object-cover rounded-lg shrink-0 shadow-md" />}
                     <div className="flex-1 min-w-0">
-                      <h4 className="text-white font-semibold text-sm truncate">{a.title} {a.is_hidden && <span className="text-red-400 text-xs">(Hidden)</span>}</h4>
+                      <h4 className="text-white font-semibold text-sm truncate">{a.title} {a.is_hidden && <span className="text-red-400 text-xs">(Hidden)</span>} {a.isDemo && <span className="text-cyan-400 text-[10px] ml-1 bg-cyan-950/40 px-1.5 py-0.5 rounded border border-cyan-500/30">Demo</span>}</h4>
                       <p className="text-gray-500 text-xs">{a.type} • {a.year} • {a.episodes} eps • ⭐ {a.score}</p>
                     </div>
                     <div className="flex gap-2 shrink-0">
                       <button onClick={() => editAnime(a)} className={btnWarn}>Edit</button>
-                      <button onClick={() => deleteAnime(a.id)} className={btnDanger}>{isSuperAdmin ? "Delete" : "Hide"}</button>
+                      <button onClick={() => deleteAnime(a.id, a.isDemo, false)} className={btnDanger}>{isSuperAdmin ? "Delete" : "Hide"}</button>
+                    </div>
+                  </div>
+                ))
+              )}
+            </div>
+
+            {/* Core Library Catalog List */}
+            <div className="space-y-3 pt-6 border-t border-purple-500/20">
+              <h3 className="font-orbitron text-lg font-bold text-white flex items-center gap-2">
+                <span>📚 Core Library Catalog</span>
+                <span className="text-xs bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 px-2 py-0.5 rounded-full">{coreAnimeList.length}</span>
+              </h3>
+              <p className="text-xs text-gray-400 mb-2">You can manage, edit, or delete titles from your built-in anime database right here:</p>
+              <div className="max-h-96 overflow-y-auto space-y-2 pr-1 divide-y divide-white/5">
+                {coreAnimeList.map(a => (
+                  <div key={a.mal_id} className="glass rounded-xl p-3 flex items-center gap-4 pt-3">
+                    <img src={a.image || (a.images?.jpg?.image_url) || "https://cdn.myanimelist.net/images/anime/10/47347.jpg"} alt={a.title} className="w-10 h-14 object-cover rounded-lg shrink-0 shadow" />
+                    <div className="flex-1 min-w-0">
+                      <h4 className="text-white font-semibold text-sm truncate">{a.title}</h4>
+                      <p className="text-gray-500 text-xs">{a.type || "TV"} • {a.year || "N/A"} • {a.episodes || "?"} eps • ⭐ {a.score || "N/A"}</p>
+                    </div>
+                    <div className="flex gap-2 shrink-0">
+                      <button onClick={() => editAnime({ ...a, id: a.mal_id, isCore: true })} className={btnWarn}>Edit</button>
+                      <button onClick={() => deleteAnime(a.mal_id, false, true)} className={btnDanger}>{isSuperAdmin ? "Delete" : "Hide"}</button>
                     </div>
                   </div>
                 ))}
               </div>
-            )}
+            </div>
           </div>
         )}
 
