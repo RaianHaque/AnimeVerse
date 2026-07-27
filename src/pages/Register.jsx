@@ -71,7 +71,7 @@ export default function Register() {
       </div>
 
       {/* Right - Form */}
-      <div className="flex-1 flex items-center justify-center px-4 py-12 bg-[#03010a]">
+      <div className="flex-1 flex items-center justify-center px-4 py-12 bg-[#03010a]/60 backdrop-blur-md relative z-10">
         <div className="w-full max-w-md">
           <div className="lg:hidden flex items-center justify-center gap-2 mb-8">
             <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500 via-cyan-400 to-pink-500 flex items-center justify-center font-orbitron font-black text-white text-xl">A</div>

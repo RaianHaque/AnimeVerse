@@ -52,7 +52,7 @@ export default function Login() {
       </div>
 
       {/* Right - Form */}
-      <div className="flex-1 flex items-center justify-center px-4 py-12 bg-[#03010a]">
+      <div className="flex-1 flex items-center justify-center px-4 py-12 bg-[#03010a]/60 backdrop-blur-md relative z-10">
         <div className="w-full max-w-md">
           {/* Mobile Logo */}
           <div className="lg:hidden flex items-center justify-center gap-2 mb-8">
