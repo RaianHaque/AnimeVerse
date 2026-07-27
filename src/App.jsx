@@ -12,12 +12,14 @@ import Register from "./pages/Register"
 import Profile from "./pages/Profile"
 import Contact from "./pages/Contact"
 import AdminDashboard from "./pages/AdminDashboard"
+import OceanSkyBackground from "./components/OceanSkyBackground"
 
 function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
-        <div className="min-h-screen bg-[#03010a]">
+        <div className="min-h-screen relative bg-transparent text-[#e0d6ff]">
+          <OceanSkyBackground />
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />

@@ -25,7 +25,7 @@ body { background-color: #03010a; color: #e0d6ff; font-family: 'Rajdhani', sans-
 .particle-bg { background-image: radial-gradient(circle at 20% 50%, rgba(180,79,255,0.07) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(0,212,255,0.07) 0%, transparent 50%), radial-gradient(circle at 50% 80%, rgba(255,45,120,0.05) 0%, transparent 50%); }
 .grid-overlay { background-image: linear-gradient(rgba(180,79,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(180,79,255,0.04) 1px, transparent 1px); background-size: 50px 50px; }
 .neon-line { height: 2px; background: linear-gradient(90deg, transparent, #b44fff, #00d4ff, #ff2d78, transparent); }
-.hero-gradient { background: linear-gradient(135deg, #03010a 0%, #0d0020 50%, #000d1a 100%); }
+.hero-gradient { background: linear-gradient(135deg, rgba(3, 1, 10, 0.35) 0%, rgba(13, 0, 32, 0.45) 50%, rgba(0, 13, 26, 0.35) 100%); }
 
 @keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
 @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }

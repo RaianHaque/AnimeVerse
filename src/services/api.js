@@ -12,19 +12,19 @@ export function fixBrokenAnimeMedia(title, image, trailer_url) {
   let newTr = trailer_url || null;
 
   if (t.includes("solo leveling") || img.includes("140461")) {
-    newImg = "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx176496-Vwbb3v54m75v.jpg";
+    newImg = "https://cdn.myanimelist.net/images/anime/1090/141019l.jpg";
     if (!newTr || newTr.includes("2u321155") || newTr.length < 25) newTr = "https://www.youtube.com/embed/94r_Y4vP5C8";
   } else if (t.includes("reze") || t.includes("chainsaw man") || img.includes("140082")) {
-    newImg = "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx171018-bngyqUo15u4I.jpg";
+    newImg = "https://cdn.myanimelist.net/images/anime/1806/126216l.jpg";
     if (!newTr || newTr.length < 25) newTr = "https://www.youtube.com/embed/1vRzTzW6c6c";
   } else if (t.includes("one punch man") || img.includes("122627")) {
-    newImg = "https://cdn.myanimelist.net/images/anime/1160/122627l.jpg";
+    newImg = "https://cdn.myanimelist.net/images/anime/12/76049l.jpg";
     if (!newTr || newTr.includes("2u321155") || newTr.length < 25) newTr = "https://www.youtube.com/embed/e_q8D6bX604";
   } else if (t.includes("bleach") || img.includes("138036")) {
-    newImg = "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx171638-q5tD5z6Rj75J.jpg";
+    newImg = "https://cdn.myanimelist.net/images/anime/1764/126627l.jpg";
     if (!newTr || newTr.includes("5a2223432") || newTr.length < 25) newTr = "https://www.youtube.com/embed/t0d2z9j39q8";
   } else if (t.includes("jujutsu kaisen") || img.includes("141018")) {
-    newImg = "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx171017-Z1P8y3D4P70x.jpg";
+    newImg = "https://cdn.myanimelist.net/images/anime/1792/138022l.jpg";
     if (!newTr || newTr.includes("6b3334232") || newTr.length < 25) newTr = "https://www.youtube.com/embed/8n_7y7e44t0";
   }
 
@@ -356,7 +356,7 @@ const DEMO_CUSTOM_ANIME = [
   {
     mal_id: 9001, id: 9001, title: "Solo Leveling Season 2: Arise from the Shadow",
     title_english: "Solo Leveling Season 2",
-    image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx176496-Vwbb3v54m75v.jpg",
+    image: "https://cdn.myanimelist.net/images/anime/1090/141019l.jpg",
     score: 9.2, rating: 9.2, episodes: 12, status: "Currently Airing", year: 2025,
     synopsis: "After surviving the Double Dungeon and unlocking the mysterious System, Sung Jinwoo continues his ascent as the world's only leveling hunter. With new shadow monarchs at his command, he must face threats that could destroy both hunters and humanity.",
     description: "After surviving the Double Dungeon and unlocking the mysterious System, Sung Jinwoo continues his ascent as the world's only leveling hunter. With new shadow monarchs at his command, he must face threats that could destroy both hunters and humanity.",
@@ -368,7 +368,7 @@ const DEMO_CUSTOM_ANIME = [
   {
     mal_id: 9002, id: 9002, title: "Chainsaw Man - The Movie: Reze Arc",
     title_english: "Chainsaw Man - The Movie: Reze Arc",
-    image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx171018-bngyqUo15u4I.jpg",
+    image: "https://cdn.myanimelist.net/images/anime/1806/126216l.jpg",
     score: 9.1, rating: 9.1, episodes: 1, status: "Not yet aired", year: 2025,
     synopsis: "Denji meets a mysterious girl named Reze in a cafe who shows him affection he has never experienced before. However, Reze harbors a deadly secret that will plunge Denji and Public Safety into one of their most explosive battles yet.",
     description: "Denji meets a mysterious girl named Reze in a cafe who shows him affection he has never experienced before. However, Reze harbors a deadly secret that will plunge Denji and Public Safety into one of their most explosive battles yet.",
@@ -380,7 +380,7 @@ const DEMO_CUSTOM_ANIME = [
   {
     mal_id: 9003, id: 9003, title: "One Punch Man Season 3",
     title_english: "One Punch Man Season 3",
-    image: "https://cdn.myanimelist.net/images/anime/1160/122627l.jpg",
+    image: "https://cdn.myanimelist.net/images/anime/12/76049l.jpg",
     score: 8.9, rating: 8.9, episodes: 12, status: "Not yet aired", year: 2025,
     synopsis: "The Monster Association launches an all-out war against the Hero Association. While S-Class heroes engage in brutal combat with dragon-level threats beneath City Z, Saitama is drawn into the subterranean battlefield.",
     description: "The Monster Association launches an all-out war against the Hero Association. While S-Class heroes engage in brutal combat with dragon-level threats beneath City Z, Saitama is drawn into the subterranean battlefield.",
@@ -392,7 +392,7 @@ const DEMO_CUSTOM_ANIME = [
   {
     mal_id: 9004, id: 9004, title: "Bleach: Thousand-Year Blood War - Part 3",
     title_english: "Bleach: Thousand-Year Blood War - The Conflict",
-    image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx171638-q5tD5z6Rj75J.jpg",
+    image: "https://cdn.myanimelist.net/images/anime/1764/126627l.jpg",
     score: 9.0, rating: 9.0, episodes: 13, status: "Currently Airing", year: 2024,
     synopsis: "The war between the Soul Reapers and the Quincy reaches the Royal Palace. Ichigo Kurosaki and his allies must confront Yhwach and his elite Schutzstaffel before the Soul King is destroyed and the realms collapse.",
     description: "The war between the Soul Reapers and the Quincy reaches the Royal Palace. Ichigo Kurosaki and his allies must confront Yhwach and his elite Schutzstaffel before the Soul King is destroyed and the realms collapse.",
@@ -404,7 +404,7 @@ const DEMO_CUSTOM_ANIME = [
   {
     mal_id: 9005, id: 9005, title: "Jujutsu Kaisen Season 3: Culling Game",
     title_english: "Jujutsu Kaisen Season 3",
-    image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx171017-Z1P8y3D4P70x.jpg",
+    image: "https://cdn.myanimelist.net/images/anime/1792/138022l.jpg",
     score: 9.3, rating: 9.3, episodes: 24, status: "Not yet aired", year: 2025,
     synopsis: "Following the catastrophic Shibuya Incident, Kenjaku initiates the Culling Game—a battle royale involving newly awakened sorcerers and ancient curses across Japan. Megumi Fushiguro and Yuji Itadori enter the deadly game to rescue Tsumiki and unseal Satoru Gojo.",
     description: "Following the catastrophic Shibuya Incident, Kenjaku initiates the Culling Game—a battle royale involving newly awakened sorcerers and ancient curses across Japan. Megumi Fushiguro and Yuji Itadori enter the deadly game to rescue Tsumiki and unseal Satoru Gojo.",
