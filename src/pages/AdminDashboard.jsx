@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useSearchParams } from "react-router-dom"
 import { useAuth } from "../context/AuthContext"
 import { apiGet, apiPost, apiPut, apiDelete } from "../services/db"
 import { getAllAnimeRaw, fixBrokenAnimeMedia } from "../services/api"
@@ -7,7 +7,20 @@ import { getAllAnimeRaw, fixBrokenAnimeMedia } from "../services/api"
 export default function AdminDashboard() {
   const { user, isAdmin, isSuperAdmin, actualRole, hasPermission } = useAuth()
   const navigate = useNavigate()
-  const [tab, setTab] = useState("stats")
+  const [searchParams, setSearchParams] = useSearchParams()
+  const tabParam = searchParams.get("tab")
+  const [tab, setTabState] = useState(tabParam || "stats")
+
+  useEffect(() => {
+    if (tabParam && ["stats", "anime", "users", "reviews", "custom", "messages", "admins", "settings"].includes(tabParam)) {
+      setTabState(tabParam)
+    }
+  }, [tabParam])
+
+  const setTab = (newTab) => {
+    setTabState(newTab)
+    setSearchParams({ tab: newTab })
+  }
   const [stats, setStats] = useState(null)
   const [users, setUsers] = useState([])
   const [reviews, setReviews] = useState([])

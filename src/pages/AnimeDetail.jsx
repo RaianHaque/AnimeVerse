@@ -301,10 +301,19 @@ export default function AnimeDetail() {
         {/* YouTube Trailer */}
         {trailerUrl && (
           <div className="mb-12">
-            <div className="flex items-center gap-4 mb-6">
+            <div className="flex items-center gap-4 mb-6 flex-wrap">
               <span className="text-2xl">🎥</span>
               <h2 className="font-orbitron text-xl font-bold text-white">Trailer</h2>
-              <div className="flex-1 neon-line opacity-30" />
+              <div className="flex-1 neon-line opacity-30 hidden sm:block" />
+              <a
+                href={trailerUrl.replace('/embed/', '/watch?v=').replace('youtube.com/embed/', 'youtube.com/watch?v=')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 rounded-xl bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-white font-semibold text-xs tracking-wider flex items-center gap-2 shadow-[0_0_15px_rgba(239,68,68,0.3)] hover:shadow-[0_0_25px_rgba(239,68,68,0.6)] transition-all transform hover:-translate-y-0.5"
+              >
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Watch Directly on YouTube ↗
+              </a>
             </div>
             <div className="relative rounded-2xl overflow-hidden glass" style={{ aspectRatio: "16/9", maxWidth: "800px" }}>
               {showTrailer ? (
@@ -329,6 +338,20 @@ export default function AnimeDetail() {
                   </div>
                 </div>
               )}
+            </div>
+            <div className="mt-3 max-w-[800px] flex items-center justify-between bg-purple-900/20 border border-purple-500/20 rounded-xl px-4 py-2.5 text-xs text-gray-400 flex-wrap gap-2">
+              <span className="flex items-center gap-2">
+                <span className="text-amber-400 text-sm">💡</span>
+                <span>If the embed player is blocked by ad-blockers or studio copyright restrictions, use the direct link!</span>
+              </span>
+              <a
+                href={trailerUrl.replace('/embed/', '/watch?v=').replace('youtube.com/embed/', 'youtube.com/watch?v=')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-purple-300 hover:text-purple-200 font-bold underline shrink-0"
+              >
+                Open YouTube ↗
+              </a>
             </div>
           </div>
         )}
