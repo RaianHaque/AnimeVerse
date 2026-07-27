@@ -4,15 +4,47 @@ import animeRawData from "../data/animeDatabase.json"
 // Filter out placeholder/skip entries
 const animeDB = animeRawData.filter(a => !a.skip)
 
+// Intercept and repair broken media URLs (like old MAL CDN 404s or invalid short YouTube embed IDs)
+export function fixBrokenAnimeMedia(title, image, trailer_url) {
+  const t = (title || "").toString().toLowerCase();
+  const img = (image || "").toString().toLowerCase();
+  let newImg = image || "";
+  let newTr = trailer_url || null;
+
+  if (t.includes("solo leveling") || img.includes("140461")) {
+    newImg = "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx176496-Vwbb3v54m75v.jpg";
+    if (!newTr || newTr.includes("2u321155") || newTr.length < 25) newTr = "https://www.youtube.com/embed/94r_Y4vP5C8";
+  } else if (t.includes("reze") || t.includes("chainsaw man") || img.includes("140082")) {
+    newImg = "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx171018-bngyqUo15u4I.jpg";
+    if (!newTr || newTr.length < 25) newTr = "https://www.youtube.com/embed/1vRzTzW6c6c";
+  } else if (t.includes("one punch man") || img.includes("122627")) {
+    newImg = "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx153682-9t1FSt1WftLz.png";
+    if (!newTr || newTr.includes("2u321155") || newTr.length < 25) newTr = "https://www.youtube.com/embed/e_q8D6bX604";
+  } else if (t.includes("bleach") || img.includes("138036")) {
+    newImg = "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx171638-q5tD5z6Rj75J.jpg";
+    if (!newTr || newTr.includes("5a2223432") || newTr.length < 25) newTr = "https://www.youtube.com/embed/t0d2z9j39q8";
+  } else if (t.includes("jujutsu kaisen") || img.includes("141018")) {
+    newImg = "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx171017-Z1P8y3D4P70x.jpg";
+    if (!newTr || newTr.includes("6b3334232") || newTr.length < 25) newTr = "https://www.youtube.com/embed/8n_7y7e44t0";
+  }
+
+  return { image: newImg, trailer_url: newTr };
+}
+
 // Normalize anime from local JSON to match the shape used by components
 // Made idempotent: handles both raw (genres) and already-normalized (genre) data
 export function normalizeAnime(a) {
+  const rawTitle = a.title || a.title_english || "Unknown";
+  const rawImg = a.image || a.images?.jpg?.large_image_url || "";
+  const rawTr = a.trailer_url || null;
+  const fixed = fixBrokenAnimeMedia(rawTitle, rawImg, rawTr);
+
   return {
     mal_id: a.mal_id,
-    title: a.title || a.title_english || "Unknown",
+    title: rawTitle,
     title_english: a.title_english,
     title_japanese: a.title_japanese,
-    image: a.image || a.images?.jpg?.large_image_url || "",
+    image: fixed.image,
     rating: a.rating || a.score || 0,
     episodes: a.episodes || "?",
     status: a.status || "Unknown",
@@ -32,7 +64,7 @@ export function normalizeAnime(a) {
     season: a.season,
     themes: a.themes || [],
     demographics: a.demographics || [],
-    trailer_url: a.trailer_url || null,
+    trailer_url: fixed.trailer_url,
     characters: a.characters || [],
     trending: a.trending,
     topRated: a.topRated,
@@ -445,12 +477,13 @@ export function getCustomAnime() {
           try { parsedGenres = typeof a.genres === "string" ? JSON.parse(a.genres) : (a.genres || []) } catch (e) {}
           let parsedStudios = []
           try { parsedStudios = typeof a.studios === "string" ? JSON.parse(a.studios) : (a.studios || []) } catch (e) {}
+          const fixed = fixBrokenAnimeMedia(a.title, a.image || "", a.trailer_url || null);
           return {
             mal_id: a.mal_id || a.id,
             title: a.title,
             title_english: a.title_english,
             title_japanese: a.title_japanese,
-            image: a.image || "",
+            image: fixed.image,
             rating: a.score || 0,
             episodes: a.episodes || "?",
             status: a.status || "Unknown",
@@ -470,7 +503,7 @@ export function getCustomAnime() {
             season: a.season || "",
             themes: [],
             demographics: [],
-            trailer_url: a.trailer_url || null,
+            trailer_url: fixed.trailer_url,
             characters: [],
             trending: a.trending || false,
             topRated: a.top_rated || false,

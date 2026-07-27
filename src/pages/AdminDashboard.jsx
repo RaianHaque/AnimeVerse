@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { useAuth } from "../context/AuthContext"
 import { apiGet, apiPost, apiPut, apiDelete } from "../services/db"
-import { getAllAnimeRaw } from "../services/api"
+import { getAllAnimeRaw, fixBrokenAnimeMedia } from "../services/api"
 
 export default function AdminDashboard() {
   const { user, isAdmin, isSuperAdmin, actualRole, hasPermission } = useAuth()
@@ -61,7 +61,10 @@ export default function AdminDashboard() {
     try {
       const d = await apiGet("/api/admin?action=anime")
       if (d && d.anime && d.anime.length > 0) {
-        setCustomAnime(d.anime)
+        setCustomAnime(d.anime.map(a => {
+          const fixed = fixBrokenAnimeMedia(a.title, a.image, a.trailer_url);
+          return { ...a, image: fixed.image, trailer_url: fixed.trailer_url };
+        }))
       } else {
         setCustomAnime([
           { id: 9001, mal_id: 9001, title: "Solo Leveling Season 2: Arise from the Shadow", type: "TV", year: 2025, episodes: 12, score: 9.2, image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx176496-Vwbb3v54m75v.jpg", trailer_url: "https://www.youtube.com/embed/94r_Y4vP5C8", synopsis: "After surviving the Double Dungeon and unlocking the mysterious System, Sung Jinwoo continues his ascent as the world's only leveling hunter.", genres: "Action, Fantasy, Adventure", studios: "A-1 Pictures", is_hidden: false, isDemo: true, trending: true, top_rated: true },
@@ -369,7 +372,7 @@ export default function AdminDashboard() {
               ) : (
                 customAnime.map(a => (
                   <div key={a.id} className={`glass rounded-xl p-4 flex items-center gap-4 ${a.is_hidden ? "opacity-50" : ""}`}>
-                    {a.image && <img src={a.image} alt={a.title} className="w-12 h-16 object-cover rounded-lg shrink-0 shadow-md" />}
+                    {a.image && <img src={fixBrokenAnimeMedia(a.title, a.image, a.trailer_url).image} alt={a.title} className="w-12 h-16 object-cover rounded-lg shrink-0 shadow-md" />}
                     <div className="flex-1 min-w-0">
                       <h4 className="text-white font-semibold text-sm truncate">{a.title} {a.is_hidden && <span className="text-red-400 text-xs">(Hidden)</span>} {a.isDemo && <span className="text-cyan-400 text-[10px] ml-1 bg-cyan-950/40 px-1.5 py-0.5 rounded border border-cyan-500/30">Demo</span>}</h4>
                       <p className="text-gray-500 text-xs">{a.type} • {a.year} • {a.episodes} eps • ⭐ {a.score}</p>

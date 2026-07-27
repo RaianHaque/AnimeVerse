@@ -1,15 +1,17 @@
 import { Link } from "react-router-dom"
+import { fixBrokenAnimeMedia } from "../services/api"
 
 export default function AnimeCard({ anime }) {
   const rating = anime.rating || anime.score || 0
   const stars = Array.from({ length: 5 }, (_, i) => i < Math.round(rating / 2))
   const statusText = anime.airing ? "Ongoing" : anime.status === "Currently Airing" ? "Ongoing" : anime.status === "Finished Airing" ? "Completed" : anime.status || "Unknown"
   const isOngoing = statusText === "Ongoing" || statusText === "Currently Airing"
+  const fixedMedia = fixBrokenAnimeMedia(anime.title, anime.image, anime.trailer_url)
 
   return (
     <Link to={`/anime/${anime.mal_id}`} className="anime-card block rounded-xl overflow-hidden bg-[#0d0a1a] border border-purple-500/10 hover:border-purple-500/30 group relative">
       <div className="relative overflow-hidden aspect-[3/4]">
-        <img src={anime.image} alt={anime.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        <img src={fixedMedia.image} alt={anime.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0d0a1a] via-transparent to-transparent" />
         <span className={`absolute top-3 left-3 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider ${isOngoing ? "bg-green-500/20 text-green-300 border border-green-500/30" : "bg-cyan-500/20 text-cyan-300 border border-cyan-500/30"}`}>{statusText}</span>
         {rating > 0 && <span className="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-yellow-500/20 border border-yellow-500/30 text-yellow-300 text-xs font-bold">&#11088; {rating}</span>}

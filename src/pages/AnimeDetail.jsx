@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { useParams, Link, useNavigate } from "react-router-dom"
-import { getAnimeById, getAnimeCharacters, getAnimeEpisodes, getAnimeRecommendations, normalizeAnime } from "../services/api"
+import { getAnimeById, getAnimeCharacters, getAnimeEpisodes, getAnimeRecommendations, normalizeAnime, fixBrokenAnimeMedia } from "../services/api"
 import { useAuth } from "../context/AuthContext"
 import { apiGet, apiPost, apiDelete } from "../services/db"
 import AnimeCard from "../components/AnimeCard"
@@ -174,7 +174,9 @@ export default function AnimeDetail() {
   )
 
   const a = anime
-  const image = a.image || a.images?.jpg?.large_image_url || a.images?.jpg?.image_url || ""
+  const rawImage = a.image || a.images?.jpg?.large_image_url || a.images?.jpg?.image_url || ""
+  const fixedMedia = fixBrokenAnimeMedia(a.title, rawImage, a.trailer_url)
+  const image = fixedMedia.image
   const genreList = [...(a.genres || []), ...(a.themes || [])].map(g => typeof g === "string" ? g : g.name)
   const isOngoing = a.airing || a.status === "Currently Airing"
 
@@ -191,7 +193,7 @@ export default function AnimeDetail() {
     if (watchMatch) return `https://www.youtube.com/embed/${watchMatch[1]}`
     return url
   }
-  const trailerUrl = getEmbedUrl(a.trailer_url)
+  const trailerUrl = getEmbedUrl(fixedMedia.trailer_url)
 
   return (
     <div className="min-h-screen pt-16">
