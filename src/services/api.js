@@ -352,57 +352,6 @@ export function getAllAnimeRaw() {
   return animeDB.filter(a => !a.skip)
 }
 
-let customAnimeCache = null
-let customAnimePromise = null
-
-export async function getCustomAnime() {
-  if (customAnimeCache) return customAnimeCache
-  if (!customAnimePromise) {
-    customAnimePromise = fetch("/api/custom-anime")
-      .then(res => res.json())
-      .then(data => {
-        const list = (data.anime || []).map(a => {
-          let parsedGenres = []
-          try { parsedGenres = typeof a.genres === "string" ? JSON.parse(a.genres) : (a.genres || []) } catch (e) {}
-          let parsedStudios = []
-          try { parsedStudios = typeof a.studios === "string" ? JSON.parse(a.studios) : (a.studios || []) } catch (e) {}
-          return {
-            mal_id: a.mal_id || a.id,
-            title: a.title,
-            title_english: a.title_english,
-            title_japanese: a.title_japanese,
-            image: a.image || "",
-            rating: a.score || 0,
-            episodes: a.episodes || "?",
-            status: a.status || "Unknown",
-            year: a.year || "N/A",
-            description: a.synopsis || "No description available.",
-            genre: parsedGenres,
-            type: a.type || "TV",
-            source: a.source || "",
-            duration: a.duration || "",
-            airing: a.status === "Currently Airing",
-            studios: parsedStudios,
-            score: Number(a.score || 0),
-            scored_by: Number(a.scored_by || 0),
-            rank: a.rank_num || 999,
-            popularity: a.popularity || 999,
-            aired: { string: a.aired_string || "" },
-            season: a.season || "",
-            themes: [],
-            demographics: [],
-            trailer_url: a.trailer_url || null,
-            characters: [],
-            trending: a.trending || false,
-            topRated: a.top_rated || false,
-            synopsis: a.synopsis || "",
-            rating_label: a.rating || "",
-            favorites: 0,
-            members: Number(a.scored_by || 0),
-            isCustom: true,
-            id: a.id
-          }
-        })
 const DEMO_CUSTOM_ANIME = [
   {
     mal_id: 9001, id: 9001, title: "Solo Leveling Season 2: Arise from the Shadow",
@@ -465,6 +414,9 @@ const DEMO_CUSTOM_ANIME = [
     trailer_url: "https://www.youtube.com/embed/8n_7y7e44t0", isCustom: true, isDemo: true, trending: true, topRated: true
   }
 ];
+
+let customAnimeCache = null
+let customAnimePromise = null
 
 export function getCustomAnime() {
   if (customAnimeCache) return Promise.resolve(customAnimeCache)
